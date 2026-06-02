@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Real Estate Sticky Header</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fa;
+    min-height:200vh;
+}
+
+/* =========================
+   STICKY HEADER
+========================= */
+
+.re-header{
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:9999;
+    padding:18px 20px;
+    background:transparent;
+}
+
+/* Capsule Navbar */
+
+.re-navbar{
+    max-width:1350px;
+    margin:auto;
+    background: black;
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.3);
+  
+
+    border-radius:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:14px 28px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    position:relative;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.re-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.re-logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+    font-size:20px;
+}
+
+.re-logo-text{
+    font-size:24px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.re-nav-links{
+    display:flex;
+    align-items:center;
+    gap:12px;
+   
+}
+
+.re-nav-links a{
+    text-decoration:none;
+    
+    font-size:15px;
+    font-weight:500;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    transition:0.3s ease;
+    color:white;
+}
+
+.re-nav-links a:hover{
+    background:#2563eb;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.re-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.re-btn{
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+/* Login Button */
+
+.re-login{
+    border:1px solid #dbe4f0;
+    color:#0f172a;
+    background:#fff;
+}
+
+.re-login:hover{
+    background:#f1f5f9;
+}
+
+/* Register Button */
+
+.re-register{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(37,99,235,0.25);
+}
+
+.re-register:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.re-menu-toggle{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+    color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .re-navbar{
+        padding:14px 20px;
+    }
+
+    .re-nav-links{
+        gap:5px;
+    }
+
+    .re-nav-links a{
+        padding:10px 14px;
+        font-size:14px;
+    }
+
+    .re-btn{
+        padding:10px 18px;
+    }
+}
+
+/* Tablet + Mobile */
+
+@media(max-width:768px){
+
+    .re-navbar{
+        border-radius:30px;
+        padding:14px 18px;
+    }
+
+    .re-menu-toggle{
+        display:block;
+    }
+
+    .re-nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+
+        background: black;
+
+        margin-top:15px;
+        padding:20px;
+
+        border-radius:30px;
+
+        flex-direction:column;
+        align-items:flex-start;
+
+        box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+        display:none;
+    }
+
+    .re-nav-links.active{
+        display:flex;
+    }
+
+    .re-nav-links a{
+        width:100%;
+    }
+
+    .re-actions{
+        display:none;
+    }
+
+    .re-logo-text{
+        font-size:20px;
+    }
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+    .re-header{
+        padding:14px 10px;
+    }
+
+    .re-navbar{
+        padding:12px 16px;
+    }
+
+    .re-logo-icon{
+        width:42px;
+        height:42px;
+        font-size:18px;
+    }
+
+    .re-logo-text{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="re-header">
+
+    <nav class="re-navbar">
+
+        <!-- LOGO -->
+
+        <a href="index.html">   
+            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a> 
+        <!-- NAVIGATION -->
+
+        <div class="re-nav-links" id="reMenu">
+
+            <a href="./index.html">Home</a>
+            <a href="#">About</a>
+            <a href="#">Property</a>
+            <a href="#">Blog</a>
+            <a href="#">Dashboard</a>
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="re-actions">
+
+            <a href="#" class="re-btn re-login">
+                Login
+            </a>
+
+            <a href="#" class="re-btn re-register">
+                Register
+            </a>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+
+        <div class="re-menu-toggle" id="reToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- DEMO CONTENT -->
+
+<!-- =========================
+     HERO VIDEO SECTION
+========================= -->
+
+<section class="re-hero">
+
+    <!-- BACKGROUND VIDEO -->
+
+    <video autoplay muted loop playsinline class="re-bg-video">
+        <source src="./real.mp4" type="video/mp4">
+    </video>
+
+    <!-- OVERLAY -->
+
+    <div class="re-overlay"></div>
+
+    <!-- CONTENT -->
+
+    <div class="re-hero-container">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="re-hero-content">
+
+            <span class="re-tag">
+                Premium Real Estate Platform
+            </span>
+
+            <h1>
+                Find Your <span>Dream Home</span> With Comfort & Luxury
+            </h1>
+
+            <p>
+                Discover premium apartments, villas, rentals and luxury homes
+                in your favourite locations with modern facilities and elegant designs.
+            </p>
+
+            <div class="re-hero-buttons">
+
+                <a href="./404.html" class="re-primary-btn">
+                    Explore Properties
+                </a>
+
+                <a href="./real.mp4" class="re-secondary-btn">
+                    Watch Video
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT GLASSMORPHISM CARD -->
+
+        <div class="re-search-card">
+
+            <!-- TAB BUTTONS -->
+
+            <div class="re-tabs">
+
+                <button class="re-tab active" id="rentBtn">
+                    For Rent
+                </button>
+
+                <button class="re-tab" id="saleBtn">
+                    For Sale
+                </button>
+
+            </div>
+
+            <!-- FORM -->
+
+            <form class="re-search-form">
+
+                <!-- LOCATION -->
+
+                <div class="re-input-box">
+
+                    <label>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Location
+                    </label>
+
+                    <select>
+                        <option>All Main Locations</option>
+                        <option>Chennai</option>
+                        <option>Madurai</option>
+                        <option>Coimbatore</option>
+                        <option>Bangalore</option>
+                        <option>Hyderabad</option>
+                    </select>
+
+                </div>
+
+                <!-- BED -->
+
+                <div class="re-input-box">
+
+                    <label>
+                        <i class="fa-solid fa-bed"></i>
+                        Bedrooms
+                    </label>
+
+                    <select>
+                        <option>All Bed</option>
+                        <option>1 BHK</option>
+                        <option>2 BHK</option>
+                        <option>3 BHK</option>
+                        <option>4+ BHK</option>
+                    </select>
+
+                </div>
+
+                <!-- BATH -->
+
+                <div class="re-input-box">
+
+                    <label>
+                        <i class="fa-solid fa-bath"></i>
+                        Bathrooms
+                    </label>
+
+                    <select>
+                        <option>All Bath</option>
+                        <option>1 Bath</option>
+                        <option>2 Bath</option>
+                        <option>3 Bath</option>
+                        <option>4+ Bath</option>
+                    </select>
+
+                </div>
+
+                <!-- PROPERTY TYPE -->
+
+                <div class="re-input-box">
+
+                    <label>
+                        <i class="fa-solid fa-building"></i>
+                        Property Type
+                    </label>
+
+                    <select>
+                        <option>All Types</option>
+                        <option>Apartment</option>
+                        <option>Villa</option>
+                        <option>Commercial</option>
+                        <option>Penthouse</option>
+                    </select>
+
+                </div>
+
+                <!-- SEARCH BUTTON -->
+
+                <button type="submit" class="re-search-btn">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search Property
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.re-hero{
+    position:relative;
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:120px 20px 80px;
+}
+
+/* =========================
+   BACKGROUND VIDEO
+========================= */
+
+.re-bg-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-2;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.re-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.45);
+    z-index:-1;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.re-hero-container{
+    width:100%;
+    max-width:1350px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.re-hero-content{
+    flex:1;
+    color:#fff;
+
+    animation:slideUp 1.2s ease;
+}
+
+.re-tag{
+    display:inline-block;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.2);
+
+    padding:10px 22px;
+    border-radius:999px;
+
+    font-size:14px;
+    margin-bottom:25px;
+
+    backdrop-filter:blur(10px);
+}
+
+.re-hero-content h1{
+    font-size:68px;
+    line-height:1.2;
+    margin-bottom:25px;
+    font-weight:700;
+}
+
+.re-hero-content h1 span{
+    color:#60a5fa;
+}
+
+.re-hero-content p{
+    font-size:18px;
+    line-height:1.8;
+    color:#e2e8f0;
+
+    max-width:650px;
+    margin-bottom:35px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.re-hero-buttons{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.re-primary-btn,
+.re-secondary-btn{
+    text-decoration:none;
+    padding:15px 28px;
+    border-radius:999px;
+    font-weight:600;
+    transition:0.4s ease;
+}
+
+.re-primary-btn{
+    background:#2563eb;
+    color:#fff;
+}
+
+.re-primary-btn:hover{
+    transform:translateY(-3px);
+}
+
+.re-secondary-btn{
+    border:1px solid rgba(255,255,255,0.3);
+    color:#fff;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+}
+
+/* =========================
+   GLASSMORPHISM CARD
+========================= */
+
+.re-search-card{
+    width:420px;
+
+    background:rgba(255,255,255,0.12);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:35px;
+
+    padding:30px;
+
+    box-shadow:0 10px 40px rgba(0,0,0,0.2);
+
+    animation:slideUp 1.5s ease;
+}
+
+/* =========================
+   TABS
+========================= */
+
+.re-tabs{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+}
+
+.re-tab{
+    flex:1;
+    border:none;
+    padding:14px;
+    border-radius:999px;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s ease;
+
+    background:rgba(255,255,255,0.12);
+    color:#fff;
+}
+
+.re-tab.active{
+    background:#2563eb;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.re-search-form{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.re-input-box{
+    display:flex;
+    flex-direction:column;
+}
+
+.re-input-box label{
+    color:#fff;
+    margin-bottom:10px;
+    font-size:14px;
+    font-weight:500;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.re-input-box select{
+    width:100%;
+    padding:16px 18px;
+
+    border:none;
+    outline:none;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,0.14);
+    color:#fff;
+
+    font-size:15px;
+
+    backdrop-filter:blur(10px);
+}
+
+.re-input-box select option{
+    color:#111827;
+}
+
+/* =========================
+   SEARCH BUTTON
+========================= */
+
+.re-search-btn{
+    border:none;
+    padding:18px;
+
+    border-radius:999px;
+
+    background:#2563eb;
+    color:#fff;
+
+    font-size:16px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    transition:0.3s ease;
+}
+
+.re-search-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes slideUp{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-hero-content h1{
+        font-size:56px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .re-hero-container{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .re-hero-content p{
+        margin:auto auto 35px;
+    }
+
+    .re-hero-buttons{
+        justify-content:center;
+    }
+
+    .re-search-card{
+        width:100%;
+        max-width:600px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .re-hero{
+        padding:130px 15px 70px;
+    }
+
+    .re-hero-content h1{
+        font-size:42px;
+    }
+
+    .re-hero-content p{
+        font-size:16px;
+    }
+
+    .re-search-card{
+        padding:22px;
+        border-radius:28px;
+    }
+
+    .re-tabs{
+        flex-direction:column;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-hero-content h1{
+        font-size:34px;
+    }
+
+    .re-primary-btn,
+    .re-secondary-btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .re-search-btn{
+        font-size:15px;
+    }
+
+}
+
+</style>
+
+<script>
+
+/* =========================
+   TAB SWITCHING
+========================= */
+
+const rentBtn = document.getElementById("rentBtn");
+const saleBtn = document.getElementById("saleBtn");
+
+rentBtn.addEventListener("click", () => {
+    rentBtn.classList.add("active");
+    saleBtn.classList.remove("active");
+});
+
+saleBtn.addEventListener("click", () => {
+    saleBtn.classList.add("active");
+    rentBtn.classList.remove("active");
+});
+
+</script>
+
+
+
+
+
+
+
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const reToggle = document.getElementById("reToggle");
+const reMenu = document.getElementById("reMenu");
+
+reToggle.addEventListener("click", () => {
+    reMenu.classList.toggle("active");
+});
+
+</script>
+
+
+</body>
+</html>
