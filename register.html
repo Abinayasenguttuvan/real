@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cybersecurity Register</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ===== ROOT ===== */
+:root{
+  --cyber-primary:#5f5cff;
+  --cyber-secondary:#0ea5e9;
+  --cyber-dark:#020617;
+  --cyber-card:rgba(255,255,255,0.05);
+  --cyber-border:rgba(255,255,255,0.12);
+  --cyber-text:#94a3b8;
+}
+
+/* FIX DROPDOWN VISIBILITY */
+.cyber-input select {
+  background: rgba(0, 0, 0, 0.6);  /* solid background */
+  color: #fff;
+}
+
+/* IMPORTANT: option styling */
+.cyber-input select option {
+  background: #020617;   /* dark solid */
+  color: #ffffff;        /* always visible */
+}
+
+/* Optional hover (works in some browsers) */
+.cyber-input select option:hover {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+.cyber-input select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+/* ===== GLOBAL ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:radial-gradient(circle at top,#020617,#000);
+  overflow:hidden;
+  color:#fff;
+}
+
+/* ===== CYBER PARTICLE BG ===== */
+.cyber-bg{
+  position:absolute;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  z-index:0;
+}
+
+.cyber-bg span{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:var(--cyber-primary);
+  border-radius:50%;
+  animation:cyberParticle 8s linear infinite;
+}
+
+@keyframes cyberParticle{
+  0%{transform:translateY(0) translateX(0)}
+  50%{transform:translateY(50vh) translateX(30px)}
+  100%{transform:translateY(100vh) translateX(0)}
+}
+
+/* ===== WRAPPER ===== */
+.cyber-wrapper{
+  width:100%;
+  max-width:780px;
+  padding:20px;
+  z-index:2;
+}
+
+/* BACK BUTTON */
+.cyber-back{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--cyber-text);
+  text-decoration:none;
+  margin-bottom:15px;
+  font-size:14px;
+}
+
+.cyber-back:hover{
+  color:var(--cyber-primary);
+}
+
+/* ===== CARD ===== */
+.cyber-card{
+  background:var(--cyber-card);
+  border:1px solid var(--cyber-border);
+  backdrop-filter:blur(18px);
+  border-radius:18px;
+  padding:35px;
+  color:#fff;
+  box-shadow:0 20px 60px rgba(0,0,0,0.5);
+}
+
+/* LOGO */
+.cyber-logo{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.cyber-logo img{
+  height:55px;
+}
+
+.cyber-icon{
+  width:70px;
+  height:70px;
+  margin:15px auto;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--cyber-primary),var(--cyber-secondary));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:26px;
+}
+
+/* TITLE */
+.cyber-title{
+  text-align:center;
+  font-size:26px;
+  margin-bottom:5px;
+}
+
+.cyber-sub{
+  text-align:center;
+  color:var(--cyber-text);
+  margin-bottom:25px;
+  font-size:13px;
+}
+
+/* GRID */
+.cyber-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+/* INPUT */
+.cyber-group{
+  margin-bottom:18px;
+}
+
+.cyber-group label{
+  font-size:13px;
+  display:block;
+  margin-bottom:6px;
+}
+
+.cyber-input{
+  display:flex;
+  align-items:center;
+  border:1px solid var(--cyber-border);
+  border-radius:10px;
+  height:46px;
+  padding:0 12px;
+}
+
+.cyber-input i{
+  margin-right:8px;
+  color:#94a3b8;
+}
+
+.cyber-input input,
+.cyber-input select{
+  border:none;
+  outline:none;
+  background:transparent;
+  color:#fff;
+  width:100%;
+}
+
+/* PASSWORD */
+.cyber-pass{
+  position:relative;
+}
+
+.cyber-pass span{
+  position:absolute;
+  right:10px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+}
+
+/* ERROR */
+.cyber-error{
+  color:#ff4d4d;
+  font-size:11px;
+  display:none;
+}
+
+/* TERMS */
+.cyber-terms{
+  font-size:13px;
+  margin:10px 0;
+  color:var(--cyber-text);
+}
+
+/* BUTTON */
+.cyber-btn{
+  width:100%;
+  padding:13px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(90deg,var(--cyber-primary),var(--cyber-secondary));
+  color:#000;
+  font-weight:600;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.cyber-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 0 20px var(--cyber-primary);
+}
+
+/* LINK */
+.cyber-link{
+  text-align:center;
+  margin-top:15px;
+  font-size:13px;
+}
+
+.cyber-link a{
+  color:var(--cyber-primary);
+  text-decoration:none;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Laptop/Tablet */
+@media(max-width:900px){
+  .cyber-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .cyber-card{
+    padding:25px 20px;
+  }
+  .cyber-title{
+    font-size:22px;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PARTICLE BG -->
+<div class="cyber-bg">
+<span style="left:10%; animation-delay:0s;"></span>
+<span style="left:30%; animation-delay:2s;"></span>
+<span style="left:50%; animation-delay:4s;"></span>
+<span style="left:70%; animation-delay:1s;"></span>
+<span style="left:90%; animation-delay:3s;"></span>
+</div>
+
+<div class="cyber-wrapper">
+
+<a href="index.html" class="cyber-back">
+<i class="fa fa-arrow-left"></i> Back to Home
+</a>
+
+<div class="cyber-card">
+
+<div class="cyber-logo">
+<img src="./white.webp" alt="Cyber Logo">
+</div>
+
+<div class="cyber-icon">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+
+<h2 class="cyber-title">Create Real Estate account</h2>
+<p class="cyber-sub">Join our secure platform</p>
+
+<form id="cyberRegForm">
+
+<div class="cyber-grid">
+
+<div class="cyber-group">
+<label>Full Name</label>
+<div class="cyber-input">
+<i class="fa fa-user"></i>
+<input type="text" placeholder="John Doe" required>
+</div>
+</div>
+
+<div class="cyber-group">
+<label>Role</label>
+<div class="cyber-input">
+<select required>
+<option>Agent</option>
+<option>Customer</option>
+</select>
+</div>
+</div>
+
+</div>
+
+<div class="cyber-group">
+<label>Email</label>
+<div class="cyber-input">
+<i class="fa fa-envelope"></i>
+<input type="email" id="email" required>
+</div>
+<p id="emailErr" class="cyber-error">Invalid email</p>
+</div>
+
+<div class="cyber-grid">
+
+<div class="cyber-group">
+<label>Password</label>
+<div class="cyber-input cyber-pass">
+<input type="password" id="pass" required>
+<span onclick="togglePass('pass')"><i class="fa fa-eye"></i></span>
+</div>
+<p id="passErr" class="cyber-error">Weak password</p>
+</div>
+
+<div class="cyber-group">
+<label>Confirm</label>
+<div class="cyber-input cyber-pass">
+<input type="password" id="confirm" required>
+<span onclick="togglePass('confirm')"><i class="fa fa-eye"></i></span>
+</div>
+<p id="confirmErr" class="cyber-error">Passwords do not match</p>
+</div>
+
+</div>
+
+<div class="cyber-terms">
+<input type="checkbox" required> Accept terms & policy
+</div>
+
+<button class="cyber-btn">Create Account</button>
+
+<div class="cyber-link">
+Already have an account? <a href="login.html">Login</a>
+</div>
+
+</form>
+
+</div>
+</div>
+
+<script>
+/* PASSWORD TOGGLE */
+function togglePass(id){
+  const el = document.getElementById(id);
+  el.type = el.type === "password" ? "text" : "password";
+}
+
+/* VALIDATION */
+const email = document.getElementById("email");
+const pass = document.getElementById("pass");
+const confirm = document.getElementById("confirm");
+
+document.getElementById("cyberRegForm").addEventListener("submit",(e)=>{
+  e.preventDefault();
+  let valid = true;
+
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)){
+    document.getElementById("emailErr").style.display="block";
+    valid=false;
+  } else document.getElementById("emailErr").style.display="none";
+
+  if(pass.value.length < 6){
+    document.getElementById("passErr").style.display="block";
+    valid=false;
+  } else document.getElementById("passErr").style.display="none";
+
+  if(pass.value !== confirm.value){
+    document.getElementById("confirmErr").style.display="block";
+    valid=false;
+  } else document.getElementById("confirmErr").style.display="none";
+
+  if(valid){
+    // save data (demo)
+    localStorage.setItem("email", email.value);
+    localStorage.setItem("role", document.querySelector("select").value);
+    window.location.href="404.html";
+  }
+});
+</script>
+
+</body>
+</html>

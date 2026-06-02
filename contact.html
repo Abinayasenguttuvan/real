@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Real Estate </title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fa;
+    min-height:200vh;
+}
+
+/* =========================
+   STICKY HEADER
+========================= */
+
+.re-header{
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:9999;
+    padding:18px 20px;
+    background:transparent;
+}
+
+/* Capsule Navbar */
+
+.re-navbar{
+    max-width:1350px;
+    margin:auto;
+    background: #0f172a;
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.3);
+  
+
+    border-radius:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:14px 28px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    position:relative;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.re-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.re-logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+    font-size:20px;
+}
+
+.re-logo-text{
+    font-size:24px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.re-nav-links{
+    display:flex;
+    align-items:center;
+    gap:12px;
+   
+}
+
+.re-nav-links a{
+    text-decoration:none;
+    
+    font-size:15px;
+    font-weight:500;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    transition:0.3s ease;
+    color:white;
+}
+
+.re-nav-links a:hover{
+    background:#2563eb;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.re-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.re-btn{
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+/* Login Button */
+
+.re-login{
+    border:1px solid #dbe4f0;
+    color:#0f172a;
+    background:#fff;
+}
+
+.re-login:hover{
+    background:#f1f5f9;
+}
+
+/* Register Button */
+
+.re-register{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(37,99,235,0.25);
+}
+
+.re-register:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.re-menu-toggle{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+    color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .re-navbar{
+        padding:14px 20px;
+    }
+
+    .re-nav-links{
+        gap:5px;
+    }
+
+    .re-nav-links a{
+        padding:10px 14px;
+        font-size:14px;
+    }
+
+    .re-btn{
+        padding:10px 18px;
+    }
+}
+
+/* Tablet + Mobile */
+
+@media(max-width:768px){
+
+    .re-navbar{
+        border-radius:30px;
+        padding:14px 18px;
+    }
+
+    .re-menu-toggle{
+        display:block;
+    }
+
+    .re-nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+
+        background: black;
+
+        margin-top:15px;
+        padding:20px;
+
+        border-radius:30px;
+
+        flex-direction:column;
+        align-items:flex-start;
+
+        box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+        display:none;
+    }
+
+    .re-nav-links.active{
+        display:flex;
+    }
+
+    .re-nav-links a{
+        width:100%;
+    }
+
+    .re-actions{
+        display:none;
+    }
+
+    .re-logo-text{
+        font-size:20px;
+    }
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+    .re-header{
+        padding:14px 10px;
+    }
+
+    .re-navbar{
+        padding:12px 16px;
+    }
+
+    .re-logo-icon{
+        width:42px;
+        height:42px;
+        font-size:18px;
+    }
+
+    .re-logo-text{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="re-header">
+
+    <nav class="re-navbar">
+
+        <!-- LOGO -->
+
+        <a href="index.html">   
+            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a> 
+        <!-- NAVIGATION -->
+
+        <div class="re-nav-links" id="reMenu">
+
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./property.html">Property</a>
+            <a href="./pricing.html">Pricing</a>
+            <a href="./contact.html">Contact</a>
+            
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="re-actions">
+
+            <a href="./login.html" class="re-btn re-login">
+                Login
+            </a>
+
+            <a href="./register.html" class="re-btn re-register">
+                Register
+            </a>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+
+        <div class="re-menu-toggle" id="reToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </nav>
+
+</header>
+
+
+<section class="contact-hero">
+    <div class="hero-overlay">
+      <h1>Contact Our Team</h1>
+      <p>We are here to assist you anytime</p>
+    </div>
+  </section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section">
+    <div class="contact-container">
+  
+      <!-- Header -->
+      <div class="contact-header">
+        <h2>Contact Us</h2>
+        
+      </div>
+  
+      <!-- Contact Info -->
+      <div class="contact-info-grid">
+  
+        <!-- Email -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fa-regular fa-envelope"></i>
+          </div>
+          <h4>Email Address</h4>
+          <p>hello@yourcompany.com</p>
+          <p>support@yourcompany.com</p>
+        </div>
+  
+        <!-- Phone -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <h4>Phone Number</h4>
+          <p>+91 98765 43210</p>
+          <p>+91 91234 56789</p>
+        </div>
+  
+        <!-- Location -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h4>Office Location</h4>
+          <p>salem, Tamil Nadu</p>
+          <p>India</p>
+        </div>
+  
+        <!-- Work Time -->
+        <div class="contact-card">
+          <div class="contact-icon">
+            <i class="fa-regular fa-clock"></i>
+          </div>
+          <h4>Working Hours</h4>
+          <p>Mon – Fri: 9:00 AM – 6:00 PM</p>
+          <p>Sat: 9:00 AM – 1:00 PM</p>
+          <p>Sun: 9:00 AM – 1:00 PM</p>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <!-- CONTACT FORM SECTION -->
+  <section class="contact-form-section">
+    <div class="contact-wrapper">
+  
+      <!-- LEFT CONTENT -->
+      <div class="contact-left">
+        
+        <span class="contact-tag">CONTACT</span>
+        <h2>Get In Touch With Us</h2>
+        
+  <form class="contact-form" id="contactForm" novalidate>
+  
+    <div class="form-row">
+      <div class="field">
+        <input type="text" id="name" placeholder="Name">
+        <small class="error"></small>
+      </div>
+  
+      <div class="field">
+        <input type="email" id="email" placeholder="Email">
+        <small class="error"></small>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <div class="field">
+        <input type="text" id="phone" placeholder="Phone Number">
+        <small class="error"></small>
+      </div>
+  
+      <div class="field">
+        <input type="text" id="subject" placeholder="Subject">
+        <small class="error"></small>
+      </div>
+    </div>
+  
+    <div class="field">
+      <textarea id="message" placeholder="Message"></textarea>
+      <small class="error"></small>
+    </div>
+  
+    <button type="submit">Send Message</button>
+  </form>
+      </div>
+  
+      <!-- RIGHT IMAGE -->
+      <div class="contact-right">
+        <div class="image-box">
+          <img src="./im3.webp" alt="Contact Team">
+        </div>
+      </div>
+  
+    </div>
+  
+    <div class="map-box">
+    <iframe
+      src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+
+    
+  </div>
+  </section>
+  <style>
+    *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+/* HERO SECTION */
+
+.contact-hero{
+width:100%;
+height:65vh;
+background-size:cover;
+background-position:center;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:center;
+transition:1s;
+}
+
+.hero-overlay{
+width:100%;
+height:100%;
+/* background:rgba(0,0,0,0.6); */
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+text-align:center;
+color: #0f172a;
+padding:20px;
+}
+
+.hero-overlay h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+.hero-overlay p{
+font-size:18px;
+}
+
+/* CONTACT SECTION */
+
+.contact-section{
+padding:60px 20px;
+}
+
+.contact-header{
+text-align:center;
+margin-bottom:40px;
+}
+
+.contact-header h2{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.contact-info-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.contact-card{
+background:#f5f5f5;
+padding:20px;
+text-align:center;
+border-radius:10px;
+}
+
+.contact-icon{
+font-size:30px;
+margin-bottom:10px;
+}
+
+/* CONTACT FORM */
+
+.contact-form-section{
+padding:60px 20px;
+}
+
+.contact-wrapper{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:40px;
+flex-wrap:wrap;
+}
+
+.contact-left{
+flex:1;
+position:relative;
+}
+
+.contact-left h2{
+margin:10px 0;
+}
+
+.contact-right{
+flex:1;
+}
+
+.contact-right img{
+width:100%;
+border-radius:10px;
+}
+
+/* FLOATING IMAGE */
+
+.floating-img{
+width:150px;
+position:absolute;
+top:50px;
+right:-50px;
+animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-20px);}
+}
+
+/* FORM */
+
+.form-row{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.field{
+flex:1;
+display:flex;
+flex-direction:column;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+}
+
+.contact-form button{
+padding:12px;
+background:#000;
+color:#fff;
+border:none;
+cursor:pointer;
+}
+
+/* MAP */
+
+.map-box iframe{
+width:100%;
+height:300px;
+border:0;
+margin-top:30px;
+}
+
+/* TABLET VIEW */
+
+@media(max-width:1024px){
+
+.contact-info-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.contact-wrapper{
+flex-direction:column;
+}
+
+.floating-img{
+right:0;
+}
+
+}
+
+/* MOBILE VIEW */
+
+@media(max-width:768px){
+
+.hero-overlay h1{
+font-size:28px;
+}
+
+.hero-overlay p{
+font-size:14px;
+}
+
+.contact-info-grid{
+grid-template-columns:1fr;
+}
+
+.form-row{
+flex-direction:column;
+}
+
+.floating-img{
+position:static;
+margin:20px auto;
+display:block;
+}
+
+.contact-hero{
+height:40vh;
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+.hero-overlay h1{
+font-size:22px;
+}
+
+.hero-overlay p{
+font-size:12px;
+}
+
+}
+  </style>
+
+  <script>
+    const hero=document.querySelector(".contact-hero");
+
+const images=[
+"./beach.webp",
+"./archi2.webp",
+"./archi3.webp"
+];
+
+let i=0;
+
+setInterval(()=>{
+hero.style.backgroundImage=`url(${images[i]})`;
+i=(i+1)%images.length;
+},3000);
+
+document.getElementById("contactForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+let name=document.getElementById("name").value.trim();
+let email=document.getElementById("email").value.trim();
+let phone=document.getElementById("phone").value.trim();
+let subject=document.getElementById("subject").value.trim();
+let message=document.getElementById("message").value.trim();
+
+if(name==="" || email==="" || phone==="" || subject==="" || message===""){
+
+alert("Please fill all details");
+
+}else{
+
+window.location.href="404.html";
+
+}
+
+});
+  </script>
+
+
+
+<!-- ---------------- -->
+
+
+<!-- =========================
+     FOOTER SECTION
+========================= -->
+
+<footer class="re-footer-section">
+
+    <!-- TOP FOOTER -->
+
+    <div class="re-footer-container">
+
+        <!-- COLUMN 1 -->
+
+        <div class="re-footer-col">
+
+            <!-- LOGO -->
+
+            <a href="./index.html" class="re-footer-logo">
+                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+
+               
+
+            </a>
+
+            <!-- CONTENT -->
+
+            <p class="re-footer-text">
+
+                We provide premium real estate solutions with luxury homes,
+                modern apartments and trusted property consultation services.
+
+            </p>
+
+            <p class="re-footer-text">
+
+                Find your dream home with professional support and world-class
+                property management assistance.
+
+            </p>
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="re-footer-social">
+
+                <a href="404.html">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 2 -->
+
+        <div class="re-footer-col">
+
+            <h3>Quick Links</h3>
+
+            <ul class="re-footer-links">
+
+                <li>
+                    <a href="404.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Property
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Pricing
+                    </a>
+                </li>
+
+                
+                <li>
+                    <a href="404.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 3 -->
+
+        <div class="re-footer-col">
+
+            <h3>Contact Info</h3>
+
+            <div class="re-footer-contact">
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        MMR complex , chinna tirupathi , salem
+                    </span>
+
+                </div>
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <a href="tel:+919876543210">
+                        +91 98765 43210
+                    </a>
+
+                </div>
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <a href="mailto:info@stacklyestate.com">
+                        support@thestackly.com
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 4 -->
+
+        <div class="re-footer-col">
+
+            <h3>Our Location</h3>
+
+            <!-- MAP -->
+
+            <div class="re-footer-map">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+
+    <div class="re-footer-bottom">
+
+        © Copyright 2026 Stackly.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<style>
+
+/* =========================
+   FOOTER SECTION
+========================= */
+
+.re-footer-section{
+    width:100%;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    overflow:hidden;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.re-footer-container{
+    width:100%;
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:100px 20px 60px;
+
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr 1.2fr;
+    gap:50px;
+}
+
+/* =========================
+   FOOTER COLUMN
+========================= */
+
+.re-footer-col{
+    animation:reFooterFade 1.2s ease;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.re-footer-logo{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:34px;
+    font-weight:700;
+
+    margin-bottom:28px;
+}
+
+.re-footer-logo i{
+    color:#3b82f6;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.re-footer-text{
+    color:#cbd5e1;
+
+    font-size:16px;
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.re-footer-social{
+    display:flex;
+    gap:14px;
+
+    margin-top:30px;
+}
+
+.re-footer-social a{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:18px;
+
+    transition:0.4s ease;
+}
+
+.re-footer-social a:hover{
+    background:#2563eb;
+
+    transform:translateY(-5px);
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.re-footer-col h3{
+    font-size:28px;
+
+    margin-bottom:30px;
+
+    color:#fff;
+}
+
+/* =========================
+   QUICK LINKS
+========================= */
+
+.re-footer-links{
+    list-style:none;
+    padding:0;
+}
+
+.re-footer-links li{
+    margin-bottom:18px;
+}
+
+.re-footer-links a{
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    font-size:17px;
+
+    transition:0.4s ease;
+}
+
+.re-footer-links a:hover{
+    color:#60a5fa;
+
+    padding-left:8px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.re-footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.re-footer-contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+    line-height:1.8;
+}
+
+.re-footer-contact-item i{
+    color:#60a5fa;
+
+    font-size:18px;
+
+    margin-top:4px;
+}
+
+.re-footer-contact-item a{
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:0.4s ease;
+}
+
+.re-footer-contact-item a:hover{
+    color:#60a5fa;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.re-footer-map{
+    width:100%;
+
+    height:260px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.re-footer-map iframe{
+    width:100%;
+    height:100%;
+
+    border:none;
+}
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.re-footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    text-align:center;
+
+    padding:28px 20px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reFooterFade{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-footer-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:768px){
+
+    .re-footer-container{
+        grid-template-columns:1fr;
+
+        padding:80px 20px 50px;
+    }
+
+    .re-footer-col{
+        text-align:center;
+    }
+
+    .re-footer-logo{
+        justify-content:center;
+    }
+
+    .re-footer-social{
+        justify-content:center;
+    }
+
+    .re-footer-contact-item{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .re-footer-col h3{
+        font-size:24px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-footer-logo{
+        font-size:28px;
+    }
+
+    .re-footer-text{
+        font-size:15px;
+    }
+
+    .re-footer-links a{
+        font-size:16px;
+    }
+
+    .re-footer-map{
+        height:220px;
+    }
+
+    .re-footer-bottom{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+}
+
+</style>
+</body>
+</html>
+
+

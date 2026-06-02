@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Real Estate Sticky Header</title>
+<title>Real Estate </title>
 
 <!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -48,7 +48,7 @@ body{
 .re-navbar{
     max-width:1350px;
     margin:auto;
-    background: black;
+    background: #0f172a;
     backdrop-filter:blur(14px);
     border:1px solid rgba(255,255,255,0.3);
   
@@ -306,10 +306,11 @@ body{
         <div class="re-nav-links" id="reMenu">
 
             <a href="./index.html">Home</a>
-            <a href="#">About</a>
-            <a href="#">Property</a>
-            <a href="#">Blog</a>
-            <a href="#">Dashboard</a>
+            <a href="./about.html">About</a>
+            <a href="./property.html">Property</a>
+            <a href="./pricing.html">Pricing</a>
+            <a href="./contact.html">Contact</a>
+            
 
         </div>
 
@@ -317,11 +318,11 @@ body{
 
         <div class="re-actions">
 
-            <a href="#" class="re-btn re-login">
+            <a href="./login.html" class="re-btn re-login">
                 Login
             </a>
 
-            <a href="#" class="re-btn re-register">
+            <a href="./register.html" class="re-btn re-register">
                 Register
             </a>
 
@@ -348,7 +349,7 @@ body{
     <!-- BACKGROUND VIDEO -->
 
     <video autoplay muted loop playsinline class="re-bg-video">
-        <source src="./real.mp4" type="video/mp4">
+        <source src="./vdeo.mp4" type="video/mp4">
     </video>
 
     <!-- OVERLAY -->
@@ -905,12 +906,4444 @@ saleBtn.addEventListener("click", () => {
 
 </script>
 
+<!-- -------------------- -->
+<!-- =========================
+     ABOUT / LEGACY SECTION
+========================= -->
+
+<section class="re-legacy-section">
+
+    <div class="re-legacy-container">
+
+        <!-- LEFT CONTENT -->
+
+        <div class="re-legacy-content">
+
+            <!-- GLASS CAPSULE -->
+
+            <div class="re-glass-tag">
+                <i class="fa-solid fa-building"></i>
+                About Our Company
+            </div>
+
+            <h2>
+                We are your partner in creating a legacy building facade.
+            </h2>
+
+            <p>
+                We are one of the leading developers providing exquisitely
+                designed modern villas and premium apartments in unique
+                locations. Our quality developments combine luxury,
+                comfort and contemporary architecture to suit your
+                lifestyle and budget.
+            </p>
+
+            <a href="./404.html" class="re-read-btn">
+                Read More
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <!-- RIGHT IMAGE GRID -->
+
+        <div class="re-legacy-gallery">
+
+            <!-- IMAGE 1 -->
+
+            <div class="re-gallery-item re-large">
+
+                <img src="./im1.webp" alt="Office">
+
+            </div>
+
+            <!-- IMAGE 2 -->
+
+            <div class="re-gallery-item">
+
+                <img src="./im2.webp" alt="Meeting">
+
+            </div>
+
+            <!-- IMAGE 3 -->
+
+            <div class="re-gallery-item">
+
+                <img src="./im3.webp" alt="Work">
+
+            </div>
+
+            <!-- IMAGE 4 -->
+
+            <div class="re-gallery-item re-tall">
+
+                <img src="./im4.webp" alt="Woman">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   LEGACY SECTION
+========================= */
+
+.re-legacy-section{
+    width:100%;
+    padding:120px 20px;
+    background:#f5f7fa;
+    overflow:hidden;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.re-legacy-container{
+    max-width:1350px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+/* =========================
+   LEFT CONTENT
+========================= */
+
+.re-legacy-content{
+    animation:reFadeUp 1.2s ease;
+}
+
+/* =========================
+   GLASS CAPSULE
+========================= */
+
+.re-glass-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 24px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.06);
+
+    font-size:14px;
+    font-weight:600;
+    color:#2563eb;
+
+    margin-bottom:28px;
+}
+
+.re-legacy-content h2{
+    font-size:58px;
+    line-height:1.2;
+    font-weight:700;
+    color:#111827;
+
+    margin-bottom:28px;
+}
+
+.re-legacy-content p{
+    font-size:18px;
+    line-height:1.9;
+    color:#4b5563;
+
+    max-width:650px;
+    margin-bottom:40px;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.re-read-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    padding:16px 34px;
+
+    border-radius:16px;
+
+    border:1px solid #bfdbfe;
+
+    background:#fff;
+
+    color:#2563eb;
+
+    font-weight:600;
+    font-size:16px;
+
+    transition:0.4s ease;
+
+    box-shadow:0 10px 25px rgba(37,99,235,0.08);
+}
+
+.re-read-btn:hover{
+    background:#2563eb;
+    color:#fff;
+    transform:translateY(-5px);
+}
+
+/* =========================
+   IMAGE GRID
+========================= */
+
+.re-legacy-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+
+    animation:reFadeUp 1.5s ease;
+}
+
+/* =========================
+   IMAGE CARD
+========================= */
+
+.re-gallery-item{
+    position:relative;
+    overflow:hidden;
+
+    border-radius:28px;
+
+    min-height:260px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,0.12);
+}
+
+.re-gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:0.7s ease;
+}
+
+/* ZOOM EFFECT */
+
+.re-gallery-item:hover img{
+    transform:scale(1.12);
+}
+
+/* LARGE IMAGE */
+
+.re-large{
+    height:370px;
+}
+
+/* TALL IMAGE */
+
+.re-tall{
+    height:370px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reFadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(90px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-legacy-content h2{
+        font-size:48px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .re-legacy-container{
+        grid-template-columns:1fr;
+        gap:60px;
+    }
+
+    .re-legacy-content{
+        text-align:center;
+    }
+
+    .re-legacy-content p{
+        margin:auto auto 35px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .re-legacy-section{
+        padding:90px 15px;
+    }
+
+    .re-legacy-content h2{
+        font-size:38px;
+    }
+
+    .re-legacy-content p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .re-legacy-gallery{
+        gap:16px;
+    }
+
+    .re-gallery-item{
+        border-radius:22px;
+    }
+
+    .re-large,
+    .re-tall{
+        height:260px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-legacy-content h2{
+        font-size:32px;
+    }
+
+    .re-glass-tag{
+        width:100%;
+        justify-content:center;
+        text-align:center;
+    }
+
+    .re-read-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .re-legacy-gallery{
+        grid-template-columns:1fr;
+    }
+
+}
+
+</style>
+
+<!-- ------------------------------------ -->
+
+<!-- =========================
+     PARTNERS SECTION
+========================= -->
+
+<section class="re-partner-section">
+
+    <!-- HEADING -->
+
+    <div class="re-partner-heading">
+
+        <div class="re-partner-tag">
+            <i class="fa-solid fa-handshake"></i>
+            Trusted Partners
+        </div>
+
+        <h2>
+            Collaborating With Leading Global Brands
+        </h2>
+
+        <p>
+            We work with premium real estate partners and trusted companies
+            to deliver world-class luxury living experiences.
+        </p>
+
+    </div>
+
+    <!-- SCROLLING LOGOS -->
+
+    <div class="re-logo-slider">
+
+        <div class="re-logo-track">
+
+            <!-- LOGO 1 -->
+
+            <div class="re-logo-card">
+                <img src="./partner.webp" alt="">
+            </div>
+
+            <!-- LOGO 2 -->
+
+            <div class="re-logo-card">
+                <img src="./partner1.webp" alt="">
+            </div>
+
+            <!-- LOGO 3 -->
+
+            <div class="re-logo-card">
+                <img src="./partner2.webp" alt="">
+            </div>
+
+            <!-- LOGO 4 -->
+
+            <div class="re-logo-card">
+                <img src="./partner3.webp" alt="">
+            </div>
+
+            <!-- LOGO 5 -->
+
+            <div class="re-logo-card">
+                <img src="./partner5.webp" alt="">
+            </div>
+
+            
+
+            <!-- DUPLICATE FOR SMOOTH LOOP -->
+
+            <div class="re-logo-card">
+                <img src="./partner.webp" alt="">
+            </div>
+
+            <div class="re-logo-card">
+                <img src="./partner1.webp" alt="">
+            </div>
+
+            <div class="re-logo-card">
+                <img src="./partner2.webp" alt="">
+            </div>
+
+            <div class="re-logo-card">
+                <img src="./partner3.webp" alt="">
+            </div>
+
+            <div class="re-logo-card">
+                <img src="./partner5.webp" alt="">
+            </div>
+
+            
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   PARTNER SECTION
+========================= */
+
+.re-partner-section{
+    width:100%;
+    padding:120px 0;
+    background:#f8fafc;
+    overflow:hidden;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.re-partner-heading{
+    text-align:center;
+    margin-bottom:70px;
+    padding:0 20px;
+
+    animation:rePartnerFade 1.2s ease;
+}
+
+
+/* =========================
+   GLASSMORPHISM CAPSULE
+========================= */
+
+.re-partner-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+
+    color:#2563eb;
+
+    font-size:15px;
+    font-weight:600;
+
+    margin-bottom:24px;
+}
+
+.re-partner-heading h2{
+    font-size:52px;
+    line-height:1.2;
+    color:#111827;
+
+    margin-bottom:20px;
+}
+
+.re-partner-heading p{
+    max-width:750px;
+    margin:auto;
+
+    font-size:18px;
+    line-height:1.8;
+
+    color:#64748b;
+}
+
+/* =========================
+   LOGO SLIDER
+========================= */
+
+.re-logo-slider{
+    width:100%;
+    overflow:hidden;
+    position:relative;
+}
+
+/* =========================
+   TRACK
+========================= */
+
+.re-logo-track{
+    display:flex;
+    align-items:center;
+    gap:28px;
+
+    width:max-content;
+
+    animation:reScroll 28s linear infinite;
+}
+
+/* =========================
+   LOGO CARD
+========================= */
+
+.re-logo-card{
+    width:240px;
+    height:120px;
+
+    background:rgba(255,255,255,0.75);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    border-radius:28px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    transition:0.5s ease;
+
+    flex-shrink:0;
+}
+
+/* =========================
+   LOGO IMAGE
+========================= */
+
+.re-logo-card img{
+    width:130px;
+    object-fit:contain;
+
+    transition:0.5s ease;
+}
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.re-logo-card:hover{
+    transform:translateY(-10px) scale(1.08);
+}
+
+.re-logo-card:hover img{
+    transform:scale(1.12);
+}
+
+/* PAUSE ANIMATION */
+
+.re-logo-slider:hover .re-logo-track{
+    animation-play-state:paused;
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+@keyframes reScroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+/* =========================
+   LOAD ANIMATION
+========================= */
+
+@keyframes rePartnerFade{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-partner-heading h2{
+        font-size:44px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .re-partner-heading h2{
+        font-size:40px;
+    }
+
+    .re-logo-card{
+        width:200px;
+        height:105px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .re-partner-section{
+        padding:90px 0;
+    }
+
+    .re-partner-heading{
+        margin-bottom:50px;
+    }
+
+    .re-partner-heading h2{
+        font-size:34px;
+    }
+
+    .re-partner-heading p{
+        font-size:16px;
+    }
+
+    .re-logo-track{
+        gap:18px;
+    }
+
+    .re-logo-card{
+        width:170px;
+        height:90px;
+
+        border-radius:22px;
+    }
+
+    .re-logo-card img{
+        width:100px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-partner-heading h2{
+        font-size:28px;
+    }
+
+    .re-partner-tag{
+        width:100%;
+        justify-content:center;
+    }
+
+    .re-logo-card{
+        width:150px;
+        height:85px;
+    }
+
+    .re-logo-card img{
+        width:90px;
+    }
+
+}
+
+</style>
+
+<!-- ---------------------- -->
+
+
+<!-- =========================
+     FEATURED PROPERTY SECTION
+========================= -->
+
+<section class="re-feature-section">
+
+    <!-- HEADING -->
+
+    <div class="re-feature-heading">
+
+        <div class="re-feature-tag">
+            <i class="fa-solid fa-house"></i>
+            Featured Properties
+        </div>
+
+        <h2>
+            Our Featured Exclusives
+        </h2>
+
+        <p>
+            Explore premium villas, luxury apartments and modern homes
+            crafted with elegance and world-class amenities.
+        </p>
+
+    </div>
+
+    <!-- FILTER BUTTONS -->
+
+    <div class="re-feature-tabs">
+
+        <button class="re-filter-btn active" data-filter="all">
+            All
+        </button>
+
+        <button class="re-filter-btn" data-filter="rent">
+            For Rent
+        </button>
+
+        <button class="re-filter-btn" data-filter="sale">
+            For Sale
+        </button>
+
+    </div>
+
+    <!-- PROPERTY GRID -->
+
+    <div class="re-property-grid">
+
+        <!-- PROPERTY 1 -->
+
+        <div class="re-property-card" data-category="rent">
+
+            <div class="re-property-image">
+
+                <img src="./archi.webp" alt="">
+
+                <div class="re-property-badge">
+                    For Rent
+                </div>
+
+            </div>
+
+            <div class="re-property-content">
+
+                <h3>
+                    Home in Merrick Way
+                </h3>
+
+                <p class="re-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Merrick Way, Miami, USA
+                </p>
+
+                <div class="re-property-info">
+
+                    <span>
+                        <i class="fa-solid fa-bed"></i>
+                        3 Bed
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-bath"></i>
+                        3 Bath
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-expand"></i>
+                        4300 Sq Ft
+                    </span>
+
+                </div>
+
+                <div class="re-property-bottom">
+
+                    <h4>$540,000</h4>
+
+                    <a href="./404.html" class="re-view-btn">
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PROPERTY 2 -->
+
+        <div class="re-property-card" data-category="sale">
+
+            <div class="re-property-image">
+
+                <img src="./archi1.webp" alt="">
+
+                <div class="re-property-badge">
+                    For Sale
+                </div>
+
+            </div>
+
+            <div class="re-property-content">
+
+                <h3>
+                    Villa in Coral Gables
+                </h3>
+
+                <p class="re-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Coral Gables, Florida, USA
+                </p>
+
+                <div class="re-property-info">
+
+                    <span>
+                        <i class="fa-solid fa-bed"></i>
+                        4 Bed
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-bath"></i>
+                        3 Bath
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-expand"></i>
+                        3500 Sq Ft
+                    </span>
+
+                </div>
+
+                <div class="re-property-bottom">
+
+                    <h4>$825,000</h4>
+
+                    <a href="./404.html" class="re-view-btn">
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PROPERTY 3 -->
+
+        <div class="re-property-card" data-category="rent">
+
+            <div class="re-property-image">
+
+                <img src="./archi2.webp" alt="">
+
+                <div class="re-property-badge">
+                    For Rent
+                </div>
+
+            </div>
+
+            <div class="re-property-content">
+
+                <h3>
+                    Hollywood Luxury Villa
+                </h3>
+
+                <p class="re-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Hollywood Boulevard, USA
+                </p>
+
+                <div class="re-property-info">
+
+                    <span>
+                        <i class="fa-solid fa-bed"></i>
+                        5 Bed
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-bath"></i>
+                        4 Bath
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-expand"></i>
+                        4530 Sq Ft
+                    </span>
+
+                </div>
+
+                <div class="re-property-bottom">
+
+                    <h4>$740,000</h4>
+
+                    <a href="./404.html" class="re-view-btn">
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- PROPERTY 4 -->
+
+        <div class="re-property-card" data-category="sale">
+
+            <div class="re-property-image">
+
+                <img src="./archi6.webp" alt="">
+
+                <div class="re-property-badge">
+                    For Sale
+                </div>
+
+            </div>
+
+            <div class="re-property-content">
+
+                <h3>
+                    Modern Family House
+                </h3>
+
+                <p class="re-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Beverly Hills, California
+                </p>
+
+                <div class="re-property-info">
+
+                    <span>
+                        <i class="fa-solid fa-bed"></i>
+                        4 Bed
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-bath"></i>
+                        5 Bath
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-expand"></i>
+                        5100 Sq Ft
+                    </span>
+
+                </div>
+
+                <div class="re-property-bottom">
+
+                    <h4>$1,250,000</h4>
+
+                    <a href="./404.html" class="re-view-btn">
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   FEATURE SECTION
+========================= */
+
+.re-feature-section{
+    width:100%;
+    padding:120px 20px;
+    background:#f5f7fa;
+    overflow:hidden;
+}
+
+.re-feature-section{
+    max-width:1400px;
+    margin:auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.re-feature-heading{
+    margin-bottom:45px;
+    animation:reFadeUp 1.2s ease;
+}
+
+/* GLASS TAG */
+
+.re-feature-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 26px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+    color:#2563eb;
+
+    font-size:15px;
+    font-weight:600;
+
+    margin-bottom:24px;
+}
+
+.re-feature-heading h2{
+    font-size:58px;
+    line-height:1.2;
+    color:#111827;
+
+    margin-bottom:18px;
+}
+
+.re-feature-heading p{
+    max-width:700px;
+
+    font-size:18px;
+    line-height:1.8;
+
+    color:#6b7280;
+}
+
+/* =========================
+   FILTER BUTTONS
+========================= */
+
+.re-feature-tabs{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+
+    margin-bottom:60px;
+
+    animation:reFadeUp 1.5s ease;
+}
+
+.re-filter-btn{
+    border:none;
+
+    padding:14px 30px;
+
+    border-radius:999px;
+
+    background:#fff;
+
+    color:#111827;
+
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.4s ease;
+
+    box-shadow:0 8px 22px rgba(0,0,0,0.06);
+}
+
+.re-filter-btn.active{
+    background:#2563eb;
+    color:#fff;
+}
+
+.re-filter-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* =========================
+   PROPERTY GRID
+========================= */
+
+.re-property-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+/* =========================
+   PROPERTY CARD
+========================= */
+
+.re-property-card{
+    background:#fff;
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+
+    transition:0.5s ease;
+
+    animation:reFadeUp 1.5s ease;
+}
+
+.re-property-card:hover{
+    transform:translateY(-12px);
+}
+
+/* IMAGE */
+
+.re-property-image{
+    position:relative;
+    overflow:hidden;
+    height:280px;
+}
+
+.re-property-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:0.8s ease;
+}
+
+/* IMAGE HOVER */
+
+.re-property-card:hover img{
+    transform:scale(1.12);
+}
+
+/* BADGE */
+
+.re-property-badge{
+    position:absolute;
+    top:18px;
+    left:18px;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.85);
+
+    backdrop-filter:blur(10px);
+
+    color:#2563eb;
+
+    font-size:13px;
+    font-weight:600;
+}
+
+/* CONTENT */
+
+.re-property-content{
+    padding:28px;
+}
+
+.re-property-content h3{
+    font-size:28px;
+    margin-bottom:15px;
+    color:#111827;
+}
+
+.re-location{
+    display:flex;
+    gap:10px;
+
+    color:#6b7280;
+
+    line-height:1.7;
+    margin-bottom:24px;
+}
+
+/* INFO */
+
+.re-property-info{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+
+    margin-bottom:28px;
+}
+
+.re-property-info span{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#374151;
+}
+
+/* BOTTOM */
+
+.re-property-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.re-property-bottom h4{
+    font-size:30px;
+    color:#111827;
+}
+
+/* BUTTON */
+
+.re-view-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+
+    padding:14px 24px;
+
+    border-radius:16px;
+
+    background:#2563eb;
+    color:#fff;
+
+    font-size:15px;
+    font-weight:600;
+
+    transition:0.4s ease;
+}
+
+.re-view-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reFadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(90px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-feature-heading h2{
+        font-size:48px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .re-feature-heading{
+        text-align:center;
+    }
+
+    .re-feature-heading p{
+        margin:auto;
+    }
+
+    .re-property-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .re-feature-section{
+        padding:90px 15px;
+    }
+
+    .re-feature-heading h2{
+        font-size:38px;
+    }
+
+    .re-feature-heading p{
+        font-size:16px;
+    }
+
+    .re-feature-tabs{
+        justify-content:center;
+    }
+
+    .re-property-content h3{
+        font-size:24px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-feature-heading h2{
+        font-size:30px;
+    }
+
+    .re-feature-tag{
+        width:100%;
+        justify-content:center;
+    }
+
+    .re-filter-btn{
+        width:100%;
+    }
+
+    .re-view-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+}
+
+</style>
+
+<script>
+
+/* =========================
+   PROPERTY FILTER
+========================= */
+
+const filterButtons = document.querySelectorAll(".re-filter-btn");
+const propertyCards = document.querySelectorAll(".re-property-card");
+
+filterButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        // REMOVE ACTIVE
+        filterButtons.forEach(btn => {
+            btn.classList.remove("active");
+        });
+
+        // ADD ACTIVE
+        button.classList.add("active");
+
+        // FILTER VALUE
+        const filterValue = button.getAttribute("data-filter");
+
+        // FILTER CARDS
+        propertyCards.forEach(card => {
+
+            const category = card.getAttribute("data-category");
+
+            if(filterValue === "all" || filterValue === category){
+
+                card.style.display = "block";
+
+                // RELOAD ANIMATION
+                card.style.animation = "none";
+                card.offsetHeight;
+                card.style.animation = "reFadeUp 0.8s ease";
+
+            }
+
+            else{
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    });
+
+});
+
+</script>
+<!-- ---------------------- -->
+
+<!-- =========================
+     SERVICES SECTION
+========================= -->
+
+<section class="re-services-section">
+
+    <!-- HEADING -->
+
+    <div class="re-services-heading">
+
+        <div class="re-services-tag">
+            <i class="fa-solid fa-layer-group"></i>
+            Our Services
+        </div>
+
+        <h2>
+            What We Are Providing
+        </h2>
+
+        <p>
+            We provide premium real estate solutions with modern strategies,
+            expert consultation and world-class property management services.
+        </p>
+
+    </div>
+
+    <!-- SERVICES GRID -->
+
+    <div class="re-services-grid">
+
+        <!-- SERVICE 1 -->
+
+        <div class="re-service-card">
+
+            <div class="re-service-icon blue">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <h3>
+                Property Management
+            </h3>
+
+            <p>
+                We provide premium property management solutions for owners,
+                investors and commercial real estate businesses.
+            </p>
+
+            <a href="./404.html" class="re-read-more">
+                Read More
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <!-- SERVICE 2 -->
+
+        <div class="re-service-card">
+
+            <div class="re-service-icon orange">
+                <i class="fa-solid fa-house"></i>
+            </div>
+
+            <h3>
+                Home Buying
+            </h3>
+
+            <p>
+                Our experts guide you through the complete home buying process
+                with trusted support and smart investment planning.
+            </p>
+
+            <a href="./404.html" class="re-read-more">
+                Read More
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <!-- SERVICE 3 -->
+
+        <div class="re-service-card">
+
+            <div class="re-service-icon cyan">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h3>
+                Consulting Service
+            </h3>
+
+            <p>
+                Get professional real estate consultation for property
+                investment, commercial spaces and future growth opportunities.
+            </p>
+
+            <a href="./404.html" class="re-read-more">
+                Read More
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <!-- SERVICE 4 -->
+
+        <div class="re-service-card">
+
+            <div class="re-service-icon green">
+                <i class="fa-solid fa-chart-column"></i>
+            </div>
+
+            <h3>
+                Mortgage Service
+            </h3>
+
+            <p>
+                We help you secure mortgage and financial solutions with easy
+                approval guidance and affordable loan plans.
+            </p>
+
+            <a href="./404.html" class="re-read-more">
+                Read More
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <!-- SERVICE 5 -->
+
+        <div class="re-service-card">
+
+            <div class="re-service-icon purple">
+                <i class="fa-solid fa-tags"></i>
+            </div>
+
+            <h3>
+                Home Selling
+            </h3>
+
+            <p>
+                Sell your home faster with modern marketing strategies,
+                verified buyers and premium real estate visibility.
+            </p>
+
+            <a href="./404.html" class="re-read-more">
+                Read More
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <!-- SERVICE 6 -->
+
+        <div class="re-service-card">
+
+            <div class="re-service-icon red">
+                <i class="fa-solid fa-chart-pie"></i>
+            </div>
+
+            <h3>
+                Escrow Service
+            </h3>
+
+            <p>
+                Secure and transparent escrow services ensuring safe
+                transactions and trusted property closing processes.
+            </p>
+
+            <a href="./404.html" class="re-read-more">
+                Read More
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   SERVICES SECTION
+========================= */
+
+.re-services-section{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:120px 20px;
+    background:#f8fafc;
+    overflow:hidden;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.re-services-heading{
+    margin-bottom:70px;
+    animation:reServiceFade 1.2s ease;
+}
+
+.re-services-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+
+    color:#2563eb;
+
+    font-size:15px;
+    font-weight:600;
+
+    margin-bottom:25px;
+}
+
+.re-services-heading h2{
+    font-size:60px;
+    line-height:1.2;
+    color:#111827;
+
+    margin-bottom:20px;
+}
+
+.re-services-heading p{
+    max-width:700px;
+
+    font-size:18px;
+    line-height:1.8;
+
+    color:#6b7280;
+}
+
+/* =========================
+   SERVICES GRID
+========================= */
+
+.re-services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* =========================
+   SERVICE CARD
+========================= */
+
+.re-service-card{
+    background:rgba(255,255,255,0.75);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.5);
+
+    border-radius:28px;
+
+    padding:45px 35px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,0.06);
+
+    transition:0.5s ease;
+
+    animation:reServiceFade 1.5s ease;
+
+    display:flex;
+    flex-direction:column;
+
+    min-height:430px;
+}
+
+.re-service-card:hover{
+    transform:translateY(-12px);
+}
+
+/* =========================
+   ICON
+========================= */
+
+.re-service-icon{
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+
+    margin-bottom:30px;
+}
+
+/* ICON COLORS */
+
+.blue{
+    background:#e0edff;
+    color:#2563eb;
+}
+
+.orange{
+    background:#fff1e7;
+    color:#ff7a00;
+}
+
+.cyan{
+    background:#e6f9ff;
+    color:#0ea5e9;
+}
+
+.green{
+    background:#e8fff1;
+    color:#22c55e;
+}
+
+.purple{
+    background:#f1e8ff;
+    color:#8b5cf6;
+}
+
+.red{
+    background:#ffe9ec;
+    color:#ef4444;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.re-service-card h3{
+    font-size:30px;
+    line-height:1.3;
+    color:#111827;
+
+    margin-bottom:18px;
+}
+
+.re-service-card p{
+    font-size:17px;
+    line-height:1.9;
+    color:#6b7280;
+
+    margin-bottom:35px;
+
+    flex-grow:1;   /* IMPORTANT */
+}
+
+/* =========================
+   READ MORE
+========================= */
+
+.re-read-more{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+
+    color:#22c55e;
+
+    font-size:16px;
+    font-weight:600;
+
+    transition:0.4s ease;
+
+    margin-top:auto;   /* IMPORTANT */
+}
+
+.re-read-more:hover{
+    gap:15px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reServiceFade{
+
+    from{
+        opacity:0;
+        transform:translateY(90px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-services-heading h2{
+        font-size:50px;
+    }
+
+    .re-service-card h3{
+        font-size:26px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .re-services-heading{
+        text-align:center;
+    }
+
+    .re-services-heading p{
+        margin:auto;
+    }
+
+    .re-services-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .re-services-section{
+        padding:90px 15px;
+    }
+
+    .re-services-heading h2{
+        font-size:38px;
+    }
+
+    .re-services-heading p{
+        font-size:16px;
+    }
+
+    .re-services-grid{
+        grid-template-columns:1fr;
+    }
+
+    .re-service-card{
+        min-height:auto;
+        padding:35px 28px;
+    }
+
+    .re-service-card h3{
+        font-size:24px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-services-tag{
+        width:100%;
+        justify-content:center;
+    }
+
+    .re-services-heading h2{
+        font-size:30px;
+    }
+
+    .re-service-card{
+        text-align:center;
+    }
+
+    .re-service-icon{
+        margin:auto auto 25px;
+    }
+
+    .re-read-more{
+        justify-content:center;
+    }
+
+}
+
+</style>
+
+
+<!-- =========================
+     NEARBY PLACES SECTION
+========================= -->
+
+<section class="re-nearby-section">
+
+    <!-- HEADING -->
+
+    <div class="re-nearby-heading">
+
+        <!-- GLASSMORPHISM CAPSULE -->
+
+        <div class="re-nearby-tag">
+            <i class="fa-solid fa-location-dot"></i>
+            Explore Nearby Places
+        </div>
+
+        <h2>
+            Everything Around Your Dream Home
+        </h2>
+
+        <p>
+            Discover schools, parks, colleges, hospitals and entertainment
+            spots located near your premium property location.
+        </p>
+
+    </div>
+
+    <!-- NEARBY GRID -->
+
+    <div class="re-nearby-grid">
+
+        <!-- ITEM 1 -->
+
+        <div class="re-nearby-card">
+
+            <!-- BACKGROUND IMAGE -->
+
+            <div class="re-nearby-bg">
+                <img src="./school.webp" alt="">
+            </div>
+
+            <div class="re-nearby-overlay"></div>
+
+            <div class="re-nearby-content">
+
+                <div class="re-nearby-icon blue">
+                    <i class="fa-solid fa-school"></i>
+                </div>
+
+                <h3>Top Schools</h3>
+
+                <p>
+                    Premium international schools located within a few minutes
+                    from your residential area.
+                </p>
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    2.5 Km Nearby
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 2 -->
+
+        <div class="re-nearby-card">
+
+            <div class="re-nearby-bg">
+                <img src="./city.webp" alt="">
+            </div>
+
+            <div class="re-nearby-overlay"></div>
+
+            <div class="re-nearby-content">
+
+                <div class="re-nearby-icon green">
+                    <i class="fa-solid fa-tree"></i>
+                </div>
+
+                <h3>City Parks</h3>
+
+                <p>
+                    Beautiful green parks and jogging spaces for a peaceful
+                    and healthy lifestyle experience.
+                </p>
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    1.2 Km Nearby
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 3 -->
+
+        <div class="re-nearby-card">
+
+            <div class="re-nearby-bg">
+                <img src="./college.webp" alt="">
+            </div>
+
+            <div class="re-nearby-overlay"></div>
+
+            <div class="re-nearby-content">
+
+                <div class="re-nearby-icon orange">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <h3>Colleges</h3>
+
+                <p>
+                    Reputed universities and colleges offering quality
+                    education and modern campus facilities.
+                </p>
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    4 Km Nearby
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 4 -->
+
+        <div class="re-nearby-card">
+
+            <div class="re-nearby-bg">
+                <img src="./hospital.webp" alt="">
+            </div>
+
+            <div class="re-nearby-overlay"></div>
+
+            <div class="re-nearby-content">
+
+                <div class="re-nearby-icon red">
+                    <i class="fa-solid fa-hospital"></i>
+                </div>
+
+                <h3>Hospitals</h3>
+
+                <p>
+                    Multi-speciality hospitals and emergency healthcare
+                    services available 24/7 near you.
+                </p>
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    3 Km Nearby
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 5 -->
+
+        <div class="re-nearby-card">
+
+            <div class="re-nearby-bg">
+                <img src="./mall.webp" alt="">
+            </div>
+
+            <div class="re-nearby-overlay"></div>
+
+            <div class="re-nearby-content">
+
+                <div class="re-nearby-icon purple">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </div>
+
+                <h3>Shopping Mall</h3>
+
+                <p>
+                    Explore luxury shopping malls, supermarkets and lifestyle
+                    stores near your property.
+                </p>
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    2 Km Nearby
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 6 -->
+
+        <div class="re-nearby-card">
+
+            <div class="re-nearby-bg">
+                <img src="./fit (1).webp" alt="">
+            </div>
+
+            <div class="re-nearby-overlay"></div>
+
+            <div class="re-nearby-content">
+
+                <div class="re-nearby-icon cyan">
+                    <i class="fa-solid fa-dumbbell"></i>
+                </div>
+
+                <h3>Fitness Center</h3>
+
+                <p>
+                    Modern gyms and wellness centers designed for fitness,
+                    workouts and healthy living.
+                </p>
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    1.5 Km Nearby
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   NEARBY SECTION
+========================= */
+
+.re-nearby-section{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:120px 20px;
+    background:#f8fafc;
+    overflow:hidden;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.re-nearby-heading{
+    margin-bottom:70px;
+    animation:reNearbyFade 1.2s ease;
+}
+
+/* GLASS CAPSULE */
+
+.re-nearby-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.5);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    color:#2563eb;
+
+    font-size:15px;
+    font-weight:600;
+
+    margin-bottom:25px;
+}
+
+.re-nearby-heading h2{
+    font-size:60px;
+    line-height:1.2;
+    color:#111827;
+
+    margin-bottom:20px;
+}
+
+.re-nearby-heading p{
+    max-width:700px;
+
+    font-size:18px;
+    line-height:1.8;
+
+    color:#6b7280;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.re-nearby-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.re-nearby-card{
+    position:relative;
+
+    min-height:420px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.08);
+
+    animation:reNearbyFade 1.5s ease;
+
+    transition:0.5s ease;
+}
+
+.re-nearby-card:hover{
+    transform:translateY(-12px);
+}
+
+/* =========================
+   BACKGROUND IMAGE
+========================= */
+
+.re-nearby-bg{
+    position:absolute;
+    inset:0;
+}
+
+.re-nearby-bg img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:0.8s ease;
+}
+
+.re-nearby-card:hover .re-nearby-bg img{
+    transform:scale(1.12);
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.re-nearby-overlay{
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.2)
+    );
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.re-nearby-content{
+    position:relative;
+    z-index:2;
+
+    height:100%;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    padding:35px;
+
+    color:#fff;
+}
+
+/* =========================
+   ICON
+========================= */
+
+.re-nearby-icon{
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+    backdrop-filter:blur(10px);
+}
+
+/* COLORS */
+
+.blue{
+    background:rgba(37,99,235,0.2);
+    color:#fff;
+}
+
+.green{
+    background:rgba(34,197,94,0.2);
+    color:#fff;
+}
+
+.orange{
+    background:rgba(255,122,0,0.2);
+    color:#fff;
+}
+
+.red{
+    background:rgba(239,68,68,0.2);
+    color:#fff;
+}
+
+.purple{
+    background:rgba(139,92,246,0.2);
+    color:#fff;
+}
+
+.cyan{
+    background:rgba(6,182,212,0.2);
+    color:#fff;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.re-nearby-content h3{
+    font-size:32px;
+    line-height:1.3;
+
+    margin-bottom:18px;
+}
+
+.re-nearby-content p{
+    font-size:16px;
+    line-height:1.9;
+
+    color:rgba(255,255,255,0.9);
+
+    margin-bottom:25px;
+}
+
+.re-nearby-content span{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:15px;
+    font-weight:600;
+
+    color:#fff;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reNearbyFade{
+
+    from{
+        opacity:0;
+        transform:translateY(90px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-nearby-heading h2{
+        font-size:50px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .re-nearby-heading{
+        text-align:center;
+    }
+
+    .re-nearby-heading p{
+        margin:auto;
+    }
+
+    .re-nearby-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .re-nearby-section{
+        padding:90px 15px;
+    }
+
+    .re-nearby-heading h2{
+        font-size:38px;
+    }
+
+    .re-nearby-heading p{
+        font-size:16px;
+    }
+
+    .re-nearby-grid{
+        grid-template-columns:1fr;
+    }
+
+    .re-nearby-card{
+        min-height:380px;
+    }
+
+    .re-nearby-content{
+        padding:28px;
+    }
+
+    .re-nearby-content h3{
+        font-size:24px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-nearby-tag{
+        width:100%;
+        justify-content:center;
+    }
+
+    .re-nearby-heading h2{
+        font-size:30px;
+    }
+
+    .re-nearby-content{
+        text-align:center;
+        align-items:center;
+    }
+
+}
+
+</style>
+
+
+<!-- =========================
+     AGENTS SECTION
+========================= -->
+
+<section class="re-agents-section">
+
+    <!-- HEADING -->
+
+    <div class="re-agents-heading">
+
+        <!-- GLASSMORPHISM CAPSULE -->
+
+        <div class="re-agents-tag">
+            <i class="fa-solid fa-user-group"></i>
+            Our Expert Agents
+        </div>
+
+        <h2>
+            Meet Our Professional Agents
+        </h2>
+
+        <p>
+            Our experienced real estate agents help you buy, rent and sell
+            premium properties with trusted consultation and expert guidance.
+        </p>
+
+    </div>
+
+    <!-- AGENTS GRID -->
+
+    <div class="re-agents-grid">
+
+        <!-- AGENT 1 -->
+
+        <div class="re-agent-card">
+
+            <!-- IMAGE -->
+
+            <div class="re-agent-image">
+
+                <img src="./nithiya.webp" alt="">
+
+                <!-- VERIFIED -->
+
+                <div class="re-agent-verified">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <!-- SOCIAL -->
+
+                <div class="re-agent-social">
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- CONTENT -->
+
+            <div class="re-agent-content">
+
+                <h3>Alice Brian</h3>
+
+                <span class="re-agent-role">
+                    Real Estate Agent
+                </span>
+
+                <!-- STATS -->
+
+                <div class="re-agent-stats">
+
+                    <strong>35 Sale</strong>
+                    <div class="re-divider"></div>
+                    <strong>60 Rent</strong>
+
+                </div>
+
+                <!-- FEATURES -->
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Operating Since 2010
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        8700+ Buyers Served
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        35 Verified Properties
+                    </li>
+
+                </ul>
+
+                <!-- PHONE -->
+
+                <div class="re-agent-phone">
+
+                    <i class="fa-solid fa-phone"></i>
+                    987-654-3210
+
+                </div>
+
+                <!-- BUTTON -->
+
+                <a href="./404.html" class="re-agent-btn">
+
+                    Contact Agent
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- AGENT 2 -->
+
+        <div class="re-agent-card">
+
+            <div class="re-agent-image">
+
+                <img src="./joe.webp" alt="">
+
+                <div class="re-agent-verified">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="re-agent-social">
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="re-agent-content">
+
+                <h3>John David</h3>
+
+                <span class="re-agent-role">
+                    Real Estate Agent
+                </span>
+
+                <div class="re-agent-stats">
+
+                    <strong>27 Sale</strong>
+                    <div class="re-divider"></div>
+                    <strong>41 Rent</strong>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Operating Since 2014
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        6308+ Buyers Served
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        23 Verified Properties
+                    </li>
+
+                </ul>
+
+                <div class="re-agent-phone">
+
+                    <i class="fa-solid fa-phone"></i>
+                    1-234-456-7890
+
+                </div>
+
+                <a href="./404.html" class="re-agent-btn">
+
+                    Contact Agent
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- AGENT 3 -->
+
+        <div class="re-agent-card">
+
+            <div class="re-agent-image">
+
+                <img src="./sana.webp" alt="">
+
+                <div class="re-agent-verified">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="re-agent-social">
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="re-agent-content">
+
+                <h3>Melissa William</h3>
+
+                <span class="re-agent-role">
+                    Real Estate Agent
+                </span>
+
+                <div class="re-agent-stats">
+
+                    <strong>32 Sale</strong>
+                    <div class="re-divider"></div>
+                    <strong>43 Rent</strong>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Operating Since 2013
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        4212+ Buyers Served
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        39 Verified Properties
+                    </li>
+
+                </ul>
+
+                <div class="re-agent-phone">
+
+                    <i class="fa-solid fa-phone"></i>
+                    1-234-456-7892
+
+                </div>
+
+                <a href="./404.html" class="re-agent-btn">
+
+                    Contact Agent
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- AGENT 4 -->
+
+        <div class="re-agent-card">
+
+            <div class="re-agent-image">
+
+                <img src="./arjun.webp" alt="">
+
+                <div class="re-agent-verified">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="re-agent-social">
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="./404.html">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="re-agent-content">
+
+                <h3>Nathan James</h3>
+
+                <span class="re-agent-role">
+                    Real Estate Agent
+                </span>
+
+                <div class="re-agent-stats">
+
+                    <strong>44 Sale</strong>
+                    <div class="re-divider"></div>
+                    <strong>53 Rent</strong>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Operating Since 2017
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        3500+ Buyers Served
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-circle-check"></i>
+                        22 Verified Properties
+                    </li>
+
+                </ul>
+
+                <div class="re-agent-phone">
+
+                    <i class="fa-solid fa-phone"></i>
+                    987-654-3210
+
+                </div>
+
+                <a href="./404.html" class="re-agent-btn">
+
+                    Contact Agent
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   AGENTS SECTION
+========================= */
+
+.re-agents-section{
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:120px 20px;
+    background:#f8fafc;
+    overflow:hidden;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.re-agents-heading{
+    margin-bottom:70px;
+    animation:reAgentFade 1.2s ease;
+}
+
+/* GLASS CAPSULE */
+
+.re-agents-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.5);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    color:#2563eb;
+
+    font-size:15px;
+    font-weight:600;
+
+    margin-bottom:25px;
+}
+
+.re-agents-heading h2{
+    font-size:60px;
+    line-height:1.2;
+    color:#111827;
+
+    margin-bottom:20px;
+}
+
+.re-agents-heading p{
+    max-width:700px;
+
+    font-size:18px;
+    line-height:1.8;
+
+    color:#6b7280;
+}
+
+/* =========================
+   GRID
+========================= */
+
+.re-agents-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.re-agent-card{
+    display:flex;
+    gap:25px;
+
+    background:#fff;
+
+    border-radius:30px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.06);
+
+    transition:0.5s ease;
+
+    animation:reAgentFade 1.5s ease;
+}
+
+.re-agent-card:hover{
+    transform:translateY(-10px);
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+.re-agent-image{
+    width:42%;
+    position:relative;
+    overflow:hidden;
+}
+
+.re-agent-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:0.8s ease;
+}
+
+.re-agent-card:hover img{
+    transform:scale(1.12);
+}
+
+/* VERIFIED */
+
+.re-agent-verified{
+    position:absolute;
+    top:18px;
+    right:18px;
+
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    background:#34d399;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:14px;
+}
+
+/* SOCIAL */
+
+.re-agent-social{
+    position:absolute;
+    bottom:18px;
+    left:18px;
+
+    display:flex;
+    gap:10px;
+
+    padding:12px 16px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,0.85);
+
+    backdrop-filter:blur(10px);
+}
+
+.re-agent-social a{
+    width:38px;
+    height:38px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#111827;
+
+    transition:0.4s ease;
+}
+
+.re-agent-social a:hover{
+    background:#2563eb;
+    color:#fff;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.re-agent-content{
+    flex:1;
+    padding:35px 30px 35px 0;
+}
+
+.re-agent-content h3{
+    font-size:34px;
+    color:#111827;
+
+    margin-bottom:10px;
+}
+
+.re-agent-role{
+    display:block;
+
+    font-size:16px;
+    color:#6b7280;
+
+    margin-bottom:28px;
+}
+
+/* STATS */
+
+.re-agent-stats{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    margin-bottom:30px;
+}
+
+.re-agent-stats strong{
+    font-size:22px;
+    color:#111827;
+}
+
+.re-divider{
+    width:1px;
+    height:22px;
+    background:#d1d5db;
+}
+
+/* LIST */
+
+.re-agent-content ul{
+    list-style:none;
+    padding:0;
+
+    margin-bottom:30px;
+}
+
+.re-agent-content ul li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    margin-bottom:16px;
+
+    font-size:16px;
+    color:#374151;
+}
+
+.re-agent-content ul li i{
+    color:#34d399;
+}
+
+/* PHONE */
+
+.re-agent-phone{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:24px;
+    font-weight:700;
+
+    color:#111827;
+
+    margin-bottom:30px;
+}
+
+/* BUTTON */
+
+.re-agent-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    text-decoration:none;
+
+    padding:15px 28px;
+
+    border-radius:16px;
+
+    background:#2563eb;
+    color:#fff;
+
+    font-size:16px;
+    font-weight:600;
+
+    transition:0.4s ease;
+}
+
+.re-agent-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reAgentFade{
+
+    from{
+        opacity:0;
+        transform:translateY(90px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-agent-content h3{
+        font-size:28px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .re-agents-heading{
+        text-align:center;
+    }
+
+    .re-agents-heading p{
+        margin:auto;
+    }
+
+    .re-agents-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .re-agents-section{
+        padding:90px 15px;
+    }
+
+    .re-agents-heading h2{
+        font-size:38px;
+    }
+
+    .re-agents-heading p{
+        font-size:16px;
+    }
+
+    .re-agent-card{
+        flex-direction:column;
+    }
+
+    .re-agent-image{
+        width:100%;
+        height:380px;
+    }
+
+    .re-agent-content{
+        padding:30px;
+    }
+
+    .re-agent-content h3{
+        font-size:24px;
+    }
+
+    .re-agent-phone{
+        font-size:20px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-agents-tag{
+        width:100%;
+        justify-content:center;
+    }
+
+    .re-agents-heading h2{
+        font-size:30px;
+    }
+
+    .re-agent-social{
+        left:50%;
+        transform:translateX(-50%);
+    }
+
+    .re-agent-content{
+        text-align:center;
+    }
+
+    .re-agent-stats,
+    .re-agent-phone{
+        justify-content:center;
+    }
+
+    .re-agent-content ul li{
+        justify-content:center;
+    }
+
+    .re-agent-btn{
+        width:100%;
+        justify-content:center;
+    }
+
+}
+
+</style>
+
+
+<!-- =========================
+     TESTIMONIAL SECTION
+========================= -->
+
+<section class="re-testimonial-section">
+
+    <!-- BACKGROUND IMAGE -->
+
+    <div class="re-testimonial-bg">
+        <img src="./archi.webp" alt="">
+    </div>
+
+    <!-- DARK OVERLAY -->
+
+    <div class="re-testimonial-overlay"></div>
+
+    <!-- CONTENT -->
+
+    <div class="re-testimonial-container">
+
+        <!-- HEADING -->
+
+        <div class="re-testimonial-heading">
+
+            <!-- GLASSMORPHISM CAPSULE -->
+
+            <div class="re-testimonial-tag">
+                <i class="fa-solid fa-comments"></i>
+                Client Testimonials
+            </div>
+
+            <h2>
+                What Our Customer’s Saying
+            </h2>
+
+            <p>
+                Hear from our happy clients who trusted our real estate
+                services for buying, renting and selling premium properties.
+            </p>
+
+        </div>
+
+        <!-- TESTIMONIAL GRID -->
+
+        <div class="re-testimonial-grid">
+
+            <!-- CARD 1 -->
+
+            <div class="re-testimonial-card">
+
+                <!-- TOP -->
+
+                <div class="re-client-top">
+
+                    <div class="re-client-profile">
+
+                        <img src="./ava1.webp" alt="">
+
+                        <div>
+
+                            <h4>Elissa White</h4>
+                            <span>Alpha</span>
+
+                        </div>
+
+                    </div>
+
+                    <!-- STARS -->
+
+                    <div class="re-stars">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                </div>
+
+                <!-- TEXT -->
+
+                <h3>
+                    Negotiation skills were top-notch
+                </h3>
+
+                <p>
+                    Their negotiation skills were top-notch, resulting in a
+                    sale price that exceeded our expectations. Elissa White
+                    is a true professional, and we wholeheartedly endorse
+                    their services.
+                </p>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="re-testimonial-card">
+
+                <div class="re-client-top">
+
+                    <div class="re-client-profile">
+
+                        <img src="./ava2.webp" alt="">
+
+                        <div>
+
+                            <h4>David Johnson</h4>
+                            <span>Fairfield</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="re-stars">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Super easy & clear to follow
+                </h3>
+
+                <p>
+                    I have been a web designer for over 18 years now. The
+                    theme is fantastic, flexible and simply excellent to use.
+                    I cannot recommend enough!
+                </p>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="re-testimonial-card">
+
+                <div class="re-client-top">
+
+                    <div class="re-client-profile">
+
+                        <img src="./ava3.webp" alt="">
+
+                        <div>
+
+                            <h4>Jane Doe</h4>
+                            <span>Austin</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="re-stars">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                </div>
+
+                <h3>
+                    Simplified property management
+                </h3>
+
+                <p>
+                    Thanks to the RealHomes theme, my website has become a
+                    powerful marketing tool that attracts and engages
+                    potential clients.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   TESTIMONIAL SECTION
+========================= */
+
+.re-testimonial-section{
+    position:relative;
+
+    width:100%;
+    overflow:hidden;
+
+    padding:120px 20px;
+}
+
+/* =========================
+   BACKGROUND IMAGE
+========================= */
+
+.re-testimonial-bg{
+    position:absolute;
+    inset:0;
+    z-index:1;
+}
+
+.re-testimonial-bg img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.re-testimonial-overlay{
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        to right,
+        rgba(15,23,42,0.85),
+        rgba(37,99,235,0.75)
+    );
+
+    z-index:2;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.re-testimonial-container{
+    position:relative;
+    z-index:3;
+
+    width:100%;
+    max-width:1400px;
+
+    margin:auto;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.re-testimonial-heading{
+    margin-bottom:70px;
+
+    animation:reTestimonialFade 1.2s ease;
+}
+
+/* GLASSMORPHISM CAPSULE */
+
+.re-testimonial-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.12);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+
+    color:#fff;
+
+    font-size:15px;
+    font-weight:600;
+
+    margin-bottom:25px;
+}
+
+.re-testimonial-heading h2{
+    font-size:60px;
+    line-height:1.2;
+
+    color:#fff;
+
+    margin-bottom:20px;
+}
+
+.re-testimonial-heading p{
+    max-width:700px;
+
+    font-size:18px;
+    line-height:1.8;
+
+    color:rgba(255,255,255,0.85);
+}
+
+/* =========================
+   GRID
+========================= */
+
+.re-testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.re-testimonial-card{
+    background:rgba(255,255,255,0.92);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    transition:0.5s ease;
+
+    animation:reTestimonialFade 1.5s ease;
+
+    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
+
+.re-testimonial-card:hover{
+    transform:translateY(-12px);
+}
+
+/* =========================
+   TOP
+========================= */
+
+.re-client-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:20px;
+
+    margin-bottom:30px;
+}
+
+/* PROFILE */
+
+.re-client-profile{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.re-client-profile img{
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+}
+
+.re-client-profile h4{
+    font-size:22px;
+    color:#111827;
+
+    margin-bottom:6px;
+}
+
+.re-client-profile span{
+    color:#6b7280;
+    font-size:15px;
+}
+
+/* STARS */
+
+.re-stars{
+    display:flex;
+    gap:6px;
+
+    color:#fbbf24;
+
+    font-size:15px;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.re-testimonial-card h3{
+    font-size:32px;
+    line-height:1.4;
+
+    color:#111827;
+
+    margin-bottom:22px;
+}
+
+.re-testimonial-card p{
+    font-size:17px;
+    line-height:2;
+
+    color:#4b5563;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reTestimonialFade{
+
+    from{
+        opacity:0;
+        transform:translateY(90px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-testimonial-heading h2{
+        font-size:50px;
+    }
+
+    .re-testimonial-card h3{
+        font-size:28px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .re-testimonial-heading{
+        text-align:center;
+    }
+
+    .re-testimonial-heading p{
+        margin:auto;
+    }
+
+    .re-testimonial-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .re-testimonial-section{
+        padding:90px 15px;
+    }
+
+    .re-testimonial-heading h2{
+        font-size:38px;
+    }
+
+    .re-testimonial-heading p{
+        font-size:16px;
+    }
+
+    .re-testimonial-grid{
+        grid-template-columns:1fr;
+    }
+
+    .re-client-top{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .re-testimonial-card{
+        padding:30px;
+    }
+
+    .re-testimonial-card h3{
+        font-size:24px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-testimonial-tag{
+        width:100%;
+        justify-content:center;
+    }
+
+    .re-testimonial-heading h2{
+        font-size:30px;
+    }
+
+    .re-client-profile{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .re-client-top{
+        align-items:center;
+    }
+
+    .re-stars{
+        justify-content:center;
+    }
+
+    .re-testimonial-card{
+        text-align:center;
+    }
+
+}
+
+</style>
 
 
 
+<!-- =========================
+     DREAM HOUSE CONTACT SECTION
+========================= -->
 
+<section class="re-contact-section">
 
+    <!-- LEFT IMAGE -->
 
+    <div class="re-contact-image">
+
+        <img src="./archi1.webp" alt="Dream House">
+
+    </div>
+
+    <!-- RIGHT CONTENT -->
+
+    <div class="re-contact-content">
+
+        <!-- GLASSMORPHISM CAPSULE -->
+
+        <div class="re-contact-tag">
+            <i class="fa-solid fa-house"></i>
+            Dream Home Assistance
+        </div>
+
+        <h2>
+            Are You Looking For The Dream House?
+        </h2>
+
+        <p>
+            We can help you find the perfect dream property with premium
+            locations, luxury interiors and modern facilities tailored to
+            your lifestyle.
+        </p>
+
+        <!-- FORM -->
+
+        <form class="re-contact-form" id="dreamHomeForm">
+
+            <!-- NAME -->
+
+            <div class="re-input-box">
+
+                <i class="fa-solid fa-user"></i>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+            </div>
+
+            <!-- MOBILE -->
+
+            <div class="re-input-box">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <input
+                    type="tel"
+                    id="mobile"
+                    placeholder="Mobile Number"
+                    required
+                >
+
+            </div>
+
+            <!-- EMAIL -->
+
+            <div class="re-input-box">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Email Address"
+                    required
+                >
+
+            </div>
+
+            <!-- LOOKING FOR -->
+
+            <div class="re-input-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <select id="property" required>
+
+                    <option value="">
+                        What Are You Looking For?
+                    </option>
+
+                    <option>
+                        Luxury Villa
+                    </option>
+
+                    <option>
+                        Apartment
+                    </option>
+
+                    <option>
+                        Penthouse
+                    </option>
+
+                    <option>
+                        Rental Property
+                    </option>
+
+                    <option>
+                        Commercial Space
+                    </option>
+
+                </select>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <button type="submit" class="re-submit-btn">
+
+                Submit Request
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.re-contact-section{
+    width:100%;
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:120px 20px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+
+    align-items:center;
+
+    overflow:hidden;
+}
+
+/* =========================
+   LEFT IMAGE
+========================= */
+
+.re-contact-image{
+    position:relative;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    animation:reContactFade 1.2s ease;
+}
+
+.re-contact-image img{
+    width:100%;
+    height:750px;
+
+    object-fit:cover;
+
+    border-radius:35px;
+
+    transition:0.9s ease;
+}
+
+/* IMAGE HOVER */
+
+.re-contact-image:hover img{
+    transform:scale(1.12);
+}
+
+/* =========================
+   RIGHT CONTENT
+========================= */
+
+.re-contact-content{
+    animation:reContactFade 1.5s ease;
+}
+
+/* GLASS CAPSULE */
+
+.re-contact-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 28px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    color:#2563eb;
+
+    font-size:15px;
+    font-weight:600;
+
+    margin-bottom:25px;
+}
+
+/* HEADING */
+
+.re-contact-content h2{
+    font-size:58px;
+    line-height:1.2;
+
+    color:#111827;
+
+    margin-bottom:25px;
+}
+
+/* PARAGRAPH */
+
+.re-contact-content p{
+    font-size:18px;
+    line-height:1.9;
+
+    color:#6b7280;
+
+    margin-bottom:40px;
+}
+
+/* =========================
+   FORM
+========================= */
+
+.re-contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+/* INPUT BOX */
+
+.re-input-box{
+    position:relative;
+
+    animation:reContactFade 1.8s ease;
+}
+
+.re-input-box i{
+    position:absolute;
+
+    top:50%;
+    left:22px;
+
+    transform:translateY(-50%);
+
+    color:#2563eb;
+
+    font-size:18px;
+}
+
+/* INPUT + SELECT */
+
+.re-input-box input,
+.re-input-box select{
+    width:100%;
+
+    height:65px;
+
+    border:none;
+    outline:none;
+
+    border-radius:18px;
+
+    background:#f8fafc;
+
+    padding:0 20px 0 60px;
+
+    font-size:16px;
+
+    color:#111827;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.05);
+
+    transition:0.4s ease;
+}
+
+/* FOCUS */
+
+.re-input-box input:focus,
+.re-input-box select:focus{
+    box-shadow:0 0 0 3px rgba(37,99,235,0.15);
+}
+
+/* BUTTON */
+
+.re-submit-btn{
+    width:100%;
+
+    height:68px;
+
+    border:none;
+    outline:none;
+
+    border-radius:18px;
+
+    background:#2563eb;
+    color:#fff;
+
+    font-size:18px;
+    font-weight:600;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+
+    cursor:pointer;
+
+    transition:0.4s ease;
+
+    margin-top:10px;
+
+    animation:reContactFade 2s ease;
+}
+
+.re-submit-btn:hover{
+    transform:translateY(-5px);
+    background:#1d4ed8;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reContactFade{
+
+    from{
+        opacity:0;
+        transform:translateY(90px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-contact-content h2{
+        font-size:48px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .re-contact-section{
+        grid-template-columns:1fr;
+    }
+
+    .re-contact-content{
+        text-align:center;
+    }
+
+    .re-contact-tag{
+        margin:auto auto 25px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .re-contact-section{
+        padding:90px 15px;
+        gap:45px;
+    }
+
+    .re-contact-image img{
+        height:500px;
+    }
+
+    .re-contact-content h2{
+        font-size:38px;
+    }
+
+    .re-contact-content p{
+        font-size:16px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-contact-tag{
+        width:100%;
+        justify-content:center;
+    }
+
+    .re-contact-content h2{
+        font-size:30px;
+    }
+
+    .re-input-box input,
+    .re-input-box select{
+        height:60px;
+        font-size:15px;
+    }
+
+    .re-submit-btn{
+        height:62px;
+        font-size:16px;
+    }
+
+}
+
+</style>
+
+<script>
+
+/* =========================
+   FORM VALIDATION
+========================= */
+
+document
+.getElementById("dreamHomeForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    let name =
+        document.getElementById("name").value.trim();
+
+    let mobile =
+        document.getElementById("mobile").value.trim();
+
+    let email =
+        document.getElementById("email").value.trim();
+
+    let property =
+        document.getElementById("property").value;
+
+    /* EMAIL CHECK */
+
+    let emailPattern =
+        /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    /* MOBILE CHECK */
+
+    let mobilePattern =
+        /^[0-9]{10}$/;
+
+    /* VALIDATION */
+
+    if(
+        name === "" ||
+        !mobile.match(mobilePattern) ||
+        !email.match(emailPattern) ||
+        property === ""
+    ){
+
+        alert(
+            "Please fill all details correctly!"
+        );
+
+    }
+
+    else{
+
+        /* REDIRECT TO 404 PAGE */
+
+        window.location.href = "404.html";
+
+    }
+
+});
+
+</script>
 
 <!-- JAVASCRIPT -->
 
@@ -925,6 +5358,523 @@ reToggle.addEventListener("click", () => {
 
 </script>
 
+<!-- ---------------- -->
 
+
+<!-- =========================
+     FOOTER SECTION
+========================= -->
+
+<footer class="re-footer-section">
+
+    <!-- TOP FOOTER -->
+
+    <div class="re-footer-container">
+
+        <!-- COLUMN 1 -->
+
+        <div class="re-footer-col">
+
+            <!-- LOGO -->
+
+            <a href="./index.html" class="re-footer-logo">
+                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+
+               
+
+            </a>
+
+            <!-- CONTENT -->
+
+            <p class="re-footer-text">
+
+                We provide premium real estate solutions with luxury homes,
+                modern apartments and trusted property consultation services.
+
+            </p>
+
+            <p class="re-footer-text">
+
+                Find your dream home with professional support and world-class
+                property management assistance.
+
+            </p>
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="re-footer-social">
+
+                <a href="404.html">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 2 -->
+
+        <div class="re-footer-col">
+
+            <h3>Quick Links</h3>
+
+            <ul class="re-footer-links">
+
+                <li>
+                    <a href="404.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Property
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Pricing
+                    </a>
+                </li>
+
+                
+                <li>
+                    <a href="404.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 3 -->
+
+        <div class="re-footer-col">
+
+            <h3>Contact Info</h3>
+
+            <div class="re-footer-contact">
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        MMR complex , chinna tirupathi , salem
+                    </span>
+
+                </div>
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <a href="tel:+919876543210">
+                        +91 98765 43210
+                    </a>
+
+                </div>
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <a href="mailto:info@stacklyestate.com">
+                        support@thestackly.com
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 4 -->
+
+        <div class="re-footer-col">
+
+            <h3>Our Location</h3>
+
+            <!-- MAP -->
+
+            <div class="re-footer-map">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+
+    <div class="re-footer-bottom">
+
+        © Copyright 2026 Stackly.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<style>
+
+/* =========================
+   FOOTER SECTION
+========================= */
+
+.re-footer-section{
+    width:100%;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    overflow:hidden;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.re-footer-container{
+    width:100%;
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:100px 20px 60px;
+
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr 1.2fr;
+    gap:50px;
+}
+
+/* =========================
+   FOOTER COLUMN
+========================= */
+
+.re-footer-col{
+    animation:reFooterFade 1.2s ease;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.re-footer-logo{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:34px;
+    font-weight:700;
+
+    margin-bottom:28px;
+}
+
+.re-footer-logo i{
+    color:#3b82f6;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.re-footer-text{
+    color:#cbd5e1;
+
+    font-size:16px;
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.re-footer-social{
+    display:flex;
+    gap:14px;
+
+    margin-top:30px;
+}
+
+.re-footer-social a{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:18px;
+
+    transition:0.4s ease;
+}
+
+.re-footer-social a:hover{
+    background:#2563eb;
+
+    transform:translateY(-5px);
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.re-footer-col h3{
+    font-size:28px;
+
+    margin-bottom:30px;
+
+    color:#fff;
+}
+
+/* =========================
+   QUICK LINKS
+========================= */
+
+.re-footer-links{
+    list-style:none;
+    padding:0;
+}
+
+.re-footer-links li{
+    margin-bottom:18px;
+}
+
+.re-footer-links a{
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    font-size:17px;
+
+    transition:0.4s ease;
+}
+
+.re-footer-links a:hover{
+    color:#60a5fa;
+
+    padding-left:8px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.re-footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.re-footer-contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+    line-height:1.8;
+}
+
+.re-footer-contact-item i{
+    color:#60a5fa;
+
+    font-size:18px;
+
+    margin-top:4px;
+}
+
+.re-footer-contact-item a{
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:0.4s ease;
+}
+
+.re-footer-contact-item a:hover{
+    color:#60a5fa;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.re-footer-map{
+    width:100%;
+
+    height:260px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.re-footer-map iframe{
+    width:100%;
+    height:100%;
+
+    border:none;
+}
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.re-footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    text-align:center;
+
+    padding:28px 20px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reFooterFade{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-footer-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:768px){
+
+    .re-footer-container{
+        grid-template-columns:1fr;
+
+        padding:80px 20px 50px;
+    }
+
+    .re-footer-col{
+        text-align:center;
+    }
+
+    .re-footer-logo{
+        justify-content:center;
+    }
+
+    .re-footer-social{
+        justify-content:center;
+    }
+
+    .re-footer-contact-item{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .re-footer-col h3{
+        font-size:24px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-footer-logo{
+        font-size:28px;
+    }
+
+    .re-footer-text{
+        font-size:15px;
+    }
+
+    .re-footer-links a{
+        font-size:16px;
+    }
+
+    .re-footer-map{
+        height:220px;
+    }
+
+    .re-footer-bottom{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+}
+
+</style>
 </body>
 </html>

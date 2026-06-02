@@ -1,0 +1,1751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Real Estate </title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fa;
+    min-height:200vh;
+}
+
+/* =========================
+   STICKY HEADER
+========================= */
+
+.re-header{
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:9999;
+    padding:18px 20px;
+    background:transparent;
+}
+
+/* Capsule Navbar */
+
+.re-navbar{
+    max-width:1350px;
+    margin:auto;
+    background: #0f172a;
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.3);
+  
+
+    border-radius:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:14px 28px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    position:relative;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.re-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.re-logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+    font-size:20px;
+}
+
+.re-logo-text{
+    font-size:24px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.re-nav-links{
+    display:flex;
+    align-items:center;
+    gap:12px;
+   
+}
+
+.re-nav-links a{
+    text-decoration:none;
+    
+    font-size:15px;
+    font-weight:500;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    transition:0.3s ease;
+    color:white;
+}
+
+.re-nav-links a:hover{
+    background:#2563eb;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.re-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.re-btn{
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+/* Login Button */
+
+.re-login{
+    border:1px solid #dbe4f0;
+    color:#0f172a;
+    background:#fff;
+}
+
+.re-login:hover{
+    background:#f1f5f9;
+}
+
+/* Register Button */
+
+.re-register{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(37,99,235,0.25);
+}
+
+.re-register:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.re-menu-toggle{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+    color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .re-navbar{
+        padding:14px 20px;
+    }
+
+    .re-nav-links{
+        gap:5px;
+    }
+
+    .re-nav-links a{
+        padding:10px 14px;
+        font-size:14px;
+    }
+
+    .re-btn{
+        padding:10px 18px;
+    }
+}
+
+/* Tablet + Mobile */
+
+@media(max-width:768px){
+
+    .re-navbar{
+        border-radius:30px;
+        padding:14px 18px;
+    }
+
+    .re-menu-toggle{
+        display:block;
+    }
+
+    .re-nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+
+        background: black;
+
+        margin-top:15px;
+        padding:20px;
+
+        border-radius:30px;
+
+        flex-direction:column;
+        align-items:flex-start;
+
+        box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+        display:none;
+    }
+
+    .re-nav-links.active{
+        display:flex;
+    }
+
+    .re-nav-links a{
+        width:100%;
+    }
+
+    .re-actions{
+        display:none;
+    }
+
+    .re-logo-text{
+        font-size:20px;
+    }
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+    .re-header{
+        padding:14px 10px;
+    }
+
+    .re-navbar{
+        padding:12px 16px;
+    }
+
+    .re-logo-icon{
+        width:42px;
+        height:42px;
+        font-size:18px;
+    }
+
+    .re-logo-text{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="re-header">
+
+    <nav class="re-navbar">
+
+        <!-- LOGO -->
+
+        <a href="index.html">   
+            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a> 
+        <!-- NAVIGATION -->
+
+        <div class="re-nav-links" id="reMenu">
+
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./property.html">Property</a>
+            <a href="./pricing.html">Pricing</a>
+            <a href="./contact.html">Contact</a>
+            
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="re-actions">
+
+            <a href="./login.html" class="re-btn re-login">
+                Login
+            </a>
+
+            <a href="./register.html" class="re-btn re-register">
+                Register
+            </a>
+
+        </div>
+        
+        <!-- MOBILE MENU -->
+
+        <div class="re-menu-toggle" id="reToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </nav>
+
+</header>
+
+<!-- =========================================================
+     PRICING + FAQ SECTION
+========================================================= -->
+
+<section class="estate-pricing-faq-section">
+
+    <!-- =========================
+         SECTION HEADING
+    ========================== -->
+
+    <div class="estate-section-heading">
+
+        <div class="estate-heading-capsule">
+
+            <i class="fa-solid fa-tags"></i>
+            Pricing & FAQ
+
+        </div>
+
+        <h2>
+            Flexible Pricing Plans For Rent & Sale
+        </h2>
+
+        <p>
+            Choose premium rental homes or luxury sale properties
+            with modern facilities, elegant interiors and trusted
+            real estate services for your dream lifestyle.
+        </p>
+
+    </div>
+
+    <!-- =========================
+         PRICING CARDS
+    ========================== -->
+
+    <div class="estate-pricing-grid">
+
+        <!-- RENT -->
+
+        <div class="estate-price-card">
+
+            <div class="estate-price-top">
+
+                <div class="estate-price-icon">
+
+                    <i class="fa-solid fa-key"></i>
+
+                </div>
+
+                <h3>
+                    Rent Property
+                </h3>
+
+                <h1>
+                    $2,500
+                    <span>/Month</span>
+                </h1>
+
+                <p>
+                    Perfect luxury rental homes for modern families.
+                </p>
+
+            </div>
+
+            <!-- FEATURES -->
+
+            <ul class="estate-price-features">
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Fully Furnished Rooms
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    24/7 Security System
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Swimming Pool Access
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Free Parking Area
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Premium Location
+                </li>
+
+            </ul>
+
+            <!-- BUTTON -->
+
+            <a href="404.html" class="estate-price-btn">
+
+                Rent Now
+
+            </a>
+
+        </div>
+
+        <!-- SALE -->
+
+        <div class="estate-price-card active-price">
+
+            <div class="estate-popular-tag">
+
+                Most Popular
+
+            </div>
+
+            <div class="estate-price-top">
+
+                <div class="estate-price-icon">
+
+                    <i class="fa-solid fa-house"></i>
+
+                </div>
+
+                <h3>
+                    Sale Property
+                </h3>
+
+                <h1>
+                    $850,000
+                </h1>
+
+                <p>
+                    Premium luxury villas and apartments for ownership.
+                </p>
+
+            </div>
+
+            <!-- FEATURES -->
+
+            <ul class="estate-price-features">
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Smart Home Automation
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Luxury Interior Design
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Legal Documentation
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Premium Neighborhood
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Investment Security
+                </li>
+
+            </ul>
+
+            <!-- BUTTON -->
+
+            <a href="404.html" class="estate-price-btn">
+
+                Buy Property
+
+            </a>
+
+        </div>
+
+        <!-- PREMIUM -->
+
+        <div class="estate-price-card">
+
+            <div class="estate-price-top">
+
+                <div class="estate-price-icon">
+
+                    <i class="fa-solid fa-crown"></i>
+
+                </div>
+
+                <h3>
+                    Premium Villa
+                </h3>
+
+                <h1>
+                    $1.5M
+                </h1>
+
+                <p>
+                    Ultra luxury villas with premium world-class facilities.
+                </p>
+
+            </div>
+
+            <!-- FEATURES -->
+
+            <ul class="estate-price-features">
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Private Rooftop Lounge
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Smart Security Systems
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Luxury Swimming Pool
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Premium Landscape Garden
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-check"></i>
+                    Home Theatre Setup
+                </li>
+
+            </ul>
+
+            <!-- BUTTON -->
+
+            <a href="404.html" class="estate-price-btn">
+
+                Explore More
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         FAQ SECTION
+    ========================== -->
+
+    <div class="estate-faq-wrapper">
+
+        <!-- FAQ HEADING -->
+
+        <div class="estate-faq-title">
+
+            <div class="estate-heading-capsule">
+
+                <i class="fa-solid fa-circle-question"></i>
+                FAQ Section
+
+            </div>
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+        </div>
+
+        <!-- FAQ ITEMS -->
+
+        <div class="estate-faq-container">
+
+            <!-- FAQ 1 -->
+
+            <div class="estate-faq-item active-faq">
+
+                <button class="estate-faq-question">
+
+                    How can I book a rental property?
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="estate-faq-answer">
+
+                    <p>
+                        You can explore rental listings, select your
+                        preferred property and contact our team directly
+                        for booking and verification assistance.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 2 -->
+
+            <div class="estate-faq-item">
+
+                <button class="estate-faq-question">
+
+                    Are all legal documents verified?
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="estate-faq-answer">
+
+                    <p>
+                        Yes, all ownership records, tax documents and
+                        property registration papers are legally verified
+                        before listing the property.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 3 -->
+
+            <div class="estate-faq-item">
+
+                <button class="estate-faq-question">
+
+                    Do you provide EMI or loan support?
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="estate-faq-answer">
+
+                    <p>
+                        Yes, we provide loan consultation and EMI support
+                        through trusted banking and financial partners.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FAQ 4 -->
+
+            <div class="estate-faq-item">
+
+                <button class="estate-faq-question">
+
+                    Can I schedule a property visit?
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </button>
+
+                <div class="estate-faq-answer">
+
+                    <p>
+                        Absolutely. You can schedule property visits
+                        through our contact form or directly connect
+                        with our support team.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   SECTION
+========================= */
+
+.estate-pricing-faq-section{
+    width:100%;
+    padding:120px 20px;
+
+    background:#f8fafc;
+
+    overflow:hidden;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.estate-section-heading{
+    max-width:900px;
+    margin:auto;
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+    animation:estateFade 1s ease;
+}
+
+.estate-heading-capsule{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 30px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    color:#2563eb;
+
+    font-weight:600;
+
+    margin-bottom:24px;
+}
+
+.estate-section-heading h2,
+.estate-faq-title h2{
+    font-size:58px;
+
+    line-height:1.2;
+
+    color:#111827;
+
+    margin-bottom:20px;
+}
+
+.estate-section-heading p{
+    font-size:18px;
+
+    line-height:2;
+
+    color:#6b7280;
+}
+
+/* =========================
+   PRICING GRID
+========================= */
+
+.estate-pricing-grid{
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-bottom:120px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.estate-price-card{
+    position:relative;
+
+    background:rgba(255,255,255,0.8);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:35px;
+
+    padding:45px 35px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.06);
+
+    transition:0.5s ease;
+
+    animation:estateFade 1.2s ease;
+}
+
+.estate-price-card:hover{
+    transform:translateY(-10px);
+}
+
+.active-price{
+    border:2px solid #2563eb;
+}
+
+/* POPULAR */
+
+.estate-popular-tag{
+    position:absolute;
+
+    top:-15px;
+    right:25px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    font-size:14px;
+    font-weight:600;
+}
+
+/* TOP */
+
+.estate-price-top{
+    text-align:center;
+
+    margin-bottom:35px;
+}
+
+.estate-price-icon{
+    width:85px;
+    height:85px;
+
+    margin:auto auto 25px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.estate-price-icon i{
+    font-size:34px;
+
+    color:#2563eb;
+}
+
+.estate-price-top h3{
+    font-size:32px;
+
+    color:#111827;
+
+    margin-bottom:20px;
+}
+
+.estate-price-top h1{
+    font-size:52px;
+
+    color:#2563eb;
+
+    margin-bottom:15px;
+}
+
+.estate-price-top h1 span{
+    font-size:18px;
+
+    color:#6b7280;
+}
+
+.estate-price-top p{
+    font-size:16px;
+
+    color:#6b7280;
+
+    line-height:1.8;
+}
+
+/* FEATURES */
+
+.estate-price-features{
+    list-style:none;
+    padding:0;
+
+    margin-bottom:35px;
+}
+
+.estate-price-features li{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 0;
+
+    border-bottom:1px solid #e5e7eb;
+
+    font-size:16px;
+
+    color:#374151;
+}
+
+.estate-price-features li i{
+    color:#22c55e;
+}
+
+/* BUTTON */
+
+.estate-price-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:17px;
+    font-weight:600;
+
+    transition:0.4s ease;
+}
+
+.estate-price-btn:hover{
+    transform:translateY(-5px);
+
+    background:#1d4ed8;
+}
+
+/* =========================
+   FAQ
+========================= */
+
+.estate-faq-wrapper{
+    max-width:1000px;
+
+    margin:auto;
+}
+
+.estate-faq-title{
+    text-align:center;
+
+    margin-bottom:50px;
+}
+
+/* FAQ ITEM */
+
+.estate-faq-item{
+    background:rgba(255,255,255,0.85);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:28px;
+
+    margin-bottom:24px;
+
+    overflow:hidden;
+
+    box-shadow:0 12px 35px rgba(0,0,0,0.05);
+
+    animation:estateScroll 1.2s ease;
+}
+
+/* QUESTION */
+
+.estate-faq-question{
+    width:100%;
+
+    background:none;
+    border:none;
+
+    padding:28px 30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    cursor:pointer;
+
+    font-size:22px;
+    font-weight:600;
+
+    color:#111827;
+}
+
+.estate-faq-question i{
+    color:#2563eb;
+
+    transition:0.4s ease;
+}
+
+/* ANSWER */
+
+.estate-faq-answer{
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:0.5s ease;
+}
+
+.estate-faq-answer p{
+    padding:0 30px 28px;
+
+    font-size:16px;
+
+    line-height:2;
+
+    color:#6b7280;
+}
+
+/* ACTIVE */
+
+.active-faq .estate-faq-answer{
+    max-height:300px;
+}
+
+.active-faq .estate-faq-question i{
+    transform:rotate(45deg);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes estateFade{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes estateScroll{
+
+    from{
+        opacity:0;
+        transform:translateY(100px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .estate-section-heading h2,
+    .estate-faq-title h2{
+        font-size:48px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .estate-pricing-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .estate-pricing-faq-section{
+        padding:90px 15px;
+    }
+
+    .estate-section-heading h2,
+    .estate-faq-title h2{
+        font-size:36px;
+    }
+
+    .estate-section-heading p{
+        font-size:16px;
+    }
+
+    .estate-price-card{
+        padding:35px 25px;
+    }
+
+    .estate-price-top h1{
+        font-size:40px;
+    }
+
+    .estate-price-top h3{
+        font-size:26px;
+    }
+
+    .estate-faq-question{
+        font-size:18px;
+
+        padding:24px;
+    }
+
+    .estate-faq-answer p{
+        padding:0 24px 24px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .estate-heading-capsule{
+        width:100%;
+        justify-content:center;
+    }
+
+    .estate-section-heading h2,
+    .estate-faq-title h2{
+        font-size:30px;
+    }
+
+    .estate-price-top h1{
+        font-size:34px;
+    }
+
+    .estate-faq-question{
+        font-size:16px;
+    }
+
+}
+
+</style>
+
+<script>
+
+/* =========================
+   FAQ TOGGLE
+========================= */
+
+const faqItems =
+document.querySelectorAll(".estate-faq-item");
+
+faqItems.forEach(function(item){
+
+    const question =
+    item.querySelector(".estate-faq-question");
+
+    question.addEventListener("click", function(){
+
+        faqItems.forEach(function(faq){
+
+            if(faq !== item){
+
+                faq.classList.remove("active-faq");
+
+            }
+
+        });
+
+        item.classList.toggle("active-faq");
+
+    });
+
+});
+
+</script>
+
+
+
+
+<!-- ---------------- -->
+
+
+<!-- =========================
+     FOOTER SECTION
+========================= -->
+
+<footer class="re-footer-section">
+
+    <!-- TOP FOOTER -->
+
+    <div class="re-footer-container">
+
+        <!-- COLUMN 1 -->
+
+        <div class="re-footer-col">
+
+            <!-- LOGO -->
+
+            <a href="./index.html" class="re-footer-logo">
+                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+
+               
+
+            </a>
+
+            <!-- CONTENT -->
+
+            <p class="re-footer-text">
+
+                We provide premium real estate solutions with luxury homes,
+                modern apartments and trusted property consultation services.
+
+            </p>
+
+            <p class="re-footer-text">
+
+                Find your dream home with professional support and world-class
+                property management assistance.
+
+            </p>
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="re-footer-social">
+
+                <a href="404.html">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 2 -->
+
+        <div class="re-footer-col">
+
+            <h3>Quick Links</h3>
+
+            <ul class="re-footer-links">
+
+                <li>
+                    <a href="404.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Property
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Pricing
+                    </a>
+                </li>
+
+                
+                <li>
+                    <a href="404.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 3 -->
+
+        <div class="re-footer-col">
+
+            <h3>Contact Info</h3>
+
+            <div class="re-footer-contact">
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        MMR complex , chinna tirupathi , salem
+                    </span>
+
+                </div>
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <a href="tel:+919876543210">
+                        +91 98765 43210
+                    </a>
+
+                </div>
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <a href="mailto:info@stacklyestate.com">
+                        support@thestackly.com
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 4 -->
+
+        <div class="re-footer-col">
+
+            <h3>Our Location</h3>
+
+            <!-- MAP -->
+
+            <div class="re-footer-map">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+
+    <div class="re-footer-bottom">
+
+        © Copyright 2026 Stackly.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<style>
+
+/* =========================
+   FOOTER SECTION
+========================= */
+
+.re-footer-section{
+    width:100%;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    overflow:hidden;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.re-footer-container{
+    width:100%;
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:100px 20px 60px;
+
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr 1.2fr;
+    gap:50px;
+}
+
+/* =========================
+   FOOTER COLUMN
+========================= */
+
+.re-footer-col{
+    animation:reFooterFade 1.2s ease;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.re-footer-logo{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:34px;
+    font-weight:700;
+
+    margin-bottom:28px;
+}
+
+.re-footer-logo i{
+    color:#3b82f6;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.re-footer-text{
+    color:#cbd5e1;
+
+    font-size:16px;
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.re-footer-social{
+    display:flex;
+    gap:14px;
+
+    margin-top:30px;
+}
+
+.re-footer-social a{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:18px;
+
+    transition:0.4s ease;
+}
+
+.re-footer-social a:hover{
+    background:#2563eb;
+
+    transform:translateY(-5px);
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.re-footer-col h3{
+    font-size:28px;
+
+    margin-bottom:30px;
+
+    color:#fff;
+}
+
+/* =========================
+   QUICK LINKS
+========================= */
+
+.re-footer-links{
+    list-style:none;
+    padding:0;
+}
+
+.re-footer-links li{
+    margin-bottom:18px;
+}
+
+.re-footer-links a{
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    font-size:17px;
+
+    transition:0.4s ease;
+}
+
+.re-footer-links a:hover{
+    color:#60a5fa;
+
+    padding-left:8px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.re-footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.re-footer-contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+    line-height:1.8;
+}
+
+.re-footer-contact-item i{
+    color:#60a5fa;
+
+    font-size:18px;
+
+    margin-top:4px;
+}
+
+.re-footer-contact-item a{
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:0.4s ease;
+}
+
+.re-footer-contact-item a:hover{
+    color:#60a5fa;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.re-footer-map{
+    width:100%;
+
+    height:260px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.re-footer-map iframe{
+    width:100%;
+    height:100%;
+
+    border:none;
+}
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.re-footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    text-align:center;
+
+    padding:28px 20px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reFooterFade{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-footer-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:768px){
+
+    .re-footer-container{
+        grid-template-columns:1fr;
+
+        padding:80px 20px 50px;
+    }
+
+    .re-footer-col{
+        text-align:center;
+    }
+
+    .re-footer-logo{
+        justify-content:center;
+    }
+
+    .re-footer-social{
+        justify-content:center;
+    }
+
+    .re-footer-contact-item{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .re-footer-col h3{
+        font-size:24px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-footer-logo{
+        font-size:28px;
+    }
+
+    .re-footer-text{
+        font-size:15px;
+    }
+
+    .re-footer-links a{
+        font-size:16px;
+    }
+
+    .re-footer-map{
+        height:220px;
+    }
+
+    .re-footer-bottom{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+}
+
+</style>
+</body>
+</html>
+
+

@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Real Estate </title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fa;
+    min-height:200vh;
+}
+
+/* =========================
+   STICKY HEADER
+========================= */
+
+.re-header{
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:9999;
+    padding:18px 20px;
+    background:transparent;
+}
+
+/* Capsule Navbar */
+
+.re-navbar{
+    max-width:1350px;
+    margin:auto;
+    background: #0f172a;
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.3);
+  
+
+    border-radius:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:14px 28px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    position:relative;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.re-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.re-logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+    font-size:20px;
+}
+
+.re-logo-text{
+    font-size:24px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.re-nav-links{
+    display:flex;
+    align-items:center;
+    gap:12px;
+   
+}
+
+.re-nav-links a{
+    text-decoration:none;
+    
+    font-size:15px;
+    font-weight:500;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    transition:0.3s ease;
+    color:white;
+}
+
+.re-nav-links a:hover{
+    background:#2563eb;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.re-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.re-btn{
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+/* Login Button */
+
+.re-login{
+    border:1px solid #dbe4f0;
+    color:#0f172a;
+    background:#fff;
+}
+
+.re-login:hover{
+    background:#f1f5f9;
+}
+
+/* Register Button */
+
+.re-register{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(37,99,235,0.25);
+}
+
+.re-register:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.re-menu-toggle{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+    color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .re-navbar{
+        padding:14px 20px;
+    }
+
+    .re-nav-links{
+        gap:5px;
+    }
+
+    .re-nav-links a{
+        padding:10px 14px;
+        font-size:14px;
+    }
+
+    .re-btn{
+        padding:10px 18px;
+    }
+}
+
+/* Tablet + Mobile */
+
+@media(max-width:768px){
+
+    .re-navbar{
+        border-radius:30px;
+        padding:14px 18px;
+    }
+
+    .re-menu-toggle{
+        display:block;
+    }
+
+    .re-nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+
+        background: black;
+
+        margin-top:15px;
+        padding:20px;
+
+        border-radius:30px;
+
+        flex-direction:column;
+        align-items:flex-start;
+
+        box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+        display:none;
+    }
+
+    .re-nav-links.active{
+        display:flex;
+    }
+
+    .re-nav-links a{
+        width:100%;
+    }
+
+    .re-actions{
+        display:none;
+    }
+
+    .re-logo-text{
+        font-size:20px;
+    }
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+    .re-header{
+        padding:14px 10px;
+    }
+
+    .re-navbar{
+        padding:12px 16px;
+    }
+
+    .re-logo-icon{
+        width:42px;
+        height:42px;
+        font-size:18px;
+    }
+
+    .re-logo-text{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="re-header">
+
+    <nav class="re-navbar">
+
+        <!-- LOGO -->
+
+        <a href="index.html">   
+            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a> 
+        <!-- NAVIGATION -->
+
+        <div class="re-nav-links" id="reMenu">
+
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./property.html">Property</a>
+            <a href="./pricing.html">Pricing</a>
+            <a href="./contact.html">Contact</a>
+            
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="re-actions">
+
+            <a href="./login.html" class="re-btn re-login">
+                Login
+            </a>
+
+            <a href="./register.html" class="re-btn re-register">
+                Register
+            </a>
+
+        </div>
+
+        <!-- MOBILE MENU -->
+
+        <div class="re-menu-toggle" id="reToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </nav>
+
+</header>
+<style>
+
+    /* RESET */
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    /* HERO SECTION */
+    .arch-hero{
+        width:100%;
+        height:100vh;
+        position:relative;
+        overflow:hidden;
+        display:flex;
+        align-items:center;
+        justify-content:flex-end;
+        padding:80px;
+        color:#0f172a;
+    }
+    
+    /* BACKGROUND SLIDER */
+    .arch-slider{
+        position:absolute;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        z-index:-2;
+    }
+    
+    .arch-slide{
+        position:absolute;
+        width:100%;
+        height:100%;
+        background-size:cover;
+        background-position:center;
+        opacity:0;
+        transition:1.5s ease-in-out;
+    }
+    
+    /* Architecture Images */
+    .arch-slide:nth-child(1){
+    background-image:url("./archi6.webp");
+    }
+    .arch-slide:nth-child(2){
+    background-image:url("./archi5.webp");
+    }
+    .arch-slide:nth-child(3){
+    background-image:url("./archi2.webp");
+    }
+    
+    .arch-slide.active{
+        opacity:1;
+    }
+    
+    /* NETFLIX DARK GRADIENT OVERLAY */
+    .arch-hero::after{
+        content:"";
+        position:absolute;
+        width:100%;
+        height:100%;
+        top:0;
+        left:0;
+        /* background:linear-gradient(
+            to right,
+            rgba(0,0,0,0.95) 10%,
+            rgba(0,0,0,0.85) 35%,
+            rgba(0,0,0,0.5) 60%,
+            rgba(0,0,0,0.2) 80%,
+            rgba(0,0,0,0.05) 100%
+        ); */
+        z-index:-1;
+    }
+    
+    /* CONTENT */
+    .arch-hero-content{
+        max-width:520px;
+        text-align:right;
+        animation:fadeUp 1.5s ease;
+    }
+    
+    .arch-hero-content h1{
+        font-size:52px;
+        font-weight:700;
+        margin-bottom:20px;
+        line-height:1.2;
+    }
+    
+    .arch-hero-content p{
+        margin-bottom:35px;
+        line-height:1.7;
+        font-size:20px;
+        color:#ddd;
+    }
+    
+    /* BUTTON */
+    .arch-btns button{
+        padding:14px 30px;
+        border:none;
+        background: #2563eb;
+        color:#fff;
+        cursor:pointer;
+        font-size:16px;
+        border-radius:4px;
+        transition:0.3s;
+    }
+    
+    .arch-btns button:hover{
+        background: #2563eb;
+        transform:scale(1.05);
+    }
+    
+    /* VIDEO MODAL */
+    .arch-video-modal{
+        position:fixed;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.85);
+        top:0;
+        left:0;
+        display:none;
+        align-items:center;
+        justify-content:center;
+        z-index:999;
+    }
+    
+    .arch-video-box{
+        width:90%;
+        max-width:800px;
+        position:relative;
+    }
+    
+    .arch-video-box iframe{
+        width:100%;
+        height:450px;
+        border-radius:10px;
+    }
+    
+    #closeVideo{
+        position:absolute;
+        top:-40px;
+        right:0;
+        font-size:35px;
+        cursor:pointer;
+        color:#fff;
+    }
+    
+    /* ANIMATION */
+    @keyframes fadeUp{
+        from{
+            opacity:0;
+            transform:translateY(40px);
+        }
+        to{
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+    
+    /* RESPONSIVE */
+    
+    /* Tablet */
+    @media(max-width:992px){
+    
+    .arch-hero{
+        padding:50px;
+    }
+    
+    .arch-hero-content h1{
+        font-size:38px;
+    }
+    }
+    
+    /* Mobile */
+    @media(max-width:768px){
+    
+    .arch-hero{
+        justify-content:center;
+        text-align:center;
+        padding:25px;
+    }
+    
+    .arch-hero-content{
+        text-align:center;
+    }
+    
+    .arch-hero-content h1{
+        font-size:28px;
+    }
+    
+    .arch-video-box iframe{
+        height:250px;
+    }
+    }
+    
+    /* LOAD FROM BOTTOM ANIMATION */
+    
+    .lux-reveal{
+        opacity:0;
+        transform:translateY(60px);
+        animation:luxFadeUp 1.6s ease forwards;
+        animation-delay:0.5s;
+    }
+    
+    @keyframes luxFadeUp{
+        0%{
+            opacity:0;
+            transform:translateY(60px);
+        }
+        100%{
+            opacity:1;
+            transform:translateY(0);
+        }
+    }
+    .lux-title{ animation-delay:0.2s; }
+    .lux-desc{ animation-delay:0.6s; }
+    .lux-btns{ animation-delay:1s; }
+    </style>
+    </head>
+    
+    <body>
+    
+    <section class="arch-hero">
+    
+        <div class="arch-slider">
+            <div class="arch-slide active"></div>
+            <div class="arch-slide"></div>
+            <div class="arch-slide"></div>
+        </div>
+    
+        <div class="arch-hero-content">
+    
+            <h1><span id="arch-text"></span></h1>
+    
+            <p>
+                Experience bold architecture concepts inspired by iconic design movements 
+                from cities like New York, Dubai and Tokyo. Discover smart, sustainable 
+                and future-ready structures redefining modern living.
+            </p>
+    
+            <div class="arch-btns">
+                <button id="watchBtn">▶ Watch Video</button>
+            </div>
+    
+        </div>
+    
+    </section>
+    
+    <!-- VIDEO POPUP -->
+    <div class="arch-video-modal" id="videoModal">
+        <div class="arch-video-box">
+            <span id="closeVideo">&times;</span>
+            <iframe id="archVideo"
+                src="./real.mp4"
+                frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+    
+    <script>
+    
+    /* AUTO BACKGROUND SLIDER */
+    let slides=document.querySelectorAll(".arch-slide");
+    let index=0;
+    
+    function autoSlide(){
+    slides.forEach(s=>s.classList.remove("active"));
+    slides[index].classList.add("active");
+    index=(index+1)%slides.length;
+    }
+    setInterval(autoSlide,4000);
+    
+    
+    /* TYPEWRITER EFFECT */
+    let textArray=[
+    "Modern Architecture",
+    "Luxury Urban Living",
+    "Sustainable Design",
+    "Future Smart Cities"
+    ];
+    
+    let count=0;
+    let i=0;
+    let currentText="";
+    let letter="";
+    
+    function typing(){
+    
+    if(count===textArray.length){
+    count=0;
+    }
+    
+    currentText=textArray[count];
+    letter=currentText.slice(0,++i);
+    
+    document.getElementById("arch-text").textContent=letter;
+    
+    if(letter.length===currentText.length){
+    count++;
+    i=0;
+    }
+    
+    setTimeout(typing,120);
+    }
+    typing();
+    
+    
+    /* VIDEO MODAL */
+    let btn=document.getElementById("watchBtn");
+    let modal=document.getElementById("videoModal");
+    let close=document.getElementById("closeVideo");
+    let iframe=document.getElementById("archVideo");
+    
+    btn.onclick=()=>{
+    modal.style.display="flex";
+    };
+    
+    close.onclick=()=>{
+    modal.style.display="none";
+    iframe.src=iframe.src; // stop video when closed
+    };
+    
+    </script>
+
+
+
+
+
+<section class="lxvmp-section">
+
+<!-- LEFT IMAGES -->
+<div class="lxvmp-images lxvmp-left-reveal">
+
+    <div class="lxvmp-img square">
+        <img src="./archi.webp">
+    </div>
+
+    <div class="lxvmp-img rectangle">
+        <img src="./archi1.webp">
+    </div>
+
+    <div class="lxvmp-img square">
+        <img src="./im3.webp">
+    </div>
+
+</div>
+
+<!-- RIGHT CONTENT -->
+<div class="lxvmp-content">
+
+    <h2 class="lxvmp-title">
+        Our Vision & Mission
+    </h2>
+
+    <div class="lxvmp-points">
+
+        <div class="lxvmp-point">
+            <i class="fa-solid fa-eye"></i>
+            <p>Create sustainable and intelligent architectural environments Lorem ipsum dolor sit amet, 
+                consectetur adipisicing elit. Perspiciatis, voluptatum?.</p>
+        </div>
+
+        <div class="lxvmp-point">
+            <i class="fa-solid fa-leaf"></i>
+            <p>Promote eco-friendly design and green infrastructure Lorem ipsum dolor sit amet 
+                consectetur adipisicing elit. Aliquam, delectus?</p>
+        </div>
+
+        <div class="lxvmp-point">
+            <i class="fa-solid fa-city"></i>
+            <p>Design urban spaces that enhance community living Lorem ipsum dolor sit amet consectetur 
+                adipisicing elit. Voluptatem, ipsa?</p>
+        </div>
+
+        <div class="lxvmp-point">
+            <i class="fa-solid fa-lightbulb"></i>
+            <p>Deliver innovative and futuristic structural solutions Lorem ipsum, dolor sit amet consectetur 
+                adipisicing elit. Deleniti, asperiores!</p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<style>
+
+/* ===== SECTION ===== */
+.lxvmp-section{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:70px;
+    padding:100px 8%;
+    background:black;
+    color:white;
+    overflow:hidden;
+}
+
+/* ===== LEFT IMAGES ===== */
+.lxvmp-images{
+    flex:1;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    opacity:0;
+    transform:translateX(-100px);
+    transition:1s ease;
+}
+
+.lxvmp-images.active{
+    opacity:1;
+    transform:translateX(0);
+}
+
+.lxvmp-img{
+    overflow:hidden;
+    border-radius:12px;
+}
+
+.lxvmp-img img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    filter:blur(4px);
+    transition:0.6s ease;
+}
+
+.lxvmp-img:hover img{
+    filter:blur(0);
+    transform:scale(1.05);
+}
+
+.square{ height:220px; }
+.rectangle{ grid-column:span 2; height:260px; }
+
+/* ===== CONTENT ===== */
+.lxvmp-content{
+    flex:1;
+}
+
+/* ===== SPLIT TITLE ===== */
+.lxvmp-title{
+    font-size:42px;
+    position:relative;
+    margin-bottom:60px;
+    overflow:hidden;
+}
+
+/* Gold Animated Underline */
+.lxvmp-title::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-10px;
+    width:0;
+    height:4px;
+    background:#2563eb;
+    animation:goldLine 2s forwards 1.2s;
+}
+
+@keyframes goldLine{
+    to{ width:120px; }
+}
+
+/* Split letter style */
+.lxvmp-title span{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(60px);
+}
+
+/* ===== POINTS ===== */
+.lxvmp-point{
+    display:flex;
+    gap:15px;
+    margin-bottom:25px;
+    opacity:0;
+    transform:translateY(40px);
+    transition:0.6s;
+}
+
+.lxvmp-point.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.lxvmp-point i{
+    color:#2563eb;
+    font-size:20px;
+    margin-top:4px;
+}
+
+.lxvmp-point p{
+    font-size:16px;
+    line-height:1.6;
+    color:white;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:992px){
+    .lxvmp-section{
+        flex-direction:column;
+    }
+    .lxvmp-title{ font-size:32px; }
+}
+
+@media(max-width:600px){
+    .square{ height:180px; }
+    .rectangle{ height:200px; }
+    .lxvmp-title{ font-size:26px; }
+    .lxvmp-point p{ font-size:14px; }
+}
+
+</style>
+<script>
+
+    /* ===== SPLIT LETTER ANIMATION ===== */
+    const title = document.querySelector(".lxvmp-title");
+    const text = title.innerText;
+    title.innerHTML = "";
+    
+    text.split("").forEach((letter, i) => {
+        const span = document.createElement("span");
+        span.innerText = letter;
+        title.appendChild(span);
+    
+        setTimeout(() => {
+            span.style.opacity = "1";
+            span.style.transform = "translateY(0)";
+            span.style.transition = "0.6s ease";
+        }, i * 50);
+    });
+    
+    /* ===== SCROLL REVEAL ===== */
+    const images = document.querySelector(".lxvmp-images");
+    const points = document.querySelectorAll(".lxvmp-point");
+    
+    function revealSection(){
+        let windowHeight = window.innerHeight;
+    
+        if(images.getBoundingClientRect().top < windowHeight - 100){
+            images.classList.add("active");
+        }
+    
+        points.forEach((point, i) => {
+            if(point.getBoundingClientRect().top < windowHeight - 80){
+                setTimeout(()=>{
+                    point.classList.add("active");
+                }, i * 200);
+            }
+        });
+    }
+    
+    window.addEventListener("scroll", revealSection);
+    
+    </script>
+
+
+<section class="luxba-section">
+
+    <h2 class="luxba-heading">
+    Architectural Transformation
+    </h2>
+    
+    <div class="luxba-wrapper">
+    
+    <!-- PROJECT 1 -->
+    <div class="luxba-box luxba-reveal">
+    
+    <div class="luxba-container">
+    
+    <img src="./archi.webp" class="luxba-img">
+    
+    <div class="luxba-after">
+    <img src="./archi1.webp" class="luxba-img">
+    </div>
+    
+    <input type="range" min="0" max="100" value="50" class="luxba-slider">
+    
+    </div>
+    
+    <div class="luxba-content">
+    <h3 class="luxba-title">Modern Villa Renovation</h3>
+    <p class="luxba-line">Complete structural redesign with open-space planning.</p>
+    <p class="luxba-line">Natural light optimization through panoramic glazing.</p>
+    <p class="luxba-line">Luxury facade transformation with stone & wood fusion.</p>
+    </div>
+    
+    </div>
+    
+    
+    <!-- PROJECT 2 -->
+    <div class="luxba-box luxba-reveal">
+    
+    <div class="luxba-container">
+    
+    <img src="./archi1.webp" class="luxba-img">
+    
+    <div class="luxba-after">
+    <img src="./archi2.webp" class="luxba-img">
+    </div>
+    
+    <input type="range" min="0" max="100" value="50" class="luxba-slider">
+    
+    </div>
+    
+    <div class="luxba-content">
+    <h3 class="luxba-title">Urban House Upgrade</h3>
+    <p class="luxba-line">Facade modernization with glass architecture.</p>
+    <p class="luxba-line">Energy efficient exterior redesign.</p>
+    <p class="luxba-line">Landscape integration for seamless living.</p>
+    </div>
+    
+    </div>
+    
+    
+    <!-- PROJECT 3 -->
+    <div class="luxba-box luxba-reveal">
+    
+    <div class="luxba-container">
+    
+    <img src="./archi.webp" class="luxba-img">
+    
+    <div class="luxba-after">
+    <img src="./archi6.webp" class="luxba-img">
+    </div>
+    
+    <input type="range" min="0" max="100" value="50" class="luxba-slider">
+    
+    </div>
+    
+    <div class="luxba-content">
+    <h3 class="luxba-title">Luxury Interior Makeover</h3>
+    <p class="luxba-line">Premium marble flooring installation.</p>
+    <p class="luxba-line">Smart lighting & ceiling redesign.</p>
+    <p class="luxba-line">Elegant contemporary styling.</p>
+    </div>
+    
+    </div>
+    
+    </div>
+    </section>
+
+    <style>
+
+    /* SECTION */
+.luxba-section{
+padding:100px 5%;
+/* background:#0e0e0e; */
+color:#fff;
+overflow:hidden;
+}
+
+.luxba-heading{
+text-align:center;
+font-size:42px;
+margin-bottom:70px;
+/* background:linear-gradient(90deg,gold,#fff,gold); */
+-webkit-background-clip:text;
+color: black;
+}
+
+/* GRID */
+.luxba-wrapper{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:50px;
+}
+
+/* BOX */
+.luxba-box{
+opacity:0;
+transform:translateY(80px);
+transition:1s ease;
+}
+
+.luxba-box.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* IMAGE CONTAINER */
+.luxba-container{
+position:relative;
+overflow:hidden;
+border-radius:8px;
+}
+
+.luxba-img{
+width:100%;
+height:420px;
+object-fit:cover;
+transition:1s;
+}
+
+.luxba-container:hover .luxba-img{
+transform:scale(1.08);
+}
+
+.luxba-after{
+position:absolute;
+top:0;
+left:0;
+width:50%;
+height:100%;
+overflow:hidden;
+}
+
+/* SLIDER */
+.luxba-slider{
+position:absolute;
+width:100%;
+bottom:15px;
+left:0;
+z-index:5;
+}
+
+/* CONTENT */
+.luxba-content{
+margin-top:25px;
+color: black;
+}
+
+.luxba-title{
+font-size:22px;
+margin-bottom:15px;
+color: black;
+}
+
+.luxba-line{
+opacity:0;
+transform:translateX(-40px);
+transition:0.6s;
+margin-bottom:8px;
+}
+
+.luxba-line.show{
+opacity:1;
+transform:translateX(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* LAPTOP */
+@media(max-width:1199px){
+.luxba-wrapper{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
+/* TABLET */
+@media(max-width:991px){
+.luxba-wrapper{
+grid-template-columns:1fr;
+}
+.luxba-img{
+height:350px;
+}
+}
+
+/* MOBILE */
+@media(max-width:767px){
+.luxba-heading{
+font-size:28px;
+}
+.luxba-img{
+height:250px;
+}
+.luxba-title{
+font-size:18px;
+}
+}
+</style>
+<script>
+
+    // SCROLL REVEAL
+    let boxes=document.querySelectorAll(".luxba-reveal");
+    
+    window.addEventListener("scroll",()=>{
+    boxes.forEach((box,i)=>{
+    let top=box.getBoundingClientRect().top;
+    if(top<window.innerHeight-100){
+    setTimeout(()=>{
+    box.classList.add("show");
+    },i*300);
+    }
+    });
+    });
+    
+    
+    // AUTO SLIDER + TEXT LOAD
+    let containers=document.querySelectorAll(".luxba-container");
+    
+    containers.forEach((box)=>{
+    let after=box.querySelector(".luxba-after");
+    let slider=box.querySelector(".luxba-slider");
+    let contentLines=box.parentElement.querySelectorAll(".luxba-line");
+    
+    let value=50;
+    let direction=1;
+    
+    setInterval(()=>{
+    value+=direction;
+    if(value>=100 || value<=0){
+    direction*=-1;
+    
+    /* TEXT LOAD LINE BY LINE */
+    contentLines.forEach((line,index)=>{
+    setTimeout(()=>{
+    line.classList.add("show");
+    },index*300);
+    });
+    }
+    
+    after.style.width=value+"%";
+    slider.value=value;
+    
+    },40);
+    
+    /* MANUAL DRAG */
+    slider.addEventListener("input",()=>{
+    after.style.width=slider.value+"%";
+    });
+    
+    });
+    
+    </script>
+
+    <!-- ---------------- -->
+
+
+<!-- =========================
+     FOOTER SECTION
+========================= -->
+
+<footer class="re-footer-section">
+
+    <!-- TOP FOOTER -->
+
+    <div class="re-footer-container">
+
+        <!-- COLUMN 1 -->
+
+        <div class="re-footer-col">
+
+            <!-- LOGO -->
+
+            <a href="./index.html" class="re-footer-logo">
+                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+
+               
+
+            </a>
+
+            <!-- CONTENT -->
+
+            <p class="re-footer-text">
+
+                We provide premium real estate solutions with luxury homes,
+                modern apartments and trusted property consultation services.
+
+            </p>
+
+            <p class="re-footer-text">
+
+                Find your dream home with professional support and world-class
+                property management assistance.
+
+            </p>
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="re-footer-social">
+
+                <a href="404.html">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 2 -->
+
+        <div class="re-footer-col">
+
+            <h3>Quick Links</h3>
+
+            <ul class="re-footer-links">
+
+                <li>
+                    <a href="404.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Property
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Pricing
+                    </a>
+                </li>
+
+                
+                <li>
+                    <a href="404.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 3 -->
+
+        <div class="re-footer-col">
+
+            <h3>Contact Info</h3>
+
+            <div class="re-footer-contact">
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        MMR complex , chinna tirupathi , salem
+                    </span>
+
+                </div>
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <a href="tel:+919876543210">
+                        +91 98765 43210
+                    </a>
+
+                </div>
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <a href="mailto:info@stacklyestate.com">
+                        support@thestackly.com
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 4 -->
+
+        <div class="re-footer-col">
+
+            <h3>Our Location</h3>
+
+            <!-- MAP -->
+
+            <div class="re-footer-map">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+
+    <div class="re-footer-bottom">
+
+        © Copyright 2026 Stackly.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<style>
+
+/* =========================
+   FOOTER SECTION
+========================= */
+
+.re-footer-section{
+    width:100%;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    overflow:hidden;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.re-footer-container{
+    width:100%;
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:100px 20px 60px;
+
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr 1.2fr;
+    gap:50px;
+}
+
+/* =========================
+   FOOTER COLUMN
+========================= */
+
+.re-footer-col{
+    animation:reFooterFade 1.2s ease;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.re-footer-logo{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:34px;
+    font-weight:700;
+
+    margin-bottom:28px;
+}
+
+.re-footer-logo i{
+    color:#3b82f6;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.re-footer-text{
+    color:#cbd5e1;
+
+    font-size:16px;
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.re-footer-social{
+    display:flex;
+    gap:14px;
+
+    margin-top:30px;
+}
+
+.re-footer-social a{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:18px;
+
+    transition:0.4s ease;
+}
+
+.re-footer-social a:hover{
+    background:#2563eb;
+
+    transform:translateY(-5px);
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.re-footer-col h3{
+    font-size:28px;
+
+    margin-bottom:30px;
+
+    color:#fff;
+}
+
+/* =========================
+   QUICK LINKS
+========================= */
+
+.re-footer-links{
+    list-style:none;
+    padding:0;
+}
+
+.re-footer-links li{
+    margin-bottom:18px;
+}
+
+.re-footer-links a{
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    font-size:17px;
+
+    transition:0.4s ease;
+}
+
+.re-footer-links a:hover{
+    color:#60a5fa;
+
+    padding-left:8px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.re-footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.re-footer-contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+    line-height:1.8;
+}
+
+.re-footer-contact-item i{
+    color:#60a5fa;
+
+    font-size:18px;
+
+    margin-top:4px;
+}
+
+.re-footer-contact-item a{
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:0.4s ease;
+}
+
+.re-footer-contact-item a:hover{
+    color:#60a5fa;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.re-footer-map{
+    width:100%;
+
+    height:260px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.re-footer-map iframe{
+    width:100%;
+    height:100%;
+
+    border:none;
+}
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.re-footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    text-align:center;
+
+    padding:28px 20px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reFooterFade{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-footer-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:768px){
+
+    .re-footer-container{
+        grid-template-columns:1fr;
+
+        padding:80px 20px 50px;
+    }
+
+    .re-footer-col{
+        text-align:center;
+    }
+
+    .re-footer-logo{
+        justify-content:center;
+    }
+
+    .re-footer-social{
+        justify-content:center;
+    }
+
+    .re-footer-contact-item{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .re-footer-col h3{
+        font-size:24px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-footer-logo{
+        font-size:28px;
+    }
+
+    .re-footer-text{
+        font-size:15px;
+    }
+
+    .re-footer-links a{
+        font-size:16px;
+    }
+
+    .re-footer-map{
+        height:220px;
+    }
+
+    .re-footer-bottom{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+}
+
+</style>
+</body>
+</html>
+
+

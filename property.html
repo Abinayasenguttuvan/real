@@ -1,0 +1,1959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Real Estate </title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ICON -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fa;
+    min-height:200vh;
+}
+
+/* =========================
+   STICKY HEADER
+========================= */
+
+.re-header{
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:9999;
+    padding:18px 20px;
+    background:transparent;
+}
+
+/* Capsule Navbar */
+
+.re-navbar{
+    max-width:1350px;
+    margin:auto;
+    background: #0f172a;
+    backdrop-filter:blur(14px);
+    border:1px solid rgba(255,255,255,0.3);
+  
+
+    border-radius:70px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:14px 28px;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    position:relative;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.re-logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+}
+
+.re-logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#0f172a,#2563eb);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    color:#fff;
+    font-size:20px;
+}
+
+.re-logo-text{
+    font-size:24px;
+    font-weight:700;
+    color:#0f172a;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.re-nav-links{
+    display:flex;
+    align-items:center;
+    gap:12px;
+   
+}
+
+.re-nav-links a{
+    text-decoration:none;
+    
+    font-size:15px;
+    font-weight:500;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    transition:0.3s ease;
+    color:white;
+}
+
+.re-nav-links a:hover{
+    background:#2563eb;
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.re-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.re-btn{
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:999px;
+    font-size:14px;
+    font-weight:600;
+    transition:0.3s ease;
+}
+
+/* Login Button */
+
+.re-login{
+    border:1px solid #dbe4f0;
+    color:#0f172a;
+    background:#fff;
+}
+
+.re-login:hover{
+    background:#f1f5f9;
+}
+
+/* Register Button */
+
+.re-register{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#fff;
+    box-shadow:0 8px 20px rgba(37,99,235,0.25);
+}
+
+.re-register:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.re-menu-toggle{
+    display:none;
+    font-size:24px;
+    cursor:pointer;
+    color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:992px){
+
+    .re-navbar{
+        padding:14px 20px;
+    }
+
+    .re-nav-links{
+        gap:5px;
+    }
+
+    .re-nav-links a{
+        padding:10px 14px;
+        font-size:14px;
+    }
+
+    .re-btn{
+        padding:10px 18px;
+    }
+}
+
+/* Tablet + Mobile */
+
+@media(max-width:768px){
+
+    .re-navbar{
+        border-radius:30px;
+        padding:14px 18px;
+    }
+
+    .re-menu-toggle{
+        display:block;
+    }
+
+    .re-nav-links{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+
+        background: black;
+
+        margin-top:15px;
+        padding:20px;
+
+        border-radius:30px;
+
+        flex-direction:column;
+        align-items:flex-start;
+
+        box-shadow:0 10px 30px rgba(0,0,0,0.1);
+
+        display:none;
+    }
+
+    .re-nav-links.active{
+        display:flex;
+    }
+
+    .re-nav-links a{
+        width:100%;
+    }
+
+    .re-actions{
+        display:none;
+    }
+
+    .re-logo-text{
+        font-size:20px;
+    }
+
+}
+
+/* Small Mobile */
+
+@media(max-width:480px){
+
+    .re-header{
+        padding:14px 10px;
+    }
+
+    .re-navbar{
+        padding:12px 16px;
+    }
+
+    .re-logo-icon{
+        width:42px;
+        height:42px;
+        font-size:18px;
+    }
+
+    .re-logo-text{
+        font-size:18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="re-header">
+
+    <nav class="re-navbar">
+
+        <!-- LOGO -->
+
+        <a href="index.html">   
+            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+          </a> 
+        <!-- NAVIGATION -->
+
+        <div class="re-nav-links" id="reMenu">
+
+            <a href="./index.html">Home</a>
+            <a href="./about.html">About</a>
+            <a href="./property.html">Property</a>
+            <a href="./pricing.html">Pricing</a>
+            <a href="./contact.html">Contact</a>
+            
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="re-actions">
+
+            <a href="./login.html" class="re-btn re-login">
+                Login
+            </a>
+
+            <a href="./register.html" class="re-btn re-register">
+                Register
+            </a>
+
+        </div>
+        
+        <!-- MOBILE MENU -->
+
+        <div class="re-menu-toggle" id="reToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </nav>
+
+</header>
+
+
+
+<!-- =========================================================
+     ADVANCED PROPERTY DETAILS SECTION
+========================================================= -->
+
+<section class="ultra-property-section">
+
+    <!-- =========================
+         HEADING
+    ========================== -->
+
+    <div class="ultra-property-heading">
+
+        <div class="ultra-property-tag">
+
+            <i class="fa-solid fa-building"></i>
+            Premium Property Details
+
+        </div>
+
+        <h2>
+            Discover Your Dream Luxury Property
+        </h2>
+
+        <p>
+            Explore premium real estate properties with luxury interiors,
+            modern architecture, spacious living spaces and world-class
+            amenities designed for comfortable modern lifestyles.
+        </p>
+
+    </div>
+
+    <!-- =========================
+         MAIN IMAGE
+    ========================== -->
+
+    <div class="ultra-main-image-wrap">
+
+        <img
+            id="ultraMainImage"
+
+            src="./archi6.webp"
+
+            alt=""
+        >
+
+        <!-- PRICE TAG -->
+
+        <div class="ultra-price-badge">
+
+            <i class="fa-solid fa-dollar-sign"></i>
+            $850,000
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         THUMBNAILS
+    ========================== -->
+
+    <div class="ultra-thumb-gallery">
+
+        <!-- IMAGE 1 -->
+
+        <img
+            class="ultra-thumb active-thumb"
+
+            src="./archi.webp"
+
+            data-title="Modern Luxury Villa"
+
+            data-price="$850,000"
+
+            data-location="Miami, Florida"
+
+            data-id="#PR4587"
+
+            data-room="4 Rooms"
+
+            data-bath="3 Baths"
+
+            data-area="4500 Sq Ft"
+
+            data-garage="2 Garage"
+
+            data-desc="This premium luxury villa features modern architecture, smart automation systems, premium marble flooring, private swimming pool and elegant interior designs for luxury lifestyle living."
+
+            onclick="changeUltraProperty(this)"
+        >
+
+        <!-- IMAGE 2 -->
+
+        <img
+            class="ultra-thumb"
+
+            src="./archi1.webp"
+
+            data-title="Luxury Family Apartment"
+
+            data-price="$620,000"
+
+            data-location="California"
+
+            data-id="#PR8520"
+
+            data-room="3 Rooms"
+
+            data-bath="2 Baths"
+
+            data-area="3200 Sq Ft"
+
+            data-garage="1 Garage"
+
+            data-desc="Modern apartment with elegant interiors, luxury modular kitchen, spacious balcony, modern security systems and premium living comfort."
+
+            onclick="changeUltraProperty(this)"
+        >
+
+        <!-- IMAGE 3 -->
+
+        <img
+            class="ultra-thumb"
+
+            src="./archi2.webp"
+
+            data-title="White Premium Villa"
+
+            data-price="$1,200,000"
+
+            data-location="New York"
+
+            data-id="#PR9981"
+
+            data-room="5 Rooms"
+
+            data-bath="4 Baths"
+
+            data-area="6500 Sq Ft"
+
+            data-garage="3 Garage"
+
+            data-desc="Beautiful white luxury villa with rooftop lounge, luxury balcony, swimming pool, smart lighting and premium neighborhood surroundings."
+
+            onclick="changeUltraProperty(this)"
+        >
+
+        <!-- IMAGE 4 -->
+
+        <img
+            class="ultra-thumb"
+
+            src="./archi5.webp"
+
+            data-title="Modern Penthouse"
+
+            data-price="$1,500,000"
+
+            data-location="Los Angeles"
+
+            data-id="#PR6512"
+
+            data-room="6 Rooms"
+
+            data-bath="5 Baths"
+
+            data-area="7800 Sq Ft"
+
+            data-garage="4 Garage"
+
+            data-desc="Ultra premium penthouse with rooftop swimming pool, private theatre, luxury interiors, premium furniture and smart home controls."
+
+            onclick="changeUltraProperty(this)"
+        >
+
+    </div>
+
+    <!-- =========================
+         PROPERTY TITLE
+    ========================== -->
+
+    <div class="ultra-property-box">
+
+        <h3 id="ultraPropertyTitle">
+
+            <i class="fa-solid fa-house"></i>
+            Modern Luxury Villa
+
+        </h3>
+
+        <p>
+
+            Premium property with modern architecture,
+            luxury interiors and excellent investment value.
+
+        </p>
+
+    </div>
+
+    <!-- =========================
+         OVERVIEW
+    ========================== -->
+
+    <div class="ultra-property-box">
+
+        <h3>
+
+            <i class="fa-solid fa-circle-info"></i>
+            Property Overview
+
+        </h3>
+
+        <div class="ultra-overview-grid">
+
+            <div class="ultra-overview-card">
+
+                <span>Property ID</span>
+
+                <h4 id="ultraPropertyId">
+                    #PR4587
+                </h4>
+
+            </div>
+
+            <div class="ultra-overview-card">
+
+                <span>Price</span>
+
+                <h4 id="ultraPropertyPrice">
+                    $850,000
+                </h4>
+
+            </div>
+
+            <div class="ultra-overview-card">
+
+                <span>Location</span>
+
+                <h4 id="ultraPropertyLocation">
+                    Miami, Florida
+                </h4>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         FEATURES
+    ========================== -->
+
+    <div class="ultra-property-box">
+
+        <h3>
+
+            <i class="fa-solid fa-star"></i>
+            Property Features
+
+        </h3>
+
+        <div class="ultra-feature-grid">
+
+            <div class="ultra-feature-card">
+
+                <i class="fa-solid fa-bed"></i>
+
+                <h4 id="ultraPropertyRoom">
+                    4 Rooms
+                </h4>
+
+            </div>
+
+            <div class="ultra-feature-card">
+
+                <i class="fa-solid fa-bath"></i>
+
+                <h4 id="ultraPropertyBath">
+                    3 Baths
+                </h4>
+
+            </div>
+
+            <div class="ultra-feature-card">
+
+                <i class="fa-solid fa-ruler-combined"></i>
+
+                <h4 id="ultraPropertyArea">
+                    4500 Sq Ft
+                </h4>
+
+            </div>
+
+            <div class="ultra-feature-card">
+
+                <i class="fa-solid fa-car"></i>
+
+                <h4 id="ultraPropertyGarage">
+                    2 Garage
+                </h4>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         DESCRIPTION
+    ========================== -->
+
+    <div class="ultra-property-box">
+
+        <h3>
+
+            <i class="fa-solid fa-file-lines"></i>
+            Description
+
+        </h3>
+
+        <p id="ultraPropertyDesc">
+
+            This premium luxury villa features modern architecture,
+            smart automation systems, premium marble flooring,
+            private swimming pool and elegant interior designs
+            for luxury lifestyle living.
+
+        </p>
+
+    </div>
+
+    <!-- =========================
+         ADDITIONAL DETAILS
+    ========================== -->
+
+    <div class="ultra-property-box">
+
+        <h3>
+
+            <i class="fa-solid fa-circle-check"></i>
+            Additional Details
+
+        </h3>
+
+        <div class="ultra-detail-grid">
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Smart Home Automation
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Premium Modular Kitchen
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Italian Marble Flooring
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Central Air Conditioning
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Luxury Swimming Pool
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                CCTV Security System
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Private Garden Area
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                Rooftop Lounge Setup
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         PROPERTY NOTE
+    ========================== -->
+
+    <div class="ultra-property-box">
+
+        <h3>
+
+            <i class="fa-solid fa-note-sticky"></i>
+            Property Common Note
+
+        </h3>
+
+        <p>
+
+            This property is completely verified and legally approved.
+            All ownership records, tax documents and registration
+            papers are verified successfully by legal authorities.
+
+        </p>
+
+    </div>
+
+    <!-- =========================
+         PROPERTY ATTACHMENTS
+    ========================== -->
+
+    <div class="ultra-property-box">
+
+        <h3>
+
+            <i class="fa-solid fa-paperclip"></i>
+            Property Attachments
+
+        </h3>
+
+        <div class="ultra-attachment-wrap">
+
+            <a href="404.html">
+
+                <i class="fa-solid fa-file-pdf"></i>
+                Property Brochure
+
+            </a>
+
+            <a href="404.html">
+
+                <i class="fa-solid fa-file-lines"></i>
+                Legal Documentation
+
+            </a>
+
+            <a href="404.html">
+
+                <i class="fa-solid fa-file-contract"></i>
+                Ownership Certificate
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         FLOOR PLAN
+    ========================== -->
+
+    <div class="ultra-property-box">
+
+        <h3>
+
+            <i class="fa-solid fa-layer-group"></i>
+            Floor Plan
+
+        </h3>
+
+        <img
+            class="ultra-floor-plan"
+
+            src="./floor.webp"
+
+            alt=""
+        >
+
+    </div>
+
+    <!-- =========================
+         VIDEO
+    ========================== -->
+
+    <div class="ultra-property-box">
+
+        <h3>
+
+            <i class="fa-solid fa-video"></i>
+            Property Video
+
+        </h3>
+
+        <div class="ultra-video-wrap">
+
+            <iframe
+            src="./real.mp4"
+                allowfullscreen>
+            </iframe>
+
+            
+
+        </div>
+
+    </div>
+
+</section>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+.ultra-property-section{
+    width:100%;
+    max-width:1450px;
+
+    margin:auto;
+
+    padding:120px 20px;
+
+    overflow:hidden;
+
+    background:#f8fafc;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.ultra-property-heading{
+    text-align:center;
+
+    margin-bottom:60px;
+
+    animation:ultraFade 1s ease;
+}
+
+.ultra-property-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 30px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,0.7);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,0.4);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+
+    color:#2563eb;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+}
+
+.ultra-property-heading h2{
+    font-size:62px;
+
+    color:#111827;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+}
+
+.ultra-property-heading p{
+    max-width:850px;
+
+    margin:auto;
+
+    font-size:18px;
+
+    line-height:2;
+
+    color:#6b7280;
+}
+
+/* =========================
+   MAIN IMAGE
+========================= */
+
+.ultra-main-image-wrap{
+    position:relative;
+
+    width:100%;
+    height:760px;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    margin-bottom:28px;
+
+    animation:ultraFade 1.2s ease;
+}
+
+.ultra-main-image-wrap img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:0.9s ease;
+}
+
+.ultra-main-image-wrap:hover img{
+    transform:scale(1.08);
+}
+
+/* PRICE */
+
+.ultra-price-badge{
+    position:absolute;
+
+    top:25px;
+    right:25px;
+
+    background:rgba(255,255,255,0.9);
+
+    backdrop-filter:blur(10px);
+
+    padding:16px 24px;
+
+    border-radius:18px;
+
+    font-size:20px;
+    font-weight:700;
+
+    color:#2563eb;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+/* =========================
+   THUMBNAILS
+========================= */
+
+.ultra-thumb-gallery{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+    margin-bottom:50px;
+}
+
+.ultra-thumb{
+    width:100%;
+    height:150px;
+
+    object-fit:cover;
+
+    border-radius:22px;
+
+    cursor:pointer;
+
+    transition:0.5s ease;
+
+    border:4px solid transparent;
+}
+
+.ultra-thumb:hover{
+    transform:scale(1.06);
+}
+
+.active-thumb{
+    border-color:#2563eb;
+}
+
+/* =========================
+   BOX
+========================= */
+
+.ultra-property-box{
+    background:rgba(255,255,255,0.82);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:35px;
+
+    padding:40px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,0.06);
+
+    animation:ultraFade 1.5s ease;
+}
+
+.ultra-property-box h3{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    font-size:34px;
+
+    color:#111827;
+
+    margin-bottom:28px;
+}
+
+.ultra-property-box h3 i{
+    color:#2563eb;
+}
+
+.ultra-property-box p{
+    font-size:17px;
+
+    line-height:2;
+
+    color:#4b5563;
+}
+
+/* =========================
+   OVERVIEW
+========================= */
+
+.ultra-overview-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:20px;
+}
+
+.ultra-overview-card{
+    background:#f8fafc;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    text-align:center;
+}
+
+.ultra-overview-card span{
+    display:block;
+
+    color:#6b7280;
+
+    margin-bottom:12px;
+}
+
+.ultra-overview-card h4{
+    font-size:24px;
+
+    color:#111827;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.ultra-feature-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    gap:20px;
+}
+
+.ultra-feature-card{
+    background:#eff6ff;
+
+    border-radius:25px;
+
+    padding:32px;
+
+    text-align:center;
+
+    transition:0.5s ease;
+}
+
+.ultra-feature-card:hover{
+    transform:translateY(-10px);
+}
+
+.ultra-feature-card i{
+    font-size:34px;
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+}
+
+.ultra-feature-card h4{
+    font-size:22px;
+
+    color:#111827;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.ultra-detail-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+}
+
+.ultra-detail-grid div{
+    background:#f8fafc;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    font-size:17px;
+
+    color:#374151;
+}
+
+.ultra-detail-grid div i{
+    color:#22c55e;
+}
+
+/* =========================
+   ATTACHMENT
+========================= */
+
+.ultra-attachment-wrap{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.ultra-attachment-wrap a{
+    text-decoration:none;
+
+    padding:18px 26px;
+
+    border-radius:18px;
+
+    background:#eff6ff;
+
+    color:#2563eb;
+
+    font-weight:600;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    transition:0.4s ease;
+}
+
+.ultra-attachment-wrap a:hover{
+    transform:translateY(-5px);
+}
+
+/* =========================
+   FLOOR PLAN
+========================= */
+
+.ultra-floor-plan{
+    width:100%;
+
+    border-radius:25px;
+}
+
+/* =========================
+   VIDEO
+========================= */
+
+.ultra-video-wrap{
+    width:100%;
+    height:520px;
+
+    border-radius:30px;
+
+    overflow:hidden;
+}
+
+.ultra-video-wrap iframe{
+    width:100%;
+    height:100%;
+
+    border:none;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes ultraFade{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .ultra-property-heading h2{
+        font-size:52px;
+    }
+
+    .ultra-main-image-wrap{
+        height:650px;
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:992px){
+
+    .ultra-overview-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ultra-feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .ultra-main-image-wrap{
+        height:520px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:768px){
+
+    .ultra-property-section{
+        padding:90px 15px;
+    }
+
+    .ultra-property-heading h2{
+        font-size:38px;
+    }
+
+    .ultra-property-heading p{
+        font-size:16px;
+    }
+
+    .ultra-main-image-wrap{
+        height:360px;
+    }
+
+    .ultra-thumb-gallery{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .ultra-thumb{
+        height:120px;
+    }
+
+    .ultra-feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ultra-detail-grid{
+        grid-template-columns:1fr;
+    }
+
+    .ultra-property-box{
+        padding:28px;
+    }
+
+    .ultra-property-box h3{
+        font-size:26px;
+    }
+
+    .ultra-video-wrap{
+        height:280px;
+    }
+
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .ultra-property-tag{
+        width:100%;
+        justify-content:center;
+    }
+
+    .ultra-property-heading h2{
+        font-size:30px;
+    }
+
+    .ultra-price-badge{
+        font-size:15px;
+
+        padding:12px 18px;
+    }
+
+    .ultra-thumb{
+        height:100px;
+    }
+
+    .ultra-property-box p{
+        font-size:15px;
+    }
+
+}
+
+</style>
+
+<script>
+
+/* =========================
+   PROPERTY CHANGE
+========================= */
+
+function changeUltraProperty(element){
+
+    /* IMAGE */
+
+    document.getElementById("ultraMainImage").src =
+    element.src;
+
+    /* TITLE */
+
+    document.getElementById("ultraPropertyTitle").innerHTML =
+    `<i class="fa-solid fa-house"></i> ${element.dataset.title}`;
+
+    /* CONTENT */
+
+    document.getElementById("ultraPropertyId").innerText =
+    element.dataset.id;
+
+    document.getElementById("ultraPropertyPrice").innerText =
+    element.dataset.price;
+
+    document.getElementById("ultraPropertyLocation").innerText =
+    element.dataset.location;
+
+    document.getElementById("ultraPropertyRoom").innerText =
+    element.dataset.room;
+
+    document.getElementById("ultraPropertyBath").innerText =
+    element.dataset.bath;
+
+    document.getElementById("ultraPropertyArea").innerText =
+    element.dataset.area;
+
+    document.getElementById("ultraPropertyGarage").innerText =
+    element.dataset.garage;
+
+    document.getElementById("ultraPropertyDesc").innerText =
+    element.dataset.desc;
+
+    /* PRICE BADGE */
+
+    document.querySelector(".ultra-price-badge").innerHTML =
+    `<i class="fa-solid fa-dollar-sign"></i> ${element.dataset.price}`;
+
+    /* ACTIVE IMAGE */
+
+    let thumbs =
+    document.querySelectorAll(".ultra-thumb");
+
+    thumbs.forEach(function(img){
+
+        img.classList.remove("active-thumb");
+
+    });
+
+    element.classList.add("active-thumb");
+
+}
+
+</script>
+
+
+<!-- ---------------- -->
+
+
+<!-- =========================
+     FOOTER SECTION
+========================= -->
+
+<footer class="re-footer-section">
+
+    <!-- TOP FOOTER -->
+
+    <div class="re-footer-container">
+
+        <!-- COLUMN 1 -->
+
+        <div class="re-footer-col">
+
+            <!-- LOGO -->
+
+            <a href="./index.html" class="re-footer-logo">
+                <img src="./white.webp" alt="Stackly Logo" class="footer-logo"  style="height:60px;">
+
+               
+
+            </a>
+
+            <!-- CONTENT -->
+
+            <p class="re-footer-text">
+
+                We provide premium real estate solutions with luxury homes,
+                modern apartments and trusted property consultation services.
+
+            </p>
+
+            <p class="re-footer-text">
+
+                Find your dream home with professional support and world-class
+                property management assistance.
+
+            </p>
+
+            <!-- SOCIAL ICONS -->
+
+            <div class="re-footer-social">
+
+                <a href="404.html">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="404.html">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 2 -->
+
+        <div class="re-footer-col">
+
+            <h3>Quick Links</h3>
+
+            <ul class="re-footer-links">
+
+                <li>
+                    <a href="404.html">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Property
+                    </a>
+                </li>
+
+                <li>
+                    <a href="404.html">
+                        Pricing
+                    </a>
+                </li>
+
+                
+                <li>
+                    <a href="404.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- COLUMN 3 -->
+
+        <div class="re-footer-col">
+
+            <h3>Contact Info</h3>
+
+            <div class="re-footer-contact">
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        MMR complex , chinna tirupathi , salem
+                    </span>
+
+                </div>
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <a href="tel:+919876543210">
+                        +91 98765 43210
+                    </a>
+
+                </div>
+
+                <div class="re-footer-contact-item">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <a href="mailto:info@stacklyestate.com">
+                        support@thestackly.com
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- COLUMN 4 -->
+
+        <div class="re-footer-col">
+
+            <h3>Our Location</h3>
+
+            <!-- MAP -->
+
+            <div class="re-footer-map">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Salem%20Tamil%20Nadu&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+
+    <div class="re-footer-bottom">
+
+        © Copyright 2026 Stackly.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+<style>
+
+/* =========================
+   FOOTER SECTION
+========================= */
+
+.re-footer-section{
+    width:100%;
+
+    background:#0f172a;
+
+    color:#fff;
+
+    overflow:hidden;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.re-footer-container{
+    width:100%;
+    max-width:1400px;
+
+    margin:auto;
+
+    padding:100px 20px 60px;
+
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr 1.2fr;
+    gap:50px;
+}
+
+/* =========================
+   FOOTER COLUMN
+========================= */
+
+.re-footer-col{
+    animation:reFooterFade 1.2s ease;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.re-footer-logo{
+    display:inline-flex;
+    align-items:center;
+    gap:12px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:34px;
+    font-weight:700;
+
+    margin-bottom:28px;
+}
+
+.re-footer-logo i{
+    color:#3b82f6;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.re-footer-text{
+    color:#cbd5e1;
+
+    font-size:16px;
+    line-height:1.9;
+
+    margin-bottom:18px;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.re-footer-social{
+    display:flex;
+    gap:14px;
+
+    margin-top:30px;
+}
+
+.re-footer-social a{
+    width:48px;
+    height:48px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.1);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:18px;
+
+    transition:0.4s ease;
+}
+
+.re-footer-social a:hover{
+    background:#2563eb;
+
+    transform:translateY(-5px);
+}
+
+/* =========================
+   TITLES
+========================= */
+
+.re-footer-col h3{
+    font-size:28px;
+
+    margin-bottom:30px;
+
+    color:#fff;
+}
+
+/* =========================
+   QUICK LINKS
+========================= */
+
+.re-footer-links{
+    list-style:none;
+    padding:0;
+}
+
+.re-footer-links li{
+    margin-bottom:18px;
+}
+
+.re-footer-links a{
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    font-size:17px;
+
+    transition:0.4s ease;
+}
+
+.re-footer-links a:hover{
+    color:#60a5fa;
+
+    padding-left:8px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.re-footer-contact{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.re-footer-contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+    line-height:1.8;
+}
+
+.re-footer-contact-item i{
+    color:#60a5fa;
+
+    font-size:18px;
+
+    margin-top:4px;
+}
+
+.re-footer-contact-item a{
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:0.4s ease;
+}
+
+.re-footer-contact-item a:hover{
+    color:#60a5fa;
+}
+
+/* =========================
+   MAP
+========================= */
+
+.re-footer-map{
+    width:100%;
+
+    height:260px;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+.re-footer-map iframe{
+    width:100%;
+    height:100%;
+
+    border:none;
+}
+
+/* =========================
+   COPYRIGHT
+========================= */
+
+.re-footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    text-align:center;
+
+    padding:28px 20px;
+
+    color:#cbd5e1;
+
+    font-size:16px;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes reFooterFade{
+
+    from{
+        opacity:0;
+        transform:translateY(80px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* =========================
+   LAPTOP
+========================= */
+
+@media(max-width:1200px){
+
+    .re-footer-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:768px){
+
+    .re-footer-container{
+        grid-template-columns:1fr;
+
+        padding:80px 20px 50px;
+    }
+
+    .re-footer-col{
+        text-align:center;
+    }
+
+    .re-footer-logo{
+        justify-content:center;
+    }
+
+    .re-footer-social{
+        justify-content:center;
+    }
+
+    .re-footer-contact-item{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .re-footer-col h3{
+        font-size:24px;
+    }
+
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-footer-logo{
+        font-size:28px;
+    }
+
+    .re-footer-text{
+        font-size:15px;
+    }
+
+    .re-footer-links a{
+        font-size:16px;
+    }
+
+    .re-footer-map{
+        height:220px;
+    }
+
+    .re-footer-bottom{
+        font-size:14px;
+        line-height:1.7;
+    }
+
+}
+
+</style>
+</body>
+</html>
+
+
