@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>StacklyEstate Bookings</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+  min-height:100vh;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard{
+  display:flex;
+  min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  width:280px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
+  border-right:1px solid rgba(255,255,255,0.1);
+  padding:25px;
+  position:fixed;
+  left:0;
+  top:0;
+  height:100vh;
+  overflow-y:auto;
+  transition:0.4s;
+  z-index:1000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:26px;
+  font-weight:700;
+  margin-bottom:45px;
+}
+
+.logo i{
+  color:#60a5fa;
+}
+
+.sidebar-menu{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.sidebar-menu a{
+  text-decoration:none;
+  color:#fff;
+  padding:15px 18px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  transition:0.3s;
+  background:rgba(255,255,255,0.04);
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .active{
+  background:rgba(255,255,255,0.15);
+  transform:translateX(5px);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main{
+  margin-left:280px;
+  width:calc(100% - 280px);
+  padding:25px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.left-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.menu-btn{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.page-title{
+  font-size:24px;
+  font-weight:600;
+}
+
+.user-box{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.user-avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+  margin-bottom:30px;
+}
+
+.stat-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:22px;
+  padding:25px;
+  position:relative;
+  overflow:hidden;
+  transition:0.4s;
+}
+
+.stat-card:hover{
+  transform:translateY(-8px);
+}
+
+.stat-card i{
+  position:absolute;
+  right:20px;
+  top:20px;
+  font-size:40px;
+  opacity:0.2;
+}
+
+.stat-card h4{
+  font-size:15px;
+  margin-bottom:12px;
+}
+
+.stat-card h1{
+  font-size:34px;
+  margin-bottom:8px;
+}
+
+.stat-card p{
+  font-size:13px;
+  opacity:0.8;
+}
+
+/* =========================
+   CHARTS
+========================= */
+
+.chart-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:25px;
+  margin-bottom:30px;
+}
+
+.chart-box{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  padding:25px;
+}
+
+.chart-title{
+  font-size:22px;
+  margin-bottom:25px;
+}
+
+/* BAR CHART */
+
+.bar-chart{
+  height:300px;
+  display:flex;
+  align-items:flex-end;
+  gap:18px;
+}
+
+.bar{
+  flex:1;
+  border-radius:16px 16px 0 0;
+  background:linear-gradient(to top,#2563eb,#60a5fa);
+  position:relative;
+  transition:0.4s;
+}
+
+.bar:hover{
+  transform:scaleY(1.05);
+}
+
+.bar span{
+  position:absolute;
+  bottom:-35px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:13px;
+}
+
+/* PIE CHART */
+
+.pie-chart{
+  width:230px;
+  height:230px;
+  margin:auto;
+  border-radius:50%;
+  background:
+  conic-gradient(
+  #60a5fa 0% 35%,
+  #2563eb 35% 60%,
+  #38bdf8 60% 80%,
+  #93c5fd 80% 100%
+  );
+}
+
+/* =========================
+   BOOKING TABLE
+========================= */
+
+.booking-box{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  padding:25px;
+  overflow-x:auto;
+}
+
+.booking-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:900px;
+}
+
+.booking-table th{
+  background:rgba(255,255,255,0.08);
+  padding:18px;
+  text-align:left;
+  font-size:14px;
+}
+
+.booking-table td{
+  padding:18px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  font-size:14px;
+}
+
+.customer{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.customer img{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.status{
+  padding:8px 14px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.confirmed{
+  background:rgba(34,197,94,0.2);
+  color:#4ade80;
+}
+
+.pending{
+  background:rgba(250,204,21,0.2);
+  color:#fde047;
+}
+
+.cancelled{
+  background:rgba(239,68,68,0.2);
+  color:#f87171;
+}
+
+.action-btns{
+  display:flex;
+  gap:10px;
+}
+
+.action-btns button{
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:10px;
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.action-btns button:hover{
+  background:#2563eb;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .chart-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:900px){
+
+  .sidebar{
+    left:-100%;
+  }
+
+  .sidebar.active{
+    left:0;
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .topbar{
+    flex-direction:column;
+    gap:20px;
+    align-items:flex-start;
+  }
+
+  .user-box{
+    width:100%;
+    justify-content:space-between;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .page-title{
+    font-size:20px;
+  }
+
+  .chart-title{
+    font-size:18px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <a href="index.html">   
+        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+      </a> 
+
+    <div class="sidebar-menu">
+
+      <a href="./dashboard1.html">
+        <i class="fa-solid fa-chart-line"></i>
+        Dashboard
+      </a>
+
+      
+      <a href="./bookings.html" class="active">
+        <i class="fa-solid fa-calendar-check"></i>
+        Bookings
+      </a>
+
+      
+      <a href="./messages.html">
+        <i class="fa-solid fa-envelope"></i>
+        Messages
+      </a>
+
+      
+
+      <a href="./index.html">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </a>
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <div class="left-top">
+
+        <div class="menu-btn" id="menuBtn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <h2 class="page-title">
+          Booking Dashboard
+        </h2>
+
+      </div>
+
+      <div class="user-box">
+
+        <div>
+          <h4>agent@stackly.com</h4>
+          <p>Role : Agent</p>
+        </div>
+
+        <div class="user-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-calendar-check"></i>
+
+        <h4>Total Bookings</h4>
+
+        <h1>860</h1>
+
+        <p>Bookings this month</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-house"></i>
+
+        <h4>Property Visits</h4>
+
+        <h1>1,240</h1>
+
+        <p>Scheduled site visits</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-indian-rupee-sign"></i>
+
+        <h4>Total Revenue</h4>
+
+        <h1>₹12.8L</h1>
+
+        <p>Booking revenue generated</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-user-check"></i>
+
+        <h4>Confirmed Deals</h4>
+
+        <h1>540</h1>
+
+        <p>Successfully completed</p>
+
+      </div>
+
+    </div>
+
+    <!-- CHARTS -->
+
+    <div class="chart-grid">
+
+      <!-- BAR CHART -->
+
+      <div class="chart-box">
+
+        <h3 class="chart-title">
+          Monthly Booking Overview
+        </h3>
+
+        <div class="bar-chart">
+
+          <div class="bar" style="height:120px;">
+            <span>Jan</span>
+          </div>
+
+          <div class="bar" style="height:160px;">
+            <span>Feb</span>
+          </div>
+
+          <div class="bar" style="height:200px;">
+            <span>Mar</span>
+          </div>
+
+          <div class="bar" style="height:240px;">
+            <span>Apr</span>
+          </div>
+
+          <div class="bar" style="height:280px;">
+            <span>May</span>
+          </div>
+
+          <div class="bar" style="height:230px;">
+            <span>Jun</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PIE CHART -->
+
+      <div class="chart-box">
+
+        <h3 class="chart-title">
+          Booking Distribution
+        </h3>
+
+        <div class="pie-chart"></div>
+
+      </div>
+
+    </div>
+
+    <!-- BOOKING TABLE -->
+
+    <div class="booking-box">
+
+      <h3 class="chart-title">
+        Recent Property Bookings
+      </h3>
+
+      <table class="booking-table">
+
+        <thead>
+
+          <tr>
+
+            <th>Customer</th>
+            <th>Property</th>
+            <th>Location</th>
+            <th>Booking Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td>
+
+              <div class="customer">
+
+                <img src="https://randomuser.me/api/portraits/women/45.jpg">
+
+                <div>
+                  <h4>Emily Johnson</h4>
+                  <p>Premium Customer</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td>Luxury Villa</td>
+
+            <td>Chennai</td>
+
+            <td>02 Jun 2026</td>
+
+            <td>
+              <span class="status confirmed">
+                Confirmed
+              </span>
+            </td>
+
+            <td>
+
+              <div class="action-btns">
+
+                <button>
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button>
+                  <i class="fa-solid fa-phone"></i>
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+
+              <div class="customer">
+
+                <img src="https://randomuser.me/api/portraits/men/38.jpg">
+
+                <div>
+                  <h4>David Miller</h4>
+                  <p>Verified Customer</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td>Modern Apartment</td>
+
+            <td>Bangalore</td>
+
+            <td>01 Jun 2026</td>
+
+            <td>
+              <span class="status pending">
+                Pending
+              </span>
+            </td>
+
+            <td>
+
+              <div class="action-btns">
+
+                <button>
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button>
+                  <i class="fa-solid fa-phone"></i>
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+
+              <div class="customer">
+
+                <img src="https://randomuser.me/api/portraits/women/65.jpg">
+
+                <div>
+                  <h4>Sophia Williams</h4>
+                  <p>New Customer</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td>Premium Duplex</td>
+
+            <td>Hyderabad</td>
+
+            <td>28 May 2026</td>
+
+            <td>
+              <span class="status cancelled">
+                Cancelled
+              </span>
+            </td>
+
+            <td>
+
+              <div class="action-btns">
+
+                <button>
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button>
+                  <i class="fa-solid fa-phone"></i>
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>StacklyEstate Messages</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+  min-height:100vh;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboard{
+  display:flex;
+  min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  width:280px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
+  border-right:1px solid rgba(255,255,255,0.1);
+  padding:25px;
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  overflow-y:auto;
+  transition:0.4s;
+  z-index:1000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:26px;
+  font-weight:700;
+  margin-bottom:45px;
+}
+
+.logo i{
+  color:#60a5fa;
+}
+
+.sidebar-menu{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.sidebar-menu a{
+  text-decoration:none;
+  color:#fff;
+  padding:15px 18px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  transition:0.3s;
+  background:rgba(255,255,255,0.04);
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .active{
+  background:rgba(255,255,255,0.15);
+  transform:translateX(5px);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main{
+  margin-left:280px;
+  width:calc(100% - 280px);
+  padding:25px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.left-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.menu-btn{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.page-title{
+  font-size:24px;
+  font-weight:600;
+}
+
+.user-box{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.user-avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+/* =========================
+   MESSAGE LAYOUT
+========================= */
+
+.message-layout{
+  display:grid;
+  grid-template-columns:350px 1fr;
+  gap:25px;
+}
+
+/* =========================
+   CHAT LIST
+========================= */
+
+.chat-list{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  padding:22px;
+  height:calc(100vh - 150px);
+  overflow-y:auto;
+}
+
+.chat-search{
+  position:relative;
+  margin-bottom:25px;
+}
+
+.chat-search input{
+  width:100%;
+  padding:14px 18px 14px 45px;
+  border:none;
+  outline:none;
+  border-radius:14px;
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+}
+
+.chat-search input::placeholder{
+  color:#ddd;
+}
+
+.chat-search i{
+  position:absolute;
+  left:16px;
+  top:15px;
+  color:#ccc;
+}
+
+.chat-user{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:15px;
+  border-radius:18px;
+  margin-bottom:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.chat-user:hover,
+.chat-user.active{
+  background:rgba(255,255,255,0.12);
+}
+
+.chat-user img{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.chat-user-content{
+  flex:1;
+}
+
+.chat-user-content h4{
+  font-size:15px;
+  margin-bottom:5px;
+}
+
+.chat-user-content p{
+  font-size:13px;
+  opacity:0.75;
+}
+
+.chat-time{
+  font-size:12px;
+  opacity:0.7;
+}
+
+/* =========================
+   CHAT BOX
+========================= */
+
+.chat-box{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  height:calc(100vh - 150px);
+}
+
+/* =========================
+   CHAT HEADER
+========================= */
+
+.chat-header{
+  padding:20px 25px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.chat-profile{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.chat-profile img{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.online{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#4ade80;
+  display:inline-block;
+  margin-left:6px;
+}
+
+.chat-actions{
+  display:flex;
+  gap:12px;
+}
+
+.chat-actions button{
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:12px;
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.chat-actions button:hover{
+  background:#2563eb;
+}
+
+/* =========================
+   CHAT BODY
+========================= */
+
+.chat-body{
+  flex:1;
+  padding:25px;
+  overflow-y:auto;
+}
+
+.message{
+  display:flex;
+  margin-bottom:20px;
+}
+
+.message.sent{
+  justify-content:flex-end;
+}
+
+.message-content{
+  max-width:70%;
+  padding:16px 18px;
+  border-radius:18px;
+  line-height:1.5;
+  font-size:14px;
+}
+
+.received .message-content{
+  background:rgba(255,255,255,0.1);
+  border-bottom-left-radius:5px;
+}
+
+.sent .message-content{
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  border-bottom-right-radius:5px;
+}
+
+.message-time{
+  font-size:11px;
+  margin-top:6px;
+  opacity:0.7;
+}
+
+/* =========================
+   CHAT FOOTER
+========================= */
+
+.chat-footer{
+  padding:20px 25px;
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+
+.message-form{
+  display:flex;
+  gap:15px;
+}
+
+.message-form input{
+  flex:1;
+  border:none;
+  outline:none;
+  padding:15px 18px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+}
+
+.message-form input::placeholder{
+  color:#ddd;
+}
+
+.send-btn{
+  width:55px;
+  border:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  color:#fff;
+  cursor:pointer;
+  font-size:18px;
+  transition:0.3s;
+}
+
+.send-btn:hover{
+  transform:scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+  .message-layout{
+    grid-template-columns:320px 1fr;
+  }
+
+}
+
+@media(max-width:900px){
+
+  .sidebar{
+    left:-100%;
+  }
+
+  .sidebar.active{
+    left:0;
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .message-layout{
+    grid-template-columns:1fr;
+  }
+
+  .chat-list{
+    height:auto;
+  }
+
+  .chat-box{
+    height:700px;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+  }
+
+  .user-box{
+    width:100%;
+    justify-content:space-between;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .page-title{
+    font-size:20px;
+  }
+
+  .chat-header{
+    flex-direction:column;
+    gap:20px;
+    align-items:flex-start;
+  }
+
+  .message-content{
+    max-width:90%;
+  }
+
+  .message-form{
+    flex-direction:column;
+  }
+
+  .send-btn{
+    width:100%;
+    height:52px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <a href="index.html">   
+        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+      </a> 
+
+    <div class="sidebar-menu">
+
+      <a href="./dashboard1.html">
+        <i class="fa-solid fa-chart-line"></i>
+        Dashboard
+      </a>
+      
+
+      <a href="./bookings.html">
+        <i class="fa-solid fa-calendar-check"></i>
+        Bookings
+      </a>
+
+      
+      <a href="./messages.html" class="active">
+        <i class="fa-solid fa-envelope"></i>
+        Messages
+      </a>
+
+      
+      <a href="./index.html">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </a>
+
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <div class="left-top">
+
+        <div class="menu-btn" id="menuBtn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <h2 class="page-title">
+          Customer Messages
+        </h2>
+
+      </div>
+
+      <div class="user-box">
+
+        <div>
+          <h4>customer@stackly.com</h4>
+          <p>Role : Customer</p>
+        </div>
+
+        <div class="user-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- MESSAGE LAYOUT -->
+
+    <div class="message-layout">
+
+      <!-- CHAT LIST -->
+
+      <div class="chat-list">
+
+        <div class="chat-search">
+
+          <i class="fa-solid fa-magnifying-glass"></i>
+
+          <input type="text" placeholder="Search messages">
+
+        </div>
+
+        <div class="chat-user active">
+
+          <img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+          <div class="chat-user-content">
+
+            <h4>Sarah Williams</h4>
+
+            <p>Property details shared...</p>
+
+          </div>
+
+          <span class="chat-time">
+            2m
+          </span>
+
+        </div>
+
+        <div class="chat-user">
+
+          <img src="https://randomuser.me/api/portraits/men/32.jpg">
+
+          <div class="chat-user-content">
+
+            <h4>David Anderson</h4>
+
+            <p>Site visit confirmed</p>
+
+          </div>
+
+          <span class="chat-time">
+            10m
+          </span>
+
+        </div>
+
+        <div class="chat-user">
+
+          <img src="https://randomuser.me/api/portraits/women/68.jpg">
+
+          <div class="chat-user-content">
+
+            <h4>Emily Johnson</h4>
+
+            <p>Can we schedule meeting?</p>
+
+          </div>
+
+          <span class="chat-time">
+            1h
+          </span>
+
+        </div>
+
+        <div class="chat-user">
+
+          <img src="https://randomuser.me/api/portraits/men/55.jpg">
+
+          <div class="chat-user-content">
+
+            <h4>Michael Brown</h4>
+
+            <p>Documents uploaded</p>
+
+          </div>
+
+          <span class="chat-time">
+            3h
+          </span>
+
+        </div>
+
+      </div>
+
+      <!-- CHAT BOX -->
+
+      <div class="chat-box">
+
+        <!-- HEADER -->
+
+        <div class="chat-header">
+
+          <div class="chat-profile">
+
+            <img src="https://randomuser.me/api/portraits/women/44.jpg">
+
+            <div>
+
+              <h3>
+                Sarah Williams
+                <span class="online"></span>
+              </h3>
+
+              <p>Senior Property Agent</p>
+
+            </div>
+
+          </div>
+
+          <div class="chat-actions">
+
+            <button>
+              <i class="fa-solid fa-phone"></i>
+            </button>
+
+            <button>
+              <i class="fa-solid fa-video"></i>
+            </button>
+
+            <button>
+              <i class="fa-solid fa-ellipsis"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- CHAT BODY -->
+
+        <div class="chat-body">
+
+          <div class="message received">
+
+            <div class="message-content">
+
+              Hello! I have shared the property details
+              for the Luxury Villa in Chennai.
+
+              <div class="message-time">
+                10:20 AM
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="message sent">
+
+            <div class="message-content">
+
+              Thank you. Can we arrange a site visit
+              this weekend?
+
+              <div class="message-time">
+                10:24 AM
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="message received">
+
+            <div class="message-content">
+
+              Yes definitely. Saturday morning
+              would be perfect for the visit.
+
+              <div class="message-time">
+                10:25 AM
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="message sent">
+
+            <div class="message-content">
+
+              Great! Please share the exact location
+              and timing details.
+
+              <div class="message-time">
+                10:28 AM
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- FOOTER -->
+
+        <div class="chat-footer">
+
+          <form class="message-form">
+
+            <input type="text" placeholder="Type your message...">
+
+            <button class="send-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+
+</script>
+
+</body>
+</html>

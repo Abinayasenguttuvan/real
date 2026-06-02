@@ -399,11 +399,11 @@ body{
 
             <div class="re-tabs">
 
-                <button class="re-tab active" id="rentBtn">
+                <button class="re-tab active" id="rentBtn" type="button">
                     For Rent
                 </button>
 
-                <button class="re-tab" id="saleBtn">
+                <button class="re-tab" id="saleBtn" type="button">
                     For Sale
                 </button>
 
@@ -411,7 +411,7 @@ body{
 
             <!-- FORM -->
 
-            <form class="re-search-form">
+            <form class="re-search-form" id="propertyForm">
 
                 <!-- LOCATION -->
 
@@ -422,13 +422,18 @@ body{
                         Location
                     </label>
 
-                    <select>
-                        <option>All Main Locations</option>
+                    <select id="location">
+
+                        <option value="">
+                            Select Location
+                        </option>
+
                         <option>Chennai</option>
                         <option>Madurai</option>
                         <option>Coimbatore</option>
                         <option>Bangalore</option>
                         <option>Hyderabad</option>
+
                     </select>
 
                 </div>
@@ -442,12 +447,17 @@ body{
                         Bedrooms
                     </label>
 
-                    <select>
-                        <option>All Bed</option>
+                    <select id="bedroom">
+
+                        <option value="">
+                            Select Bedrooms
+                        </option>
+
                         <option>1 BHK</option>
                         <option>2 BHK</option>
                         <option>3 BHK</option>
                         <option>4+ BHK</option>
+
                     </select>
 
                 </div>
@@ -461,12 +471,17 @@ body{
                         Bathrooms
                     </label>
 
-                    <select>
-                        <option>All Bath</option>
+                    <select id="bathroom">
+
+                        <option value="">
+                            Select Bathrooms
+                        </option>
+
                         <option>1 Bath</option>
                         <option>2 Bath</option>
                         <option>3 Bath</option>
                         <option>4+ Bath</option>
+
                     </select>
 
                 </div>
@@ -480,12 +495,17 @@ body{
                         Property Type
                     </label>
 
-                    <select>
-                        <option>All Types</option>
+                    <select id="propertyType">
+
+                        <option value="">
+                            Select Property Type
+                        </option>
+
                         <option>Apartment</option>
                         <option>Villa</option>
                         <option>Commercial</option>
                         <option>Penthouse</option>
+
                     </select>
 
                 </div>
@@ -495,9 +515,16 @@ body{
                 <button type="submit" class="re-search-btn">
 
                     <i class="fa-solid fa-magnifying-glass"></i>
+
                     Search Property
 
                 </button>
+
+                <!-- ERROR MESSAGE -->
+
+                <p class="re-error-msg" id="errorMsg">
+                    Please select all details
+                </p>
 
             </form>
 
@@ -518,11 +545,9 @@ body{
     width:100%;
     min-height:100vh;
     overflow:hidden;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     padding:120px 20px 80px;
 }
 
@@ -558,7 +583,6 @@ body{
 .re-hero-container{
     width:100%;
     max-width:1350px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -572,7 +596,6 @@ body{
 .re-hero-content{
     flex:1;
     color:#fff;
-
     animation:slideUp 1.2s ease;
 }
 
@@ -580,13 +603,10 @@ body{
     display:inline-block;
     background:rgba(255,255,255,0.15);
     border:1px solid rgba(255,255,255,0.2);
-
     padding:10px 22px;
     border-radius:999px;
-
     font-size:14px;
     margin-bottom:25px;
-
     backdrop-filter:blur(10px);
 }
 
@@ -605,7 +625,6 @@ body{
     font-size:18px;
     line-height:1.8;
     color:#e2e8f0;
-
     max-width:650px;
     margin-bottom:35px;
 }
@@ -647,24 +666,17 @@ body{
 }
 
 /* =========================
-   GLASSMORPHISM CARD
+   SEARCH CARD
 ========================= */
 
 .re-search-card{
     width:420px;
-
     background:rgba(255,255,255,0.12);
-
     border:1px solid rgba(255,255,255,0.2);
-
     backdrop-filter:blur(20px);
-
     border-radius:35px;
-
     padding:30px;
-
     box-shadow:0 10px 40px rgba(0,0,0,0.2);
-
     animation:slideUp 1.5s ease;
 }
 
@@ -683,14 +695,10 @@ body{
     border:none;
     padding:14px;
     border-radius:999px;
-
     font-size:15px;
     font-weight:600;
-
     cursor:pointer;
-
     transition:0.3s ease;
-
     background:rgba(255,255,255,0.12);
     color:#fff;
 }
@@ -719,7 +727,6 @@ body{
     margin-bottom:10px;
     font-size:14px;
     font-weight:500;
-
     display:flex;
     align-items:center;
     gap:10px;
@@ -728,18 +735,19 @@ body{
 .re-input-box select{
     width:100%;
     padding:16px 18px;
-
     border:none;
     outline:none;
-
     border-radius:18px;
-
     background:rgba(255,255,255,0.14);
     color:#fff;
-
     font-size:15px;
-
     backdrop-filter:blur(10px);
+    border:1px solid transparent;
+    transition:0.3s;
+}
+
+.re-input-box select:focus{
+    border-color:#60a5fa;
 }
 
 .re-input-box select option{
@@ -753,27 +761,32 @@ body{
 .re-search-btn{
     border:none;
     padding:18px;
-
     border-radius:999px;
-
     background:#2563eb;
     color:#fff;
-
     font-size:16px;
     font-weight:600;
-
     cursor:pointer;
-
     display:flex;
     align-items:center;
     justify-content:center;
     gap:12px;
-
     transition:0.3s ease;
 }
 
 .re-search-btn:hover{
     transform:translateY(-3px);
+}
+
+/* =========================
+   ERROR MESSAGE
+========================= */
+
+.re-error-msg{
+    color:#ff6b6b;
+    font-size:14px;
+    text-align:center;
+    display:none;
 }
 
 /* =========================
@@ -861,10 +874,6 @@ body{
 
 }
 
-/* =========================
-   SMALL MOBILE
-========================= */
-
 @media(max-width:480px){
 
     .re-hero-content h1{
@@ -895,17 +904,69 @@ const rentBtn = document.getElementById("rentBtn");
 const saleBtn = document.getElementById("saleBtn");
 
 rentBtn.addEventListener("click", () => {
+
     rentBtn.classList.add("active");
     saleBtn.classList.remove("active");
+
 });
 
 saleBtn.addEventListener("click", () => {
+
     saleBtn.classList.add("active");
     rentBtn.classList.remove("active");
+
+});
+
+/* =========================
+   FORM VALIDATION
+========================= */
+
+const propertyForm =
+document.getElementById("propertyForm");
+
+propertyForm.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    const location =
+    document.getElementById("location").value;
+
+    const bedroom =
+    document.getElementById("bedroom").value;
+
+    const bathroom =
+    document.getElementById("bathroom").value;
+
+    const propertyType =
+    document.getElementById("propertyType").value;
+
+    const errorMsg =
+    document.getElementById("errorMsg");
+
+    /* VALIDATION */
+
+    if(
+        location === "" ||
+        bedroom === "" ||
+        bathroom === "" ||
+        propertyType === ""
+    ){
+
+        errorMsg.style.display = "block";
+
+    }else{
+
+        errorMsg.style.display = "none";
+
+        /* REDIRECT */
+
+        window.location.href = "./404.html";
+
+    }
+
 });
 
 </script>
-
 <!-- -------------------- -->
 <!-- =========================
      ABOUT / LEGACY SECTION

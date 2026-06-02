@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StacklyEstate Customers</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+  min-height:100vh;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboard{
+  display:flex;
+  min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  width:280px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-right:1px solid rgba(255,255,255,0.1);
+  padding:25px;
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  overflow-y:auto;
+  transition:0.4s;
+  z-index:1000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:26px;
+  font-weight:700;
+  margin-bottom:45px;
+}
+
+.logo i{
+  color:#60a5fa;
+}
+
+.sidebar-menu{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.sidebar-menu a{
+  text-decoration:none;
+  color:#fff;
+  padding:15px 18px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  transition:0.3s;
+  background:rgba(255,255,255,0.04);
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .active{
+  background:rgba(255,255,255,0.15);
+  transform:translateX(5px);
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main{
+  margin-left:280px;
+  width:calc(100% - 280px);
+  padding:25px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.left-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.menu-btn{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.page-title{
+  font-size:24px;
+  font-weight:600;
+}
+
+.user-box{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.user-info{
+  text-align:right;
+}
+
+.user-info h4{
+  font-size:15px;
+  margin-bottom:4px;
+}
+
+.user-info p{
+  font-size:13px;
+  opacity:0.8;
+}
+
+.user-avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+  margin-bottom:30px;
+}
+
+.stat-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:22px;
+  padding:25px;
+  position:relative;
+  overflow:hidden;
+  transition:0.4s;
+}
+
+.stat-card:hover{
+  transform:translateY(-8px);
+}
+
+.stat-card i{
+  position:absolute;
+  right:20px;
+  top:20px;
+  font-size:40px;
+  opacity:0.2;
+}
+
+.stat-card h4{
+  font-size:15px;
+  margin-bottom:12px;
+}
+
+.stat-card h1{
+  font-size:34px;
+  margin-bottom:8px;
+}
+
+.stat-card p{
+  font-size:13px;
+  opacity:0.8;
+}
+
+/* =========================
+   CUSTOMER TABLE
+========================= */
+
+.customer-section{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  padding:25px;
+  overflow-x:auto;
+}
+
+.section-title{
+  font-size:24px;
+  margin-bottom:25px;
+}
+
+.customer-table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:900px;
+}
+
+.customer-table th{
+  background:rgba(255,255,255,0.08);
+  padding:18px;
+  text-align:left;
+  font-size:14px;
+}
+
+.customer-table td{
+  padding:18px;
+  border-bottom:1px solid rgba(255,255,255,0.08);
+  font-size:14px;
+}
+
+.customer-profile{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.customer-profile img{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.status{
+  padding:8px 14px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.active{
+  background:rgba(34,197,94,0.2);
+  color:#4ade80;
+}
+
+.pending{
+  background:rgba(250,204,21,0.2);
+  color:#fde047;
+}
+
+.inactive{
+  background:rgba(239,68,68,0.2);
+  color:#f87171;
+}
+
+.action-buttons{
+  display:flex;
+  gap:10px;
+}
+
+.action-buttons button{
+  width:38px;
+  height:38px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  color:#fff;
+  background:rgba(255,255,255,0.08);
+  transition:0.3s;
+}
+
+.action-buttons button:hover{
+  background:#2563eb;
+  transform:translateY(-2px);
+}
+
+/* =========================
+   ACTIVITY SECTION
+========================= */
+
+.activity-grid{
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:25px;
+  margin-top:30px;
+}
+
+.activity-box{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  padding:25px;
+}
+
+.activity-item{
+  display:flex;
+  align-items:flex-start;
+  gap:15px;
+  margin-bottom:22px;
+}
+
+.activity-icon{
+  width:50px;
+  height:50px;
+  border-radius:14px;
+  background:rgba(255,255,255,0.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:18px;
+}
+
+.activity-content h4{
+  margin-bottom:6px;
+}
+
+.activity-content p{
+  font-size:13px;
+  opacity:0.8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .activity-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:900px){
+
+  .sidebar{
+    left:-100%;
+  }
+
+  .sidebar.active{
+    left:0;
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .topbar{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+  }
+
+  .user-box{
+    width:100%;
+    justify-content:space-between;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .page-title{
+    font-size:20px;
+  }
+
+  .section-title{
+    font-size:20px;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <a href="index.html">   
+        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+      </a> 
+
+    <div class="sidebar-menu">
+
+      <a href="./dashboard1.html">
+        <i class="fa-solid fa-chart-line"></i>
+        Dashboard
+      </a>
+
+
+      <a href="./bookings.html">
+        <i class="fa-solid fa-calendar-check"></i>
+        Bookings
+      </a>
+
+      
+      <a href="./messages.html">
+        <i class="fa-solid fa-envelope"></i>
+        Messages
+      </a>
+
+      <a href="./index.html">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </a>
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <div class="left-top">
+
+        <div class="menu-btn" id="menuBtn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <h2 class="page-title">
+          Customer Dashboard
+        </h2>
+
+      </div>
+
+      <div class="user-box">
+
+        <div class="user-info">
+          <h4>customer@stackly.com</h4>
+          <p>Role : Customer</p>
+        </div>
+
+        <div class="user-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-users"></i>
+
+        <h4>Total Customers</h4>
+
+        <h1>4,520</h1>
+
+        <p>Registered customers</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-house"></i>
+
+        <h4>Property Visits</h4>
+
+        <h1>1,240</h1>
+
+        <p>Monthly visit requests</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-heart"></i>
+
+        <h4>Saved Listings</h4>
+
+        <h1>3,180</h1>
+
+        <p>Favorite properties saved</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-calendar-check"></i>
+
+        <h4>Bookings</h4>
+
+        <h1>860</h1>
+
+        <p>Confirmed bookings</p>
+
+      </div>
+
+    </div>
+
+    <!-- CUSTOMER TABLE -->
+
+    <div class="customer-section">
+
+      <h2 class="section-title">
+        Recent Customers
+      </h2>
+
+      <table class="customer-table">
+
+        <thead>
+
+          <tr>
+
+            <th>Customer</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>Interested Property</th>
+            <th>Status</th>
+            <th>Actions</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody>
+
+          <tr>
+
+            <td>
+
+              <div class="customer-profile">
+
+                <img src="https://randomuser.me/api/portraits/women/32.jpg">
+
+                <div>
+                  <h4>Emily Johnson</h4>
+                  <p>Premium Customer</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td>emily@gmail.com</td>
+
+            <td>Chennai</td>
+
+            <td>Luxury Villa</td>
+
+            <td>
+              <span class="status active">Active</span>
+            </td>
+
+            <td>
+
+              <div class="action-buttons">
+
+                <button>
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button>
+                  <i class="fa-solid fa-envelope"></i>
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+
+              <div class="customer-profile">
+
+                <img src="https://randomuser.me/api/portraits/men/41.jpg">
+
+                <div>
+                  <h4>Michael Brown</h4>
+                  <p>Verified Customer</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td>michael@gmail.com</td>
+
+            <td>Bangalore</td>
+
+            <td>Modern Apartment</td>
+
+            <td>
+              <span class="status pending">Pending</span>
+            </td>
+
+            <td>
+
+              <div class="action-buttons">
+
+                <button>
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button>
+                  <i class="fa-solid fa-envelope"></i>
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+          <tr>
+
+            <td>
+
+              <div class="customer-profile">
+
+                <img src="https://randomuser.me/api/portraits/women/65.jpg">
+
+                <div>
+                  <h4>Sophia Miller</h4>
+                  <p>New Customer</p>
+                </div>
+
+              </div>
+
+            </td>
+
+            <td>sophia@gmail.com</td>
+
+            <td>Hyderabad</td>
+
+            <td>Commercial Office</td>
+
+            <td>
+              <span class="status inactive">Inactive</span>
+            </td>
+
+            <td>
+
+              <div class="action-buttons">
+
+                <button>
+                  <i class="fa-solid fa-eye"></i>
+                </button>
+
+                <button>
+                  <i class="fa-solid fa-envelope"></i>
+                </button>
+
+              </div>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+    <!-- ACTIVITY -->
+
+    <div class="activity-grid">
+
+      <div class="activity-box">
+
+        <h2 class="section-title">
+          Recent Activities
+        </h2>
+
+        <div class="activity-item">
+
+          <div class="activity-icon">
+            <i class="fa-solid fa-house"></i>
+          </div>
+
+          <div class="activity-content">
+            <h4>New Property Interested</h4>
+            <p>Emily Johnson requested a site visit for Luxury Villa.</p>
+          </div>
+
+        </div>
+
+        <div class="activity-item">
+
+          <div class="activity-icon">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
+
+          <div class="activity-content">
+            <h4>Booking Confirmed</h4>
+            <p>Michael Brown confirmed booking for Smart Apartment.</p>
+          </div>
+
+        </div>
+
+        <div class="activity-item">
+
+          <div class="activity-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+
+          <div class="activity-content">
+            <h4>Saved Property</h4>
+            <p>Sophia saved Premium Duplex House to favorites.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- QUICK INFO -->
+
+      <div class="activity-box">
+
+        <h2 class="section-title">
+          Quick Info
+        </h2>
+
+        <div class="activity-item">
+
+          <div class="activity-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
+
+          <div class="activity-content">
+            <h4>Top Rated Property</h4>
+            <p>Luxury Villa - Chennai</p>
+          </div>
+
+        </div>
+
+        <div class="activity-item">
+
+          <div class="activity-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+
+          <div class="activity-content">
+            <h4>Popular Location</h4>
+            <p>Bangalore Urban Area</p>
+          </div>
+
+        </div>
+
+        <div class="activity-item">
+
+          <div class="activity-icon">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+
+          <div class="activity-content">
+            <h4>Monthly Growth</h4>
+            <p>+24% customer engagement</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+
+</script>
+
+</body>
+</html>

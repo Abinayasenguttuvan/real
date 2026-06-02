@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StacklyEstate Properties</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:
+  linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+  min-height:100vh;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.properties-wrapper{
+  display:flex;
+  min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  width:280px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border-right:1px solid rgba(255,255,255,0.1);
+  padding:25px;
+  position:fixed;
+  left:0;
+  top:0;
+  height:100vh;
+  overflow-y:auto;
+  transition:0.4s;
+  z-index:1000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:26px;
+  font-weight:700;
+  margin-bottom:45px;
+}
+
+.logo i{
+  color:#60a5fa;
+}
+
+.sidebar-menu{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.sidebar-menu a{
+  text-decoration:none;
+  color:#fff;
+  padding:15px 18px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  transition:0.3s;
+  background:rgba(255,255,255,0.04);
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .active{
+  background:rgba(255,255,255,0.15);
+  transform:translateX(5px);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main{
+  margin-left:280px;
+  width:calc(100% - 280px);
+  padding:25px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.left-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.menu-btn{
+  display:none;
+  font-size:24px;
+  cursor:pointer;
+}
+
+.page-title{
+  font-size:24px;
+  font-weight:600;
+}
+
+.user-box{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.user-avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+/* =========================
+   FILTER SECTION
+========================= */
+
+.filter-section{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:25px;
+  margin-bottom:30px;
+}
+
+.filter-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+
+.filter-box input,
+.filter-box select{
+  width:100%;
+  padding:14px;
+  border:none;
+  outline:none;
+  border-radius:12px;
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  font-size:14px;
+}
+
+.filter-box input::placeholder{
+  color:#ddd;
+}
+
+.search-btn{
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  border:none;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.search-btn:hover{
+  transform:translateY(-3px);
+}
+
+/* =========================
+   PROPERTY GRID
+========================= */
+
+.property-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+/* =========================
+   PROPERTY CARD
+========================= */
+
+.property-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:22px;
+  overflow:hidden;
+  transition:0.4s;
+}
+
+.property-card:hover{
+  transform:translateY(-8px);
+}
+
+.property-image{
+  position:relative;
+  overflow:hidden;
+}
+
+.property-image img{
+  width:100%;
+  height:250px;
+  object-fit:cover;
+  transition:0.5s;
+}
+
+.property-card:hover img{
+  transform:scale(1.08);
+}
+
+.property-tag{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:#2563eb;
+  padding:8px 14px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.property-content{
+  padding:22px;
+}
+
+.property-price{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+
+.property-title{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.property-location{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  opacity:0.85;
+  margin-bottom:20px;
+  font-size:14px;
+}
+
+.property-features{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:22px;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.feature{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-size:14px;
+}
+
+.property-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+}
+
+.view-btn{
+  flex:1;
+  text-align:center;
+  text-decoration:none;
+  padding:12px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  color:#fff;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.view-btn:hover{
+  transform:scale(1.03);
+}
+
+.favorite-btn{
+  width:48px;
+  height:48px;
+  border-radius:12px;
+  border:none;
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  cursor:pointer;
+  font-size:18px;
+  transition:0.3s;
+}
+
+.favorite-btn:hover{
+  background:#ef4444;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+  .property-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .filter-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:900px){
+
+  .sidebar{
+    left:-100%;
+  }
+
+  .sidebar.active{
+    left:0;
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .property-grid{
+    grid-template-columns:1fr;
+  }
+
+  .filter-grid{
+    grid-template-columns:1fr;
+  }
+
+  .topbar{
+    flex-direction:column;
+    gap:20px;
+    align-items:flex-start;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .property-features{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .property-footer{
+    flex-direction:column;
+  }
+
+  .view-btn{
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="properties-wrapper">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <a href="index.html">   
+        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+      </a> 
+
+    <div class="sidebar-menu">
+
+      <a href="./dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+
+      <a href="./properties.html" class="active">
+        <i class="fa-solid fa-house"></i> Properties
+      </a>
+      <a href="./agents.html"><i class="fa-solid fa-users"></i> Agents</a>
+      <!-- <a href="./settings.html"><i class="fa-solid fa-gear"></i> Settings</a> -->
+      <a href="./login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <div class="left-top">
+
+        <div class="menu-btn" id="menuBtn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <h2 class="page-title">Properties</h2>
+
+      </div>
+
+      <div class="user-box">
+
+        <div>
+          <h4>agent@stackly.com</h4>
+          <p>Role : Agent</p>
+        </div>
+
+        <div class="user-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- FILTER -->
+
+    <div class="filter-section">
+
+      <div class="filter-grid">
+
+        <div class="filter-box">
+          <input type="text" placeholder="Search Property">
+        </div>
+
+        <div class="filter-box">
+          <select>
+            <option>Property Type</option>
+            <option>Villa</option>
+            <option>Apartment</option>
+            <option>Commercial</option>
+          </select>
+        </div>
+
+        <div class="filter-box">
+          <select>
+            <option>Location</option>
+            <option>Chennai</option>
+            <option>Bangalore</option>
+            <option>Hyderabad</option>
+          </select>
+        </div>
+
+        <div class="filter-box">
+          <button class="search-btn">Search Property</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- PROPERTY GRID -->
+
+    <div class="property-grid">
+
+      <!-- CARD -->
+
+      <div class="property-card">
+
+        <div class="property-image">
+
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="property-tag">
+            Featured
+          </div>
+
+        </div>
+
+        <div class="property-content">
+
+          <h2 class="property-price">₹1.2 Cr</h2>
+
+          <h3 class="property-title">
+            Luxury Modern Villa
+          </h3>
+
+          <div class="property-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Chennai, India
+          </div>
+
+          <div class="property-features">
+
+            <div class="feature">
+              <i class="fa-solid fa-bed"></i>
+              4 Beds
+            </div>
+
+            <div class="feature">
+              <i class="fa-solid fa-bath"></i>
+              3 Baths
+            </div>
+
+            <div class="feature">
+              <i class="fa-solid fa-ruler-combined"></i>
+              2500 sqft
+            </div>
+
+          </div>
+
+          <div class="property-footer">
+
+            <a href="#" class="view-btn">
+              View Details
+            </a>
+
+            <button class="favorite-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="property-card">
+
+        <div class="property-image">
+
+          <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="property-tag">
+            Premium
+          </div>
+
+        </div>
+
+        <div class="property-content">
+
+          <h2 class="property-price">₹85 Lakh</h2>
+
+          <h3 class="property-title">
+            Smart City Apartment
+          </h3>
+
+          <div class="property-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Bangalore, India
+          </div>
+
+          <div class="property-features">
+
+            <div class="feature">
+              <i class="fa-solid fa-bed"></i>
+              3 Beds
+            </div>
+
+            <div class="feature">
+              <i class="fa-solid fa-bath"></i>
+              2 Baths
+            </div>
+
+            <div class="feature">
+              <i class="fa-solid fa-ruler-combined"></i>
+              1800 sqft
+            </div>
+
+          </div>
+
+          <div class="property-footer">
+
+            <a href="#" class="view-btn">
+              View Details
+            </a>
+
+            <button class="favorite-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- CARD -->
+
+      <div class="property-card">
+
+        <div class="property-image">
+
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop">
+
+          <div class="property-tag">
+            New Launch
+          </div>
+
+        </div>
+
+        <div class="property-content">
+
+          <h2 class="property-price">₹2.4 Cr</h2>
+
+          <h3 class="property-title">
+            Premium Duplex House
+          </h3>
+
+          <div class="property-location">
+            <i class="fa-solid fa-location-dot"></i>
+            Hyderabad, India
+          </div>
+
+          <div class="property-features">
+
+            <div class="feature">
+              <i class="fa-solid fa-bed"></i>
+              5 Beds
+            </div>
+
+            <div class="feature">
+              <i class="fa-solid fa-bath"></i>
+              4 Baths
+            </div>
+
+            <div class="feature">
+              <i class="fa-solid fa-ruler-combined"></i>
+              4200 sqft
+            </div>
+
+          </div>
+
+          <div class="property-footer">
+
+            <a href="#" class="view-btn">
+              View Details
+            </a>
+
+            <button class="favorite-btn">
+              <i class="fa-regular fa-heart"></i>
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+
+</script>
+
+</body>
+</html>

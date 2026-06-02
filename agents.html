@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StacklyEstate Agents</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+  min-height:100vh;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* =========================
+   DASHBOARD LAYOUT
+========================= */
+
+.dashboard{
+  display:flex;
+  min-height:100vh;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar{
+  width:280px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  border-right:1px solid rgba(255,255,255,0.1);
+  padding:25px;
+  position:fixed;
+  top:0;
+  left:0;
+  height:100vh;
+  overflow-y:auto;
+  transition:0.4s;
+  z-index:1000;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  font-size:26px;
+  font-weight:700;
+  margin-bottom:45px;
+}
+
+.logo i{
+  color:#60a5fa;
+}
+
+.sidebar-menu{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.sidebar-menu a{
+  text-decoration:none;
+  color:#fff;
+  padding:15px 18px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  transition:0.3s;
+  background:rgba(255,255,255,0.04);
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .active{
+  background:rgba(255,255,255,0.15);
+  transform:translateX(5px);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.main{
+  margin-left:280px;
+  width:calc(100% - 280px);
+  padding:25px;
+}
+
+/* =========================
+   TOPBAR
+========================= */
+
+.topbar{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:20px;
+  padding:18px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.left-top{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.menu-btn{
+  display:none;
+  font-size:22px;
+  cursor:pointer;
+}
+
+.page-title{
+  font-size:24px;
+  font-weight:600;
+}
+
+.user-box{
+  display:flex;
+  align-items:center;
+  gap:15px;
+}
+
+.user-avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:20px;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+  margin-bottom:30px;
+}
+
+.stat-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:22px;
+  padding:25px;
+  position:relative;
+  overflow:hidden;
+  transition:0.4s;
+}
+
+.stat-card:hover{
+  transform:translateY(-8px);
+}
+
+.stat-card i{
+  position:absolute;
+  right:20px;
+  top:20px;
+  font-size:40px;
+  opacity:0.2;
+}
+
+.stat-card h4{
+  font-size:15px;
+  margin-bottom:12px;
+}
+
+.stat-card h1{
+  font-size:34px;
+  margin-bottom:8px;
+}
+
+.stat-card p{
+  font-size:13px;
+  opacity:0.8;
+}
+
+/* =========================
+   AGENT SECTION
+========================= */
+
+.section-title{
+  font-size:24px;
+  margin-bottom:25px;
+}
+
+.agent-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+/* =========================
+   AGENT CARD
+========================= */
+
+.agent-card{
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  overflow:hidden;
+  transition:0.4s;
+}
+
+.agent-card:hover{
+  transform:translateY(-8px);
+}
+
+.agent-cover{
+  height:120px;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  position:relative;
+}
+
+.agent-image{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  border:5px solid rgba(15,23,42,1);
+  overflow:hidden;
+  position:absolute;
+  left:50%;
+  bottom:-55px;
+  transform:translateX(-50%);
+}
+
+.agent-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.agent-content{
+  padding:75px 25px 25px;
+  text-align:center;
+}
+
+.agent-content h3{
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.agent-role{
+  color:#93c5fd;
+  margin-bottom:15px;
+  font-size:14px;
+}
+
+.agent-info{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:20px;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.info-box{
+  flex:1;
+  min-width:90px;
+  background:rgba(255,255,255,0.06);
+  padding:12px;
+  border-radius:14px;
+}
+
+.info-box h4{
+  font-size:18px;
+  margin-bottom:4px;
+}
+
+.info-box p{
+  font-size:12px;
+  opacity:0.8;
+}
+
+.agent-contact{
+  display:flex;
+  justify-content:center;
+  gap:14px;
+  margin-bottom:20px;
+}
+
+.agent-contact a{
+  width:42px;
+  height:42px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.08);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.agent-contact a:hover{
+  background:#2563eb;
+  transform:translateY(-3px);
+}
+
+.agent-btn{
+  display:block;
+  width:100%;
+  text-decoration:none;
+  text-align:center;
+  padding:14px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  color:#fff;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.agent-btn:hover{
+  transform:scale(1.03);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1200px){
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .agent-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:900px){
+
+  .sidebar{
+    left:-100%;
+  }
+
+  .sidebar.active{
+    left:0;
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .agent-grid{
+    grid-template-columns:1fr;
+  }
+
+  .topbar{
+    flex-direction:column;
+    gap:20px;
+    align-items:flex-start;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .stats-grid{
+    grid-template-columns:1fr;
+  }
+
+  .agent-info{
+    flex-direction:column;
+  }
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <a href="index.html">   
+        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
+      </a> 
+      
+    <div class="sidebar-menu">
+
+      <a href="./dashboard.html">
+        <i class="fa-solid fa-chart-line"></i>
+        Dashboard
+      </a>
+
+      <a href="./properties.html">
+        <i class="fa-solid fa-house"></i>
+        Properties
+      </a>
+
+      <a href="./agents.html" class="active">
+        <i class="fa-solid fa-user-tie"></i>
+        Agents
+      </a>
+
+      <a href="./index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      
+
+      
+      
+
+      
+
+    </div>
+
+  </aside>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <!-- TOPBAR -->
+
+    <div class="topbar">
+
+      <div class="left-top">
+
+        <div class="menu-btn" id="menuBtn">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+
+        <h2 class="page-title">
+          Agents Management
+        </h2>
+
+      </div>
+
+      <div class="user-box">
+
+        <div>
+          <h4>agent@stackly.com</h4>
+          <p>Role : Agent</p>
+        </div>
+
+        <div class="user-avatar">
+          <i class="fa-solid fa-user"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats-grid">
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-user-tie"></i>
+
+        <h4>Total Agents</h4>
+
+        <h1>86</h1>
+
+        <p>Professional agents active</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-house"></i>
+
+        <h4>Total Listings</h4>
+
+        <h1>1,250</h1>
+
+        <p>Properties assigned</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-indian-rupee-sign"></i>
+
+        <h4>Total Revenue</h4>
+
+        <h1>₹8.5L</h1>
+
+        <p>Monthly revenue generated</p>
+
+      </div>
+
+      <div class="stat-card">
+
+        <i class="fa-solid fa-star"></i>
+
+        <h4>Top Rated</h4>
+
+        <h1>4.9</h1>
+
+        <p>Average customer rating</p>
+
+      </div>
+
+    </div>
+
+    <!-- AGENT LIST -->
+
+    <h2 class="section-title">
+      Top Real Estate Agents
+    </h2>
+
+    <div class="agent-grid">
+
+      <!-- AGENT -->
+
+      <div class="agent-card">
+
+        <div class="agent-cover">
+
+          <div class="agent-image">
+            <img src="./nithiya.webp">
+          </div>
+
+        </div>
+
+        <div class="agent-content">
+
+          <h3>David Anderson</h3>
+
+          <p class="agent-role">
+            Senior Property Consultant
+          </p>
+
+          <div class="agent-info">
+
+            <div class="info-box">
+              <h4>245</h4>
+              <p>Listings</p>
+            </div>
+
+            <div class="info-box">
+              <h4>120</h4>
+              <p>Sales</p>
+            </div>
+
+            <div class="info-box">
+              <h4>4.9</h4>
+              <p>Rating</p>
+            </div>
+
+          </div>
+
+          <div class="agent-contact">
+
+            <a href="./404.html">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+
+            <a href="./404.html">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="./404.html">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+          </div>
+
+          <a href="./404.html" class="agent-btn">
+            View Profile
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- AGENT -->
+
+      <div class="agent-card">
+
+        <div class="agent-cover">
+
+          <div class="agent-image">
+            <img src="./arjun.webp">
+          </div>
+
+        </div>
+
+        <div class="agent-content">
+
+          <h3>Sarah Williams</h3>
+
+          <p class="agent-role">
+            Luxury Villa Specialist
+          </p>
+
+          <div class="agent-info">
+
+            <div class="info-box">
+              <h4>198</h4>
+              <p>Listings</p>
+            </div>
+
+            <div class="info-box">
+              <h4>95</h4>
+              <p>Sales</p>
+            </div>
+
+            <div class="info-box">
+              <h4>4.8</h4>
+              <p>Rating</p>
+            </div>
+
+          </div>
+
+          <div class="agent-contact">
+
+            <a href="./404.html">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+
+            <a href="./404.html">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="./404.html">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+          </div>
+
+          <a href="./404.html" class="agent-btn">
+            View Profile
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- AGENT -->
+
+      <div class="agent-card">
+
+        <div class="agent-cover">
+
+          <div class="agent-image">
+            <img src="./joe.webp">
+          </div>
+
+        </div>
+
+        <div class="agent-content">
+
+          <h3>Michael Robert</h3>
+
+          <p class="agent-role">
+            Commercial Property Expert
+          </p>
+
+          <div class="agent-info">
+
+            <div class="info-box">
+              <h4>310</h4>
+              <p>Listings</p>
+            </div>
+
+            <div class="info-box">
+              <h4>160</h4>
+              <p>Sales</p>
+            </div>
+
+            <div class="info-box">
+              <h4>5.0</h4>
+              <p>Rating</p>
+            </div>
+
+          </div>
+
+          <div class="agent-contact">
+
+            <a href="./404.html">
+              <i class="fa-solid fa-phone"></i>
+            </a>
+
+            <a href="./404.html">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="./404.html">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+          </div>
+
+          <a href="./404.html" class="agent-btn">
+            View Profile
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script>
+
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.getElementById("sidebar");
+
+menuBtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+});
+
+</script>
+
+</body>
+</html>
