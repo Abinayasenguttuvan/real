@@ -264,6 +264,468 @@ body{
 </head>
 
 <body>
+    <!-- =========================
+     REAL ESTATE PRELOADER
+========================= -->
+
+<div id="stackly-preloader">
+
+    <!-- BACKGROUND GLOW -->
+    <div class="stackly-glow stackly-glow1"></div>
+    <div class="stackly-glow stackly-glow2"></div>
+
+    <!-- PRELOADER CONTENT -->
+    <div class="stackly-loader-box">
+
+        <!-- LOGO -->
+        <div class="stackly-logo">
+
+            <div class="stackly-logo-circle">
+                <i class="fa-solid fa-building"></i>
+
+            </div>
+
+            <img src="./white.webp" alt="Stackly Logo" style="height:45px; width:auto;">
+
+        </div>
+
+        <!-- LOADING TEXT -->
+        <p class="stackly-loading-text">
+            Loading Premium Real Estate Experience
+        </p>
+
+        <!-- LOADER BAR -->
+        <div class="stackly-loader-bar">
+
+            <div class="stackly-loader-progress"></div>
+
+        </div>
+
+        <!-- LOADER DOTS -->
+        <div class="stackly-loader-dots">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+
+/* =========================
+   PRELOADER
+========================= */
+
+#stackly-preloader{
+
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#0f172a;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    z-index:999999;
+
+    transition:0.8s ease;
+
+}
+
+/* =========================
+   GLOW EFFECTS
+========================= */
+
+.stackly-glow{
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    filter:blur(100px);
+
+    opacity:0.45;
+
+}
+
+.stackly-glow1{
+
+    background:#2563eb;
+
+    top:-120px;
+    left:-100px;
+
+    animation:floatGlow1 6s infinite alternate;
+
+}
+
+.stackly-glow2{
+
+    background:#60a5fa;
+
+    bottom:-120px;
+    right:-100px;
+
+    animation:floatGlow2 8s infinite alternate;
+
+}
+
+@keyframes floatGlow1{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    100%{
+        transform:translateY(50px);
+    }
+
+}
+
+@keyframes floatGlow2{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    100%{
+        transform:translateY(-50px);
+    }
+
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.stackly-loader-box{
+
+    position:relative;
+
+    z-index:10;
+
+    text-align:center;
+
+    width:100%;
+    max-width:500px;
+
+    padding:20px;
+
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.stackly-logo{
+
+    margin-bottom:28px;
+
+}
+
+.stackly-logo-circle{
+
+    width:110px;
+    height:110px;
+
+    margin:auto auto 20px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(135deg,
+    #2563eb,
+    #60a5fa);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    box-shadow:
+    0 0 40px rgba(37,99,235,0.5);
+
+    animation:pulseLogo 2s infinite;
+
+}
+
+.stackly-logo-circle i{
+
+    font-size:48px;
+
+    color:#fff;
+
+}
+
+.stackly-logo h1{
+
+    font-size:48px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    letter-spacing:1px;
+
+}
+
+/* =========================
+   PULSE
+========================= */
+
+@keyframes pulseLogo{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.08);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   LOADING TEXT
+========================= */
+
+.stackly-loading-text{
+
+    color:#cbd5e1;
+
+    font-size:16px;
+
+    margin-bottom:30px;
+
+    letter-spacing:1px;
+
+}
+
+/* =========================
+   LOADER BAR
+========================= */
+
+.stackly-loader-bar{
+
+    width:100%;
+    height:10px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,0.1);
+
+    overflow:hidden;
+
+    margin-bottom:25px;
+
+}
+
+.stackly-loader-progress{
+
+    width:0%;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(90deg,
+    #2563eb,
+    #60a5fa);
+
+    animation:loadingBar 3s ease forwards;
+
+}
+
+/* =========================
+   BAR ANIMATION
+========================= */
+
+@keyframes loadingBar{
+
+    0%{
+        width:0%;
+    }
+
+    100%{
+        width:100%;
+    }
+
+}
+
+/* =========================
+   LOADING DOTS
+========================= */
+
+.stackly-loader-dots{
+
+    display:flex;
+    justify-content:center;
+    gap:12px;
+
+}
+
+.stackly-loader-dots span{
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:#60a5fa;
+
+    animation:bounceDots 1s infinite alternate;
+
+}
+
+.stackly-loader-dots span:nth-child(2){
+
+    animation-delay:0.2s;
+
+}
+
+.stackly-loader-dots span:nth-child(3){
+
+    animation-delay:0.4s;
+
+}
+
+@keyframes bounceDots{
+
+    from{
+        transform:translateY(0);
+        opacity:0.5;
+    }
+
+    to{
+        transform:translateY(-12px);
+        opacity:1;
+    }
+
+}
+
+/* =========================
+   HIDE PRELOADER
+========================= */
+
+#stackly-preloader.hide{
+
+    opacity:0;
+    visibility:hidden;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    .stackly-logo-circle{
+
+        width:90px;
+        height:90px;
+
+    }
+
+    .stackly-logo-circle i{
+
+        font-size:38px;
+
+    }
+
+    .stackly-logo h1{
+
+        font-size:38px;
+
+    }
+
+    .stackly-loading-text{
+
+        font-size:14px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    .stackly-logo-circle{
+
+        width:75px;
+        height:75px;
+
+    }
+
+    .stackly-logo-circle i{
+
+        font-size:30px;
+
+    }
+
+    .stackly-logo h1{
+
+        font-size:30px;
+
+    }
+
+    .stackly-loading-text{
+
+        font-size:13px;
+
+        line-height:1.7;
+
+    }
+
+    .stackly-loader-bar{
+
+        height:8px;
+
+    }
+
+}
+
+</style>
+
+<script>
+
+/* =========================
+   PRELOADER HIDE
+========================= */
+
+window.addEventListener("load",()=>{
+
+    setTimeout(()=>{
+
+        document
+        .getElementById("stackly-preloader")
+        .classList.add("hide");
+
+    },3000);
+
+});
+
+</script>
 
 <!-- =========================
      HEADER
