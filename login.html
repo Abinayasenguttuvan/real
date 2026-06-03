@@ -23,13 +23,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 
 --re-primary:#2563eb;
 --re-secondary:#60a5fa;
-
 --re-dark:#0f172a;
-
 --re-card:rgba(255,255,255,0.08);
-
 --re-border:rgba(255,255,255,0.15);
-
 --re-text:#cbd5e1;
 
 }
@@ -422,6 +418,16 @@ font-weight:500;
 }
 
 /* =========================
+   INPUT ERROR BORDER
+========================= */
+
+.input-error{
+
+border:1px solid #ff6b6b !important;
+
+}
+
+/* =========================
    ROW
 ========================= */
 
@@ -654,8 +660,8 @@ Back to Home
 <!-- LOGO -->
 
 <div class="re-logo">
-
-<img src="./white.webp" alt="Stackly Logo">
+<a href="./index.html">
+<img src="./white.webp" alt="Stackly Logo"></a>
 
 </div>
 
@@ -867,31 +873,20 @@ pass.type === "password"
 };
 
 /* =========================
-   VALIDATION
+   INPUT REFERENCES
 ========================= */
 
 const form =
 document.getElementById("reLoginForm");
 
-const emailPattern =
-/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const roleInput =
+document.getElementById("reRole");
 
-form.addEventListener("submit",(e)=>{
+const emailInput =
+document.getElementById("reEmail");
 
-e.preventDefault();
-
-/* INPUTS */
-
-const role =
-document.getElementById("reRole").value;
-
-const email =
-document.getElementById("reEmail").value.trim();
-
-const password =
-document.getElementById("rePassword").value.trim();
-
-/* ERRORS */
+const passwordInput =
+document.getElementById("rePassword");
 
 const roleError =
 document.getElementById("roleError");
@@ -902,47 +897,118 @@ document.getElementById("emailError");
 const passError =
 document.getElementById("passError");
 
+const emailPattern =
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+/* =========================
+   HIDE ERROR FUNCTION
+========================= */
+
+function hideError(input,error){
+
+input.classList.remove("input-error");
+
+error.style.display = "none";
+
+}
+
+/* =========================
+   LIVE VALIDATION
+========================= */
+
+roleInput.addEventListener("change",()=>{
+
+if(roleInput.value !== ""){
+
+hideError(roleInput,roleError);
+
+}
+
+});
+
+emailInput.addEventListener("input",()=>{
+
+if(emailPattern.test(emailInput.value.trim())){
+
+hideError(emailInput,emailError);
+
+}
+
+});
+
+passwordInput.addEventListener("input",()=>{
+
+if(passwordInput.value.trim().length >= 6){
+
+hideError(passwordInput,passError);
+
+}
+
+});
+
+/* =========================
+   FORM SUBMIT
+========================= */
+
+form.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
 /* RESET */
 
-roleError.style.display = "none";
+hideError(roleInput,roleError);
 
-emailError.style.display = "none";
+hideError(emailInput,emailError);
 
-passError.style.display = "none";
+hideError(passwordInput,passError);
 
 let valid = true;
 
-/* ROLE */
+/* VALUES */
+
+const role = roleInput.value;
+
+const email = emailInput.value.trim();
+
+const password = passwordInput.value.trim();
+
+/* ROLE VALIDATION */
 
 if(role === ""){
 
 roleError.style.display = "block";
 
+roleInput.classList.add("input-error");
+
 valid = false;
 
 }
 
-/* EMAIL */
+/* EMAIL VALIDATION */
 
 if(!emailPattern.test(email)){
 
 emailError.style.display = "block";
 
+emailInput.classList.add("input-error");
+
 valid = false;
 
 }
 
-/* PASSWORD */
+/* PASSWORD VALIDATION */
 
 if(password.length < 6){
 
 passError.style.display = "block";
 
+passwordInput.classList.add("input-error");
+
 valid = false;
 
 }
 
-/* STOP */
+/* STOP IF INVALID */
 
 if(!valid){
 
@@ -951,7 +1017,7 @@ return;
 }
 
 /* =========================
-   STORE IN LOCAL STORAGE
+   STORE LOCAL STORAGE
 ========================= */
 
 localStorage.setItem("userRole", role);
