@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Real Estate </title>
+<title>Responsive Real Estate Navbar</title>
 
 <!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<!-- ICON -->
+<!-- FONT AWESOME -->
 <link rel="stylesheet"
 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
@@ -31,7 +31,7 @@ body{
 }
 
 /* =========================
-   STICKY HEADER
+   HEADER
 ========================= */
 
 .re-header{
@@ -43,15 +43,17 @@ body{
     background:transparent;
 }
 
-/* Capsule Navbar */
+/* =========================
+   NAVBAR
+========================= */
 
 .re-navbar{
     max-width:1350px;
     margin:auto;
-    background: #0f172a;
-    backdrop-filter:blur(14px);
-    border:1px solid rgba(255,255,255,0.3);
-  
+
+    background:#0f172a;
+
+    border:1px solid rgba(255,255,255,0.1);
 
     border-radius:70px;
 
@@ -61,8 +63,7 @@ body{
 
     padding:14px 28px;
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,0.08);
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
 
     position:relative;
 }
@@ -71,31 +72,9 @@ body{
    LOGO
 ========================= */
 
-.re-logo{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    text-decoration:none;
-}
-
-.re-logo-icon{
-    width:48px;
-    height:48px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#0f172a,#2563eb);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    color:#fff;
-    font-size:20px;
-}
-
-.re-logo-text{
-    font-size:24px;
-    font-weight:700;
-    color:#0f172a;
+.re-logo img{
+    height:60px;
+    object-fit:contain;
 }
 
 /* =========================
@@ -106,12 +85,10 @@ body{
     display:flex;
     align-items:center;
     gap:12px;
-   
 }
 
 .re-nav-links a{
     text-decoration:none;
-    
     font-size:15px;
     font-weight:500;
 
@@ -120,7 +97,8 @@ body{
     border-radius:999px;
 
     transition:0.3s ease;
-    color:white;
+
+    color:#fff;
 }
 
 .re-nav-links a:hover{
@@ -130,61 +108,37 @@ body{
 }
 
 /* =========================
-   BUTTONS
-========================= */
-
-.re-actions{
-    display:flex;
-    align-items:center;
-    gap:12px;
-}
-
-.re-btn{
-    text-decoration:none;
-    padding:12px 24px;
-    border-radius:999px;
-    font-size:14px;
-    font-weight:600;
-    transition:0.3s ease;
-}
-
-/* Login Button */
-
-.re-login{
-    border:1px solid #dbe4f0;
-    color:#0f172a;
-    background:#fff;
-}
-
-.re-login:hover{
-    background:#f1f5f9;
-}
-
-/* Register Button */
-
-.re-register{
-    background:linear-gradient(135deg,#2563eb,#1d4ed8);
-    color:#fff;
-    box-shadow:0 8px 20px rgba(37,99,235,0.25);
-}
-
-.re-register:hover{
-    transform:translateY(-2px);
-}
-
-/* =========================
-   MOBILE MENU
+   MOBILE TOGGLE
 ========================= */
 
 .re-menu-toggle{
     display:none;
-    font-size:24px;
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.08);
+
+    align-items:center;
+    justify-content:center;
+
     cursor:pointer;
-    color: white;
+
+    color:#fff;
+
+    font-size:22px;
+
+    transition:0.3s ease;
+}
+
+.re-menu-toggle:hover{
+    background:#2563eb;
 }
 
 /* =========================
-   RESPONSIVE
+   TABLET
 ========================= */
 
 @media(max-width:992px){
@@ -193,52 +147,62 @@ body{
         padding:14px 20px;
     }
 
-    .re-nav-links{
-        gap:5px;
-    }
-
     .re-nav-links a{
         padding:10px 14px;
         font-size:14px;
     }
 
-    .re-btn{
-        padding:10px 18px;
-    }
 }
 
-/* Tablet + Mobile */
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:768px){
 
+    .re-header{
+        padding:14px 14px;
+    }
+
     .re-navbar{
-        border-radius:30px;
+        border-radius:28px;
         padding:14px 18px;
     }
 
+    .re-logo img{
+        height:52px;
+    }
+
     .re-menu-toggle{
-        display:block;
+        display:flex;
     }
 
     .re-nav-links{
+
         position:absolute;
+
         top:100%;
         left:0;
         right:0;
 
-        background: black;
-
         margin-top:15px;
+
+        background:#0f172a;
+
+        border-radius:28px;
+
         padding:20px;
 
-        border-radius:30px;
-
         flex-direction:column;
+
         align-items:flex-start;
 
-        box-shadow:0 10px 30px rgba(0,0,0,0.1);
-
         display:none;
+
+        box-shadow:0 15px 35px rgba(0,0,0,0.2);
+
+        animation:menuFade 0.4s ease;
+
     }
 
     .re-nav-links.active{
@@ -247,38 +211,51 @@ body{
 
     .re-nav-links a{
         width:100%;
+        border-radius:14px;
     }
 
-    .re-actions{
-        display:none;
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:480px){
+
+    .re-header{
+        padding:12px 10px;
     }
 
-    .re-logo-text{
+    .re-navbar{
+        padding:12px 15px;
+    }
+
+    .re-logo img{
+        height:45px;
+    }
+
+    .re-menu-toggle{
+        width:42px;
+        height:42px;
         font-size:20px;
     }
 
 }
 
-/* Small Mobile */
+/* =========================
+   MENU ANIMATION
+========================= */
 
-@media(max-width:480px){
+@keyframes menuFade{
 
-    .re-header{
-        padding:14px 10px;
+    from{
+        opacity:0;
+        transform:translateY(-10px);
     }
 
-    .re-navbar{
-        padding:12px 16px;
-    }
-
-    .re-logo-icon{
-        width:42px;
-        height:42px;
-        font-size:18px;
-    }
-
-    .re-logo-text{
-        font-size:18px;
+    to{
+        opacity:1;
+        transform:translateY(0);
     }
 
 }
@@ -298,47 +275,102 @@ body{
 
         <!-- LOGO -->
 
-        <a href="index.html">   
-            <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
-          </a> 
+        <a href="index.html" class="re-logo">
+            <img src="./white.webp" alt="Stackly Logo">
+        </a>
+
         <!-- NAVIGATION -->
 
         <div class="re-nav-links" id="reMenu">
 
             <a href="./index.html">Home</a>
+
             <a href="./about.html">About</a>
+
             <a href="./property.html">Services</a>
+
             <a href="./pricing.html">Blog</a>
+
             <a href="./contact.html">Contact</a>
+
             <a href="./login.html">Login</a>
-            <a href="./register.html">Register</a>    
-            
+
+            <a href="./register.html">Register</a>
 
         </div>
 
-        <!-- ACTION BUTTONS -->
-
-        <!-- <div class="re-actions">
-
-            <a href="./login.html" class="re-btn re-login">
-                Login
-            </a>
-
-            <a href="./register.html" class="re-btn re-register">
-                Register
-            </a>
-
-        </div> -->
-
-        <!-- MOBILE MENU -->
+        <!-- MOBILE MENU BUTTON -->
 
         <div class="re-menu-toggle" id="reToggle">
-            <i class="fa-solid fa-bars"></i>
+
+            <i class="fa-solid fa-bars" id="menuIcon"></i>
+
         </div>
 
     </nav>
 
 </header>
+
+<!-- DEMO CONTENT -->
+
+
+<!-- SCRIPT -->
+
+<script>
+
+/* =========================
+   MOBILE MENU TOGGLE
+========================= */
+
+const reToggle = document.getElementById("reToggle");
+
+const reMenu = document.getElementById("reMenu");
+
+const menuIcon = document.getElementById("menuIcon");
+
+/* TOGGLE MENU */
+
+reToggle.addEventListener("click", () => {
+
+    reMenu.classList.toggle("active");
+
+    /* CHANGE ICON */
+
+    if(reMenu.classList.contains("active")){
+
+        menuIcon.classList.remove("fa-bars");
+
+        menuIcon.classList.add("fa-xmark");
+
+    }else{
+
+        menuIcon.classList.remove("fa-xmark");
+
+        menuIcon.classList.add("fa-bars");
+
+    }
+
+});
+
+/* CLOSE MENU ON LINK CLICK */
+
+document.querySelectorAll(".re-nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        reMenu.classList.remove("active");
+
+        menuIcon.classList.remove("fa-xmark");
+
+        menuIcon.classList.add("fa-bars");
+
+    });
+
+});
+
+</script>
+
+
 <style>
 
     /* RESET */

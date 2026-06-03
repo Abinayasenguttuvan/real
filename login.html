@@ -557,11 +557,9 @@ border:none;
 
 border-radius:16px;
 
-background:rgba(255,255,255,0.08);
+background:#fff;
 
-border:1px solid rgba(255,255,255,0.12);
-
-color:#fff;
+color:#111827;
 
 display:flex;
 align-items:center;
@@ -575,11 +573,15 @@ cursor:pointer;
 
 transition:0.3s;
 
+border:1px solid rgba(255,255,255,0.12);
+
 }
 
-.re-google-btn i{
+.google-icon{
 
-font-size:22px;
+width:24px;
+height:24px;
+object-fit:contain;
 
 }
 
@@ -587,9 +589,9 @@ font-size:22px;
 
 transform:translateY(-3px);
 
-background:rgba(255,255,255,0.14);
+background:#f8fafc;
 
-box-shadow:0 0 25px rgba(255,255,255,0.08);
+box-shadow:0 0 25px rgba(255,255,255,0.12);
 
 }
 
@@ -725,6 +727,13 @@ font-size:12px;
 
 font-size:14px;
 height:54px;
+
+}
+
+.google-icon{
+
+width:22px;
+height:22px;
 
 }
 
@@ -918,7 +927,10 @@ type="button"
 class="re-google-btn"
 onclick="window.location.href='404.html'">
 
-<i class="fa-brands fa-google"></i>
+<img 
+src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" 
+alt="Google"
+class="google-icon">
 
 Continue with Google
 
