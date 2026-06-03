@@ -417,6 +417,8 @@ font-size:12px;
 
 color:#ff6b6b;
 
+font-weight:500;
+
 }
 
 /* =========================
@@ -709,6 +711,12 @@ Customer
 
 </select>
 
+<p id="roleError" class="re-error">
+
+Please select your role
+
+</p>
+
 </div>
 
 <!-- EMAIL -->
@@ -885,6 +893,9 @@ document.getElementById("rePassword").value.trim();
 
 /* ERRORS */
 
+const roleError =
+document.getElementById("roleError");
+
 const emailError =
 document.getElementById("emailError");
 
@@ -892,6 +903,8 @@ const passError =
 document.getElementById("passError");
 
 /* RESET */
+
+roleError.style.display = "none";
 
 emailError.style.display = "none";
 
@@ -903,9 +916,9 @@ let valid = true;
 
 if(role === ""){
 
-valid = false;
+roleError.style.display = "block";
 
-alert("Please select role");
+valid = false;
 
 }
 
