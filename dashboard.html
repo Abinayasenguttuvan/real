@@ -119,7 +119,7 @@ body{
   backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,0.1);
   border-radius:20px;
-  padding:18px 24px;
+  padding:20px 24px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -129,7 +129,7 @@ body{
 .left-top{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:18px;
 }
 
 .menu-btn{
@@ -138,10 +138,94 @@ body{
   cursor:pointer;
 }
 
-.page-title{
-  font-size:24px;
-  font-weight:600;
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome-box{
+  display:flex;
+  align-items:center;
+  gap:16px;
 }
+
+.welcome-icon{
+  width:65px;
+  height:65px;
+  border-radius:18px;
+
+  background:
+  linear-gradient(135deg,#2563eb,#60a5fa);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:28px;
+  color:#fff;
+
+  box-shadow:
+  0 10px 25px rgba(37,99,235,0.35);
+
+  animation:floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+.welcome-text{
+  display:flex;
+  flex-direction:column;
+}
+
+.welcome-title{
+  font-size:30px;
+  font-weight:700;
+  color:#fff;
+  animation:fadeSlide 1s ease;
+}
+
+.welcome-title span{
+  background:linear-gradient(135deg,#93c5fd,#60a5fa);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.welcome-sub{
+  font-size:14px;
+  color:rgba(255,255,255,0.75);
+  margin-top:4px;
+}
+
+@keyframes fadeSlide{
+
+  0%{
+    opacity:0;
+    transform:translateY(12px);
+  }
+
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+
+/* =========================
+   USER BOX
+========================= */
 
 .user-box{
   display:flex;
@@ -274,6 +358,11 @@ body{
   border-radius:12px 12px 0 0;
   position:relative;
   min-width:40px;
+  transition:0.4s;
+}
+
+.bar:hover{
+  transform:scaleY(1.05);
 }
 
 .bar span{
@@ -411,11 +500,7 @@ table td{
 
 }
 
-@media(max-width:600px){
-
-  .cards{
-    grid-template-columns:1fr;
-  }
+@media(max-width:768px){
 
   .topbar{
     flex-direction:column;
@@ -426,6 +511,29 @@ table td{
   .user-box{
     width:100%;
     justify-content:space-between;
+  }
+
+  .welcome-box{
+    align-items:flex-start;
+  }
+
+  .welcome-icon{
+    width:55px;
+    height:55px;
+    font-size:22px;
+  }
+
+  .welcome-title{
+    font-size:24px;
+    line-height:1.4;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .cards{
+    grid-template-columns:1fr;
   }
 
   .page-title{
@@ -441,6 +549,29 @@ table td{
   .pie-chart{
     width:180px;
     height:180px;
+  }
+
+}
+
+@media(max-width:500px){
+
+  .welcome-box{
+    gap:12px;
+  }
+
+  .welcome-icon{
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    font-size:18px;
+  }
+
+  .welcome-title{
+    font-size:18px;
+  }
+
+  .welcome-sub{
+    font-size:12px;
   }
 
 }
@@ -479,6 +610,16 @@ table td{
         Agents
       </a>
 
+      <a href="./404.html">
+        <i class="fa-solid fa-chart-pie"></i>
+        Analysis
+      </a>
+
+      <a href="./404.html">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+      </a>
+
       <a href="./login.html" id="logoutBtn">
         <i class="fa-solid fa-right-from-bracket"></i>
         Logout
@@ -502,23 +643,49 @@ table td{
           <i class="fa-solid fa-bars"></i>
         </div>
 
-        <h2 class="page-title">
-          Real Estate Dashboard
-        </h2>
+        <!-- WELCOME -->
+
+        <div class="welcome-box">
+
+          <div class="welcome-icon">
+            <i class="fa-solid fa-house-chimney-window"></i>
+          </div>
+
+          <div class="welcome-text">
+
+            <h2 class="welcome-title">
+              Welcome Back,
+              <span id="welcomeName">
+                Agent
+              </span>
+              
+            </h2>
+
+            <p class="welcome-sub">
+              Manage your properties and real estate activities
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
+
+      <!-- USER -->
 
       <div class="user-box">
 
         <div class="user-details">
 
-          <!-- LOCAL STORAGE EMAIL -->
-          <h4 id="userEmail">agent@stackly.com</h4>
+          <h4 id="userEmail">
+            agent@stackly.com
+          </h4>
 
-          <!-- LOCAL STORAGE ROLE -->
           <p>
             Role :
-            <span id="userRole">Agent</span>
+            <span id="userRole">
+              Agent
+            </span>
           </p>
 
         </div>
@@ -569,8 +736,6 @@ table td{
 
     <div class="chart-grid">
 
-      <!-- BAR CHART -->
-
       <div class="chart-box">
 
         <h3 class="chart-title">
@@ -606,8 +771,6 @@ table td{
         </div>
 
       </div>
-
-      <!-- PIE CHART -->
 
       <div class="chart-box">
 
@@ -708,37 +871,60 @@ table td{
    MOBILE SIDEBAR
 ========================= */
 
-const menuBtn = document.getElementById("menuBtn");
-const sidebar = document.getElementById("sidebar");
+const menuBtn =
+document.getElementById("menuBtn");
+
+const sidebar =
+document.getElementById("sidebar");
 
 menuBtn.addEventListener("click", () => {
+
   sidebar.classList.toggle("active");
+
 });
 
 /* =========================
    GET LOCAL STORAGE DATA
 ========================= */
 
-const storedEmail = localStorage.getItem("userEmail");
-const storedRole = localStorage.getItem("userRole");
+const storedEmail =
+localStorage.getItem("userEmail");
+
+const storedRole =
+localStorage.getItem("userRole");
 
 /* =========================
    SHOW EMAIL & ROLE
 ========================= */
 
 if(storedEmail){
-  document.getElementById("userEmail").innerText = storedEmail;
+
+  document.getElementById("userEmail")
+  .innerText = storedEmail;
+
+  /* USERNAME */
+
+  const username =
+  storedEmail.split("@")[0];
+
+  document.getElementById("welcomeName")
+  .innerText = username;
+
 }
 
 if(storedRole){
-  document.getElementById("userRole").innerText = storedRole;
+
+  document.getElementById("userRole")
+  .innerText = storedRole;
+
 }
 
 /* =========================
    LOGOUT
 ========================= */
-
-document.getElementById("logoutBtn").addEventListener("click", () => {
+w
+document.getElementById("logoutBtn")
+.addEventListener("click", () => {
 
   localStorage.removeItem("userEmail");
   localStorage.removeItem("userRole");

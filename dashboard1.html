@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>StacklyEstate Customers</title>
+<title>StacklyEstate Customer Dashboard</title>
 
 <!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,15 +26,20 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
   font-family:'Poppins',sans-serif;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 body{
-  background:linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+  background:
+  linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
   min-height:100vh;
   color:#fff;
   overflow-x:hidden;
 }
 
 /* =========================
-   DASHBOARD LAYOUT
+   DASHBOARD
 ========================= */
 
 .dashboard{
@@ -49,8 +54,8 @@ body{
 .sidebar{
   width:280px;
   background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
+  backdrop-filter:blur(22px);
+  -webkit-backdrop-filter:blur(22px);
   border-right:1px solid rgba(255,255,255,0.1);
   padding:25px;
   position:fixed;
@@ -62,29 +67,52 @@ body{
   z-index:1000;
 }
 
+.sidebar::-webkit-scrollbar{
+  width:6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb{
+  background:#2563eb;
+  border-radius:20px;
+}
+
+.sidebar-logo{
+  margin-bottom:30px;
+}
+
+.sidebar-logo img{
+  height:60px;
+}
+
 .sidebar-menu{
   display:flex;
   flex-direction:column;
   gap:12px;
-  margin-top:35px;
 }
 
 .sidebar-menu a{
   text-decoration:none;
   color:#fff;
   padding:15px 18px;
-  border-radius:14px;
+  border-radius:16px;
   display:flex;
   align-items:center;
   gap:14px;
   transition:0.3s;
   background:rgba(255,255,255,0.04);
+  font-size:15px;
+  font-weight:500;
 }
 
 .sidebar-menu a:hover,
 .sidebar-menu .active{
   background:rgba(255,255,255,0.15);
   transform:translateX(5px);
+}
+
+.sidebar-menu a i{
+  width:22px;
+  text-align:center;
 }
 
 /* =========================
@@ -103,10 +131,10 @@ body{
 
 .topbar{
   background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(18px);
+  backdrop-filter:blur(20px);
   border:1px solid rgba(255,255,255,0.1);
-  border-radius:20px;
-  padding:18px 24px;
+  border-radius:22px;
+  padding:20px 25px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -116,7 +144,7 @@ body{
 .left-top{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:16px;
 }
 
 .menu-btn{
@@ -126,8 +154,15 @@ body{
 }
 
 .page-title{
-  font-size:24px;
+  font-size:26px;
   font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.page-title i{
+  color:#facc15;
 }
 
 .user-box{
@@ -142,8 +177,7 @@ body{
 
 .user-info h4{
   font-size:15px;
-  margin-bottom:4px;
-  word-break:break-word;
+  margin-bottom:5px;
 }
 
 .user-info p{
@@ -152,14 +186,93 @@ body{
 }
 
 .user-avatar{
-  width:50px;
-  height:50px;
+  width:55px;
+  height:55px;
   border-radius:50%;
   background:linear-gradient(135deg,#2563eb,#60a5fa);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:20px;
+  font-size:22px;
+}
+
+/* =========================
+   WELCOME BANNER
+========================= */
+
+.welcome-banner{
+  background:
+  linear-gradient(135deg,
+  rgba(37,99,235,0.6),
+  rgba(15,23,42,0.8));
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:28px;
+  padding:35px;
+  margin-bottom:30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:30px;
+  overflow:hidden;
+  position:relative;
+}
+
+.welcome-banner::before{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:rgba(255,255,255,0.06);
+  border-radius:50%;
+  right:-100px;
+  top:-100px;
+}
+
+.banner-content{
+  position:relative;
+  z-index:2;
+}
+
+.banner-content h1{
+  font-size:36px;
+  margin-bottom:12px;
+}
+
+.banner-content p{
+  max-width:700px;
+  line-height:1.7;
+  opacity:0.9;
+}
+
+.banner-btns{
+  display:flex;
+  gap:15px;
+  margin-top:22px;
+  flex-wrap:wrap;
+}
+
+.banner-btn{
+  padding:14px 24px;
+  border:none;
+  border-radius:14px;
+  cursor:pointer;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.primary-btn{
+  background:#fff;
+  color:#111827;
+}
+
+.secondary-btn{
+  background:rgba(255,255,255,0.12);
+  color:#fff;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.banner-btn:hover{
+  transform:translateY(-3px);
 }
 
 /* =========================
@@ -177,8 +290,8 @@ body{
   background:rgba(255,255,255,0.08);
   backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,0.1);
-  border-radius:22px;
-  padding:25px;
+  border-radius:24px;
+  padding:28px;
   position:relative;
   overflow:hidden;
   transition:0.4s;
@@ -192,8 +305,8 @@ body{
   position:absolute;
   right:20px;
   top:20px;
-  font-size:40px;
-  opacity:0.2;
+  font-size:42px;
+  opacity:0.15;
 }
 
 .stat-card h4{
@@ -203,7 +316,7 @@ body{
 
 .stat-card h1{
   font-size:34px;
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
 
 .stat-card p{
@@ -212,21 +325,160 @@ body{
 }
 
 /* =========================
-   CUSTOMER TABLE
+   QUICK ACTIONS
 ========================= */
 
-.customer-section{
+.quick-actions{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:22px;
+  margin-bottom:30px;
+}
+
+.quick-card{
   background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,0.1);
-  border-radius:24px;
-  padding:25px;
-  overflow-x:auto;
+  border-radius:22px;
+  padding:28px 22px;
+  text-align:center;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.quick-card:hover{
+  transform:translateY(-8px);
+  background:rgba(255,255,255,0.12);
+}
+
+.quick-card i{
+  width:70px;
+  height:70px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:auto;
+  margin-bottom:18px;
+  font-size:28px;
+  background:rgba(255,255,255,0.08);
+}
+
+.quick-card h3{
+  margin-bottom:8px;
+}
+
+.quick-card p{
+  font-size:13px;
+  opacity:0.8;
+  line-height:1.6;
+}
+
+/* =========================
+   PROPERTY SECTION
+========================= */
+
+.property-section{
+  margin-bottom:30px;
 }
 
 .section-title{
   font-size:24px;
   margin-bottom:25px;
+}
+
+.property-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.property-card{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  overflow:hidden;
+  transition:0.4s;
+}
+
+.property-card:hover{
+  transform:translateY(-8px);
+}
+
+.property-image{
+  position:relative;
+}
+
+.property-image img{
+  width:100%;
+  height:240px;
+  object-fit:cover;
+}
+
+.property-tag{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:#2563eb;
+  padding:8px 14px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:600;
+}
+
+.property-content{
+  padding:24px;
+}
+
+.property-content h3{
+  margin-bottom:10px;
+}
+
+.property-location{
+  font-size:14px;
+  opacity:0.8;
+  margin-bottom:15px;
+}
+
+.property-details{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:18px;
+  font-size:14px;
+}
+
+.property-price{
+  font-size:24px;
+  font-weight:700;
+  color:#60a5fa;
+}
+
+.property-btn{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:14px;
+  background:#2563eb;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.property-btn:hover{
+  background:#1d4ed8;
+}
+
+/* =========================
+   CUSTOMER TABLE
+========================= */
+
+.customer-section{
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  padding:25px;
+  overflow-x:auto;
+  margin-bottom:30px;
 }
 
 .customer-table{
@@ -255,8 +507,8 @@ body{
 }
 
 .customer-profile img{
-  width:50px;
-  height:50px;
+  width:52px;
+  height:52px;
   border-radius:50%;
   object-fit:cover;
 }
@@ -301,23 +553,20 @@ body{
 
 .action-buttons button:hover{
   background:#2563eb;
-  transform:translateY(-2px);
 }
 
 /* =========================
-   ACTIVITY SECTION
+   ACTIVITY
 ========================= */
 
 .activity-grid{
   display:grid;
   grid-template-columns:2fr 1fr;
   gap:25px;
-  margin-top:30px;
 }
 
 .activity-box{
   background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,0.1);
   border-radius:24px;
   padding:25px;
@@ -325,20 +574,19 @@ body{
 
 .activity-item{
   display:flex;
-  align-items:flex-start;
-  gap:15px;
-  margin-bottom:22px;
+  gap:16px;
+  margin-bottom:24px;
 }
 
 .activity-icon{
-  width:50px;
-  height:50px;
+  width:52px;
+  height:52px;
   border-radius:14px;
   background:rgba(255,255,255,0.08);
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:18px;
+  font-size:20px;
 }
 
 .activity-content h4{
@@ -348,15 +596,25 @@ body{
 .activity-content p{
   font-size:13px;
   opacity:0.8;
+  line-height:1.6;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
 
+@media(max-width:1400px){
+
+  .property-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
 @media(max-width:1200px){
 
-  .stats-grid{
+  .stats-grid,
+  .quick-actions{
     grid-template-columns:repeat(2,1fr);
   }
 
@@ -385,11 +643,21 @@ body{
     display:block;
   }
 
+  .welcome-banner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .property-grid{
+    grid-template-columns:1fr;
+  }
+
 }
 
 @media(max-width:768px){
 
-  .stats-grid{
+  .stats-grid,
+  .quick-actions{
     grid-template-columns:1fr;
   }
 
@@ -404,12 +672,27 @@ body{
     justify-content:space-between;
   }
 
+  .banner-content h1{
+    font-size:28px;
+  }
+
 }
 
 @media(max-width:500px){
 
+  .main{
+    padding:15px;
+  }
+
+  .topbar,
+  .welcome-banner,
+  .customer-section,
+  .activity-box{
+    padding:20px;
+  }
+
   .page-title{
-    font-size:20px;
+    font-size:18px;
   }
 
   .section-title{
@@ -420,6 +703,7 @@ body{
 
 </style>
 </head>
+
 <body>
 
 <div class="dashboard">
@@ -428,9 +712,11 @@ body{
 
   <aside class="sidebar" id="sidebar">
 
-    <a href="index.html">   
-      <img src="./white.webp" alt="Stackly Logo" style="height: 60px;">
-    </a> 
+    <div class="sidebar-logo">
+      <a href="index.html">
+        <img src="./white.webp" alt="logo">
+      </a>
+    </div>
 
     <div class="sidebar-menu">
 
@@ -439,7 +725,7 @@ body{
         Dashboard
       </a>
 
-      <a href="./bookings.html">
+      <a href="./bookings.html" class="active">
         <i class="fa-solid fa-calendar-check"></i>
         Bookings
       </a>
@@ -449,10 +735,21 @@ body{
         Messages
       </a>
 
-      <a href="./index.html" id="logoutBtn">
+      <a href="./404.html">
+        <i class="fa-solid fa-users"></i>
+        Wishlist
+      </a>
+
+      <a href="./404.html">
+        <i class="fa-solid fa-users"></i>
+        Settings
+      </a>
+
+      <a href="./index.html">
         <i class="fa-solid fa-right-from-bracket"></i>
         Logout
       </a>
+
 
     </div>
 
@@ -472,8 +769,9 @@ body{
           <i class="fa-solid fa-bars"></i>
         </div>
 
-        <h2 class="page-title">
-          Customer Dashboard
+        <h2 class="page-title" id="pageTitle">
+          <i class="fa-solid fa-sparkles"></i>
+          Welcome Back
         </h2>
 
       </div>
@@ -482,11 +780,41 @@ body{
 
         <div class="user-info">
           <h4 id="userEmail">customer@stackly.com</h4>
-          <p>Role : Customer</p>
+          <p>Premium Customer</p>
         </div>
 
         <div class="user-avatar">
           <i class="fa-solid fa-user"></i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- WELCOME BANNER -->
+
+    <div class="welcome-banner">
+
+      <div class="banner-content">
+
+        <h1>Find Your Dream Property Today 🏡</h1>
+
+        <p>
+          Explore premium villas, apartments, duplex houses, and
+          commercial properties from top verified real estate partners
+          across India.
+        </p>
+
+        <div class="banner-btns">
+
+          <button class="banner-btn primary-btn">
+            Explore Properties
+          </button>
+
+          <button class="banner-btn secondary-btn">
+            Schedule Visit
+          </button>
+
         </div>
 
       </div>
@@ -498,50 +826,207 @@ body{
     <div class="stats-grid">
 
       <div class="stat-card">
-
         <i class="fa-solid fa-users"></i>
-
         <h4>Total Customers</h4>
-
         <h1>4,520</h1>
-
         <p>Registered customers</p>
-
       </div>
 
       <div class="stat-card">
-
         <i class="fa-solid fa-house"></i>
-
         <h4>Property Visits</h4>
-
         <h1>1,240</h1>
-
         <p>Monthly visit requests</p>
-
       </div>
 
       <div class="stat-card">
-
         <i class="fa-solid fa-heart"></i>
-
         <h4>Saved Listings</h4>
-
         <h1>3,180</h1>
-
         <p>Favorite properties saved</p>
-
       </div>
 
       <div class="stat-card">
-
         <i class="fa-solid fa-calendar-check"></i>
-
         <h4>Bookings</h4>
-
         <h1>860</h1>
-
         <p>Confirmed bookings</p>
+      </div>
+
+    </div>
+
+    <!-- QUICK ACTIONS -->
+
+    <h2 class="section-title">
+      Quick Actions
+    </h2>
+
+    <div class="quick-actions">
+
+      <div class="quick-card">
+        <i class="fa-solid fa-house"></i>
+        <h3>Browse Homes</h3>
+        <p>Explore newly listed premium properties.</p>
+      </div>
+
+      <div class="quick-card">
+        <i class="fa-solid fa-calendar-days"></i>
+        <h3>Book Visit</h3>
+        <p>Schedule property site visits instantly.</p>
+      </div>
+
+      <div class="quick-card">
+        <i class="fa-solid fa-comments"></i>
+        <h3>Talk to Agent</h3>
+        <p>Connect with verified real estate agents.</p>
+      </div>
+
+      <div class="quick-card">
+        <i class="fa-solid fa-credit-card"></i>
+        <h3>Payment Info</h3>
+        <p>Track booking and payment transactions.</p>
+      </div>
+
+    </div>
+
+    <!-- FEATURED PROPERTIES -->
+
+    <div class="property-section">
+
+      <h2 class="section-title">
+        Featured Properties
+      </h2>
+
+      <div class="property-grid">
+
+        <!-- PROPERTY -->
+
+        <div class="property-card">
+
+          <div class="property-image">
+
+            <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="property-tag">
+              Premium Villa
+            </div>
+
+          </div>
+
+          <div class="property-content">
+
+            <h3>Luxury Villa</h3>
+
+            <p class="property-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Chennai, India
+            </p>
+
+            <div class="property-details">
+              <span>4 Beds</span>
+              <span>3 Baths</span>
+              <span>3200 sqft</span>
+            </div>
+
+            <div class="property-price">
+              ₹2.5 Cr
+            </div>
+
+            <br>
+
+            <button class="property-btn">
+              View Property
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- PROPERTY -->
+
+        <div class="property-card">
+
+          <div class="property-image">
+
+            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="property-tag">
+              Smart Apartment
+            </div>
+
+          </div>
+
+          <div class="property-content">
+
+            <h3>Modern Apartment</h3>
+
+            <p class="property-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Bangalore, India
+            </p>
+
+            <div class="property-details">
+              <span>3 Beds</span>
+              <span>2 Baths</span>
+              <span>1800 sqft</span>
+            </div>
+
+            <div class="property-price">
+              ₹1.2 Cr
+            </div>
+
+            <br>
+
+            <button class="property-btn">
+              View Property
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- PROPERTY -->
+
+        <div class="property-card">
+
+          <div class="property-image">
+
+            <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop">
+
+            <div class="property-tag">
+              Duplex House
+            </div>
+
+          </div>
+
+          <div class="property-content">
+
+            <h3>Premium Duplex</h3>
+
+            <p class="property-location">
+              <i class="fa-solid fa-location-dot"></i>
+              Hyderabad, India
+            </p>
+
+            <div class="property-details">
+              <span>5 Beds</span>
+              <span>4 Baths</span>
+              <span>4200 sqft</span>
+            </div>
+
+            <div class="property-price">
+              ₹3.4 Cr
+            </div>
+
+            <br>
+
+            <button class="property-btn">
+              View Property
+            </button>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -560,14 +1045,12 @@ body{
         <thead>
 
           <tr>
-
             <th>Customer</th>
             <th>Email</th>
             <th>Location</th>
             <th>Interested Property</th>
             <th>Status</th>
             <th>Actions</th>
-
           </tr>
 
         </thead>
@@ -592,9 +1075,7 @@ body{
             </td>
 
             <td>emily@gmail.com</td>
-
             <td>Chennai</td>
-
             <td>Luxury Villa</td>
 
             <td>
@@ -637,58 +1118,11 @@ body{
             </td>
 
             <td>michael@gmail.com</td>
-
             <td>Bangalore</td>
-
             <td>Modern Apartment</td>
 
             <td>
               <span class="status pending">Pending</span>
-            </td>
-
-            <td>
-
-              <div class="action-buttons">
-
-                <button>
-                  <i class="fa-solid fa-eye"></i>
-                </button>
-
-                <button>
-                  <i class="fa-solid fa-envelope"></i>
-                </button>
-
-              </div>
-
-            </td>
-
-          </tr>
-
-          <tr>
-
-            <td>
-
-              <div class="customer-profile">
-
-                <img src="./ava1.webp">
-
-                <div>
-                  <h4>Sophia Miller</h4>
-                  <p>New Customer</p>
-                </div>
-
-              </div>
-
-            </td>
-
-            <td>sophia@gmail.com</td>
-
-            <td>Hyderabad</td>
-
-            <td>Commercial Office</td>
-
-            <td>
-              <span class="status inactive">Inactive</span>
             </td>
 
             <td>
@@ -732,8 +1166,10 @@ body{
           </div>
 
           <div class="activity-content">
-            <h4>New Property Interested</h4>
-            <p>Emily Johnson requested a site visit for Luxury Villa.</p>
+            <h4>Property Interested</h4>
+            <p>
+              Emily Johnson requested a site visit for Luxury Villa.
+            </p>
           </div>
 
         </div>
@@ -746,7 +1182,9 @@ body{
 
           <div class="activity-content">
             <h4>Booking Confirmed</h4>
-            <p>Michael Brown confirmed booking for Smart Apartment.</p>
+            <p>
+              Michael Brown confirmed booking for Smart Apartment.
+            </p>
           </div>
 
         </div>
@@ -759,7 +1197,9 @@ body{
 
           <div class="activity-content">
             <h4>Saved Property</h4>
-            <p>Sophia saved Premium Duplex House to favorites.</p>
+            <p>
+              Sophia saved Premium Duplex House to favorites.
+            </p>
           </div>
 
         </div>
@@ -824,7 +1264,7 @@ body{
 <script>
 
 /* =========================
-   MOBILE SIDEBAR
+   SIDEBAR TOGGLE
 ========================= */
 
 const menuBtn = document.getElementById("menuBtn");
@@ -835,16 +1275,23 @@ menuBtn.addEventListener("click", () => {
 });
 
 /* =========================
-   SHOW LOGIN EMAIL
+   USER EMAIL + USERNAME
 ========================= */
 
 const storedEmail =
-  localStorage.getItem("userEmail") ||
-  localStorage.getItem("email") ||
-  localStorage.getItem("loginEmail");
+localStorage.getItem("userEmail") ||
+localStorage.getItem("email") ||
+localStorage.getItem("loginEmail");
 
 if(storedEmail){
+
   document.getElementById("userEmail").textContent = storedEmail;
+
+  const username = storedEmail.split("@")[0];
+
+  document.getElementById("pageTitle").innerHTML =
+  `<i class="fa-solid fa-sparkles"></i> Welcome Back, ${username} 👋`;
+
 }
 
 /* =========================

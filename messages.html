@@ -127,6 +127,16 @@ body{
 .page-title{
   font-size:24px;
   font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  line-height:1.4;
+}
+
+.page-title i{
+  color:#facc15;
+  font-size:22px;
 }
 
 .user-box{
@@ -466,7 +476,7 @@ body{
 @media(max-width:500px){
 
   .page-title{
-    font-size:20px;
+    font-size:18px;
   }
 
   .chat-header{
@@ -492,6 +502,7 @@ body{
 
 </style>
 </head>
+
 <body>
 
 <div class="dashboard">
@@ -521,6 +532,16 @@ body{
         Messages
       </a>
 
+      <a href="./404.html">
+        <i class="fa-solid fa-heart"></i>
+        Wishlist
+      </a>
+
+      <a href="./404.html">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+      </a>
+
       <a href="./index.html">
         <i class="fa-solid fa-right-from-bracket"></i>
         Logout
@@ -544,8 +565,9 @@ body{
           <i class="fa-solid fa-bars"></i>
         </div>
 
-        <h2 class="page-title">
-          Customer Messages
+        <h2 class="page-title" id="pageTitle">
+          <i class="fa-solid fa-hand-sparkles"></i>
+          Welcome Back 👋
         </h2>
 
       </div>
@@ -554,7 +576,6 @@ body{
 
         <div class="user-info">
 
-          <!-- LOCAL STORAGE EMAIL -->
           <h4 id="userEmail">customer@stackly.com</h4>
 
           <p>Role : Customer</p>
@@ -806,20 +827,25 @@ menuBtn.addEventListener("click", () => {
 });
 
 /* =========================
-   LOCAL STORAGE EMAIL
+   SHOW EMAIL + USERNAME
 ========================= */
 
-/*
-SAVE EMAIL EXAMPLE:
-
-localStorage.setItem("userEmail", "abinaya@gmail.com");
-
-*/
-
-const storedEmail = localStorage.getItem("userEmail");
+const storedEmail =
+localStorage.getItem("userEmail") ||
+localStorage.getItem("email") ||
+localStorage.getItem("loginEmail");
 
 if(storedEmail){
+
   document.getElementById("userEmail").textContent = storedEmail;
+
+  // GET USERNAME
+  const username = storedEmail.split("@")[0];
+
+  // UPDATE TOP TITLE
+  document.getElementById("pageTitle").innerHTML =
+  `<i class="fa-solid fa-hand-sparkles"></i> Welcome Back, ${username} 👋`;
+
 }
 
 </script>

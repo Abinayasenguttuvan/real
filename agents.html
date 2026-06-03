@@ -62,23 +62,11 @@ body{
   z-index:1000;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:26px;
-  font-weight:700;
-  margin-bottom:45px;
-}
-
-.logo i{
-  color:#60a5fa;
-}
-
 .sidebar-menu{
   display:flex;
   flex-direction:column;
   gap:12px;
+  margin-top:40px;
 }
 
 .sidebar-menu a{
@@ -117,20 +105,29 @@ body{
   background:rgba(255,255,255,0.08);
   backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,0.1);
-  border-radius:20px;
-  padding:18px 24px;
+  border-radius:22px;
+  padding:20px 25px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   margin-bottom:30px;
   gap:20px;
+  flex-wrap:wrap;
 }
+
+/* =========================
+   LEFT TOP
+========================= */
 
 .left-top{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:18px;
 }
+
+/* =========================
+   MENU BUTTON
+========================= */
 
 .menu-btn{
   display:none;
@@ -138,10 +135,70 @@ body{
   cursor:pointer;
 }
 
-.page-title{
-  font-size:24px;
-  font-weight:600;
+/* =========================
+   WELCOME BOX
+========================= */
+
+.welcome-box{
+  display:flex;
+  align-items:center;
+  gap:16px;
 }
+
+.welcome-icon{
+  width:65px;
+  height:65px;
+  border-radius:18px;
+
+  background:
+  linear-gradient(135deg,#2563eb,#60a5fa);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:28px;
+
+  box-shadow:
+  0 10px 25px rgba(37,99,235,0.35);
+
+  animation:floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+.welcome-text h2{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:4px;
+}
+
+.welcome-text h2 span{
+  color:#93c5fd;
+}
+
+.welcome-text p{
+  font-size:14px;
+  color:#cbd5e1;
+}
+
+/* =========================
+   USER BOX
+========================= */
 
 .user-box{
   display:flex;
@@ -161,8 +218,8 @@ body{
 }
 
 .user-avatar{
-  width:50px;
-  height:50px;
+  width:52px;
+  height:52px;
   border-radius:50%;
   background:linear-gradient(135deg,#2563eb,#60a5fa);
   display:flex;
@@ -408,6 +465,10 @@ body{
     align-items:flex-start;
   }
 
+  .welcome-text h2{
+    font-size:22px;
+  }
+
 }
 
 @media(max-width:600px){
@@ -420,12 +481,26 @@ body{
     flex-direction:column;
   }
 
-  .page-title{
+  .main{
+    padding:15px;
+  }
+
+  .welcome-box{
+    align-items:flex-start;
+  }
+
+  .welcome-icon{
+    width:55px;
+    height:55px;
+    font-size:22px;
+  }
+
+  .welcome-text h2{
     font-size:20px;
   }
 
-  .main{
-    padding:15px;
+  .welcome-text p{
+    font-size:13px;
   }
 
 }
@@ -463,6 +538,16 @@ body{
         Agents
       </a>
 
+      <a href="./404.html">
+        <i class="fa-solid fa-chart-pie"></i>
+        Analysis
+      </a>
+
+      <a href="./404.html">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+      </a>
+
       <a href="./index.html" id="logoutBtn">
         <i class="fa-solid fa-right-from-bracket"></i>
         Logout
@@ -480,15 +565,38 @@ body{
 
     <div class="topbar">
 
+      <!-- LEFT -->
+
       <div class="left-top">
 
         <div class="menu-btn" id="menuBtn">
           <i class="fa-solid fa-bars"></i>
         </div>
 
-        <h2 class="page-title">
-          Agents Management
-        </h2>
+        <!-- WELCOME -->
+
+        <div class="welcome-box">
+
+          <div class="welcome-icon">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+
+          <div class="welcome-text">
+
+            <h2>
+              Welcome Back,
+              <span id="welcomeName">
+                Agent
+              </span>
+            </h2>
+
+            <p>
+              Manage your real estate agents and property activities
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
 
@@ -814,14 +922,26 @@ document.getElementById("userEmail");
 const userRole =
 document.getElementById("userRole");
 
+const welcomeName =
+document.getElementById("welcomeName");
+
 if(storedEmail){
 
   userEmail.innerText = storedEmail;
+
+  const username =
+  storedEmail.split("@")[0];
+
+  welcomeName.innerText =
+  username;
 
 }else{
 
   userEmail.innerText =
   "guest@stackly.com";
+
+  welcomeName.innerText =
+  "Guest";
 
 }
 

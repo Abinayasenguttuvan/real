@@ -111,17 +111,18 @@ body{
   backdrop-filter:blur(18px);
   border:1px solid rgba(255,255,255,0.1);
   border-radius:20px;
-  padding:18px 24px;
+  padding:20px 24px;
   display:flex;
   justify-content:space-between;
   align-items:center;
   margin-bottom:30px;
+  gap:20px;
 }
 
 .left-top{
   display:flex;
   align-items:center;
-  gap:15px;
+  gap:18px;
 }
 
 .menu-btn{
@@ -130,10 +131,65 @@ body{
   cursor:pointer;
 }
 
-.page-title{
-  font-size:24px;
-  font-weight:600;
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome-box{
+  display:flex;
+  align-items:center;
+  gap:16px;
 }
+
+.welcome-icon{
+  width:65px;
+  height:65px;
+  border-radius:18px;
+  background:linear-gradient(135deg,#2563eb,#60a5fa);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  box-shadow:0 10px 25px rgba(37,99,235,0.35);
+  animation:floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon{
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+.welcome-text h2{
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:5px;
+}
+
+.welcome-text h2 span{
+  background:linear-gradient(135deg,#60a5fa,#ffffff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.welcome-text p{
+  font-size:14px;
+  color:#cbd5e1;
+}
+
+/* =========================
+   USER BOX
+========================= */
 
 .user-box{
   display:flex;
@@ -398,6 +454,10 @@ body{
     align-items:flex-start;
   }
 
+  .welcome-box{
+    width:100%;
+  }
+
 }
 
 @media(max-width:500px){
@@ -415,8 +475,14 @@ body{
     width:100%;
   }
 
-  .page-title{
-    font-size:20px;
+  .welcome-text h2{
+    font-size:22px;
+  }
+
+  .welcome-icon{
+    width:55px;
+    height:55px;
+    font-size:24px;
   }
 
   .user-box{
@@ -458,6 +524,16 @@ body{
         Agents
       </a>
 
+      <a href="./404.html">
+        <i class="fa-solid fa-chart-pie"></i>
+        Analysis
+      </a>
+
+      <a href="./404.html">
+        <i class="fa-solid fa-gear"></i>
+        Settings
+      </a>
+
       <a href="./login.html" id="logoutBtn">
         <i class="fa-solid fa-right-from-bracket"></i>
         Logout
@@ -481,22 +557,43 @@ body{
           <i class="fa-solid fa-bars"></i>
         </div>
 
-        <h2 class="page-title">
-          Properties
-        </h2>
+        <!-- WELCOME SECTION -->
+
+        <div class="welcome-box">
+
+          <div class="welcome-icon">
+            <i class="fa-solid fa-house-circle-check"></i>
+          </div>
+
+          <div class="welcome-text">
+
+            <h2>
+              Welcome Back,
+              <span id="welcomeName">
+                User
+              </span>
+            </h2>
+
+            <p>
+              Manage your premium properties and listings
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
+
+      <!-- USER BOX -->
 
       <div class="user-box">
 
         <div class="user-info">
 
-          <!-- LOCAL STORAGE EMAIL -->
           <h4 id="userEmail">
             user@stacklyestate.com
           </h4>
 
-          <!-- LOCAL STORAGE ROLE -->
           <p id="userRole">
             Role : Agent
           </p>
@@ -765,27 +862,62 @@ menuBtn.addEventListener("click", () => {
 const storedEmail = localStorage.getItem("userEmail");
 const storedRole = localStorage.getItem("userRole");
 
-/* SHOW EMAIL */
+/* =========================
+   USER EMAIL
+========================= */
 
 if(storedEmail){
+
   document.getElementById("userEmail").innerText = storedEmail;
+
 }else{
-  document.getElementById("userEmail").innerText = "guest@stacklyestate.com";
+
+  document.getElementById("userEmail").innerText =
+  "guest@stacklyestate.com";
+
 }
 
-/* SHOW ROLE */
+/* =========================
+   USER ROLE
+========================= */
 
 if(storedRole){
-  document.getElementById("userRole").innerText = "Role : " + storedRole;
+
+  document.getElementById("userRole").innerText =
+  "Role : " + storedRole;
+
 }else{
-  document.getElementById("userRole").innerText = "Role : Guest";
+
+  document.getElementById("userRole").innerText =
+  "Role : Guest";
+
 }
+
+/* =========================
+   WELCOME USERNAME
+========================= */
+
+let username = "User";
+
+if(storedEmail){
+
+  username = storedEmail.split("@")[0];
+
+  username =
+  username.charAt(0).toUpperCase() +
+  username.slice(1);
+
+}
+
+document.getElementById("welcomeName")
+.innerText = username;
 
 /* =========================
    LOGOUT
 ========================= */
 
-document.getElementById("logoutBtn").addEventListener("click", () => {
+document.getElementById("logoutBtn")
+.addEventListener("click", () => {
 
   localStorage.removeItem("userEmail");
   localStorage.removeItem("userRole");
