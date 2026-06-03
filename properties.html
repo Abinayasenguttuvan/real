@@ -28,7 +28,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 
 body{
   background:
-  linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+  linear-gradient(rgba(15,23,42,0.88),rgba(37,99,235,0.88)),
+  url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600&auto=format&fit=crop');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
   min-height:100vh;
   color:#fff;
   overflow-x:hidden;
@@ -62,23 +66,11 @@ body{
   z-index:1000;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:26px;
-  font-weight:700;
-  margin-bottom:45px;
-}
-
-.logo i{
-  color:#60a5fa;
-}
-
 .sidebar-menu{
   display:flex;
   flex-direction:column;
   gap:12px;
+  margin-top:30px;
 }
 
 .sidebar-menu a{
@@ -91,6 +83,7 @@ body{
   gap:14px;
   transition:0.3s;
   background:rgba(255,255,255,0.04);
+  font-size:15px;
 }
 
 .sidebar-menu a:hover,
@@ -148,6 +141,16 @@ body{
   gap:15px;
 }
 
+.user-info h4{
+  font-size:15px;
+  word-break:break-word;
+}
+
+.user-info p{
+  font-size:13px;
+  opacity:0.8;
+}
+
 .user-avatar{
   width:50px;
   height:50px;
@@ -179,7 +182,8 @@ body{
 }
 
 .filter-box input,
-.filter-box select{
+.filter-box select,
+.search-btn{
   width:100%;
   padding:14px;
   border:none;
@@ -190,14 +194,16 @@ body{
   font-size:14px;
 }
 
+.filter-box select option{
+  color:#000;
+}
+
 .filter-box input::placeholder{
   color:#ddd;
 }
 
 .search-btn{
   background:linear-gradient(135deg,#2563eb,#60a5fa);
-  border:none;
-  color:#fff;
   font-weight:600;
   cursor:pointer;
   transition:0.3s;
@@ -409,10 +415,20 @@ body{
     width:100%;
   }
 
+  .page-title{
+    font-size:20px;
+  }
+
+  .user-box{
+    width:100%;
+    justify-content:space-between;
+  }
+
 }
 
 </style>
 </head>
+
 <body>
 
 <div class="properties-wrapper">
@@ -421,21 +437,31 @@ body{
 
   <aside class="sidebar" id="sidebar">
 
-    <a href="index.html">   
-        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
-      </a> 
+    <a href="index.html">
+      <img src="./white.webp" alt="Stackly Logo" style="height:60px;">
+    </a>
 
     <div class="sidebar-menu">
 
-      <a href="./dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+      <a href="./dashboard.html">
+        <i class="fa-solid fa-chart-line"></i>
+        Dashboard
+      </a>
 
       <a href="./properties.html" class="active">
-        <i class="fa-solid fa-house"></i> Properties
+        <i class="fa-solid fa-house"></i>
+        Properties
       </a>
-      <a href="./agents.html"><i class="fa-solid fa-users"></i> Agents</a>
-      <!-- <a href="./settings.html"><i class="fa-solid fa-gear"></i> Settings</a> -->
-      <a href="./login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
 
+      <a href="./agents.html">
+        <i class="fa-solid fa-users"></i>
+        Agents
+      </a>
+
+      <a href="./login.html" id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </a>
 
     </div>
 
@@ -455,15 +481,26 @@ body{
           <i class="fa-solid fa-bars"></i>
         </div>
 
-        <h2 class="page-title">Properties</h2>
+        <h2 class="page-title">
+          Properties
+        </h2>
 
       </div>
 
       <div class="user-box">
 
-        <div>
-          <h4>agent@stackly.com</h4>
-          <p>Role : Agent</p>
+        <div class="user-info">
+
+          <!-- LOCAL STORAGE EMAIL -->
+          <h4 id="userEmail">
+            user@stacklyestate.com
+          </h4>
+
+          <!-- LOCAL STORAGE ROLE -->
+          <p id="userRole">
+            Role : Agent
+          </p>
+
         </div>
 
         <div class="user-avatar">
@@ -503,7 +540,9 @@ body{
         </div>
 
         <div class="filter-box">
-          <button class="search-btn">Search Property</button>
+          <button class="search-btn">
+            Search Property
+          </button>
         </div>
 
       </div>
@@ -514,7 +553,7 @@ body{
 
     <div class="property-grid">
 
-      <!-- CARD -->
+      <!-- PROPERTY 1 -->
 
       <div class="property-card">
 
@@ -562,7 +601,7 @@ body{
 
           <div class="property-footer">
 
-            <a href="#" class="view-btn">
+            <a href="./404.html" class="view-btn">
               View Details
             </a>
 
@@ -576,7 +615,7 @@ body{
 
       </div>
 
-      <!-- CARD -->
+      <!-- PROPERTY 2 -->
 
       <div class="property-card">
 
@@ -624,7 +663,7 @@ body{
 
           <div class="property-footer">
 
-            <a href="#" class="view-btn">
+            <a href="./404.html" class="view-btn">
               View Details
             </a>
 
@@ -638,7 +677,7 @@ body{
 
       </div>
 
-      <!-- CARD -->
+      <!-- PROPERTY 3 -->
 
       <div class="property-card">
 
@@ -686,7 +725,7 @@ body{
 
           <div class="property-footer">
 
-            <a href="#" class="view-btn">
+            <a href="./404.html" class="view-btn">
               View Details
             </a>
 
@@ -708,11 +747,49 @@ body{
 
 <script>
 
+/* =========================
+   MOBILE SIDEBAR
+========================= */
+
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
 menuBtn.addEventListener("click", () => {
   sidebar.classList.toggle("active");
+});
+
+/* =========================
+   LOCAL STORAGE USER DATA
+========================= */
+
+const storedEmail = localStorage.getItem("userEmail");
+const storedRole = localStorage.getItem("userRole");
+
+/* SHOW EMAIL */
+
+if(storedEmail){
+  document.getElementById("userEmail").innerText = storedEmail;
+}else{
+  document.getElementById("userEmail").innerText = "guest@stacklyestate.com";
+}
+
+/* SHOW ROLE */
+
+if(storedRole){
+  document.getElementById("userRole").innerText = "Role : " + storedRole;
+}else{
+  document.getElementById("userRole").innerText = "Role : Guest";
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+
+  localStorage.removeItem("userEmail");
+  localStorage.removeItem("userRole");
+
 });
 
 </script>

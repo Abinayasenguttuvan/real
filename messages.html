@@ -61,23 +61,11 @@ body{
   z-index:1000;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:26px;
-  font-weight:700;
-  margin-bottom:45px;
-}
-
-.logo i{
-  color:#60a5fa;
-}
-
 .sidebar-menu{
   display:flex;
   flex-direction:column;
   gap:12px;
+  margin-top:30px;
 }
 
 .sidebar-menu a{
@@ -145,6 +133,16 @@ body{
   display:flex;
   align-items:center;
   gap:15px;
+}
+
+.user-info h4{
+  font-size:15px;
+  margin-bottom:4px;
+}
+
+.user-info p{
+  font-size:13px;
+  opacity:0.8;
 }
 
 .user-avatar{
@@ -503,8 +501,8 @@ body{
   <aside class="sidebar" id="sidebar">
 
     <a href="index.html">   
-        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
-      </a> 
+      <img src="./white.webp" alt="Stackly Logo" style="height: 60px;">
+    </a> 
 
     <div class="sidebar-menu">
 
@@ -512,25 +510,21 @@ body{
         <i class="fa-solid fa-chart-line"></i>
         Dashboard
       </a>
-      
 
       <a href="./bookings.html">
         <i class="fa-solid fa-calendar-check"></i>
         Bookings
       </a>
 
-      
       <a href="./messages.html" class="active">
         <i class="fa-solid fa-envelope"></i>
         Messages
       </a>
 
-      
       <a href="./index.html">
         <i class="fa-solid fa-right-from-bracket"></i>
         Logout
       </a>
-
 
     </div>
 
@@ -558,9 +552,13 @@ body{
 
       <div class="user-box">
 
-        <div>
-          <h4>customer@stackly.com</h4>
+        <div class="user-info">
+
+          <!-- LOCAL STORAGE EMAIL -->
+          <h4 id="userEmail">customer@stackly.com</h4>
+
           <p>Role : Customer</p>
+
         </div>
 
         <div class="user-avatar">
@@ -589,7 +587,7 @@ body{
 
         <div class="chat-user active">
 
-          <img src="https://randomuser.me/api/portraits/women/44.jpg">
+          <img src="./ava1.webp">
 
           <div class="chat-user-content">
 
@@ -607,7 +605,7 @@ body{
 
         <div class="chat-user">
 
-          <img src="https://randomuser.me/api/portraits/men/32.jpg">
+          <img src="./ava2.webp">
 
           <div class="chat-user-content">
 
@@ -625,7 +623,7 @@ body{
 
         <div class="chat-user">
 
-          <img src="https://randomuser.me/api/portraits/women/68.jpg">
+          <img src="./ava3.webp">
 
           <div class="chat-user-content">
 
@@ -643,7 +641,7 @@ body{
 
         <div class="chat-user">
 
-          <img src="https://randomuser.me/api/portraits/men/55.jpg">
+          <img src="./ava1.webp">
 
           <div class="chat-user-content">
 
@@ -671,7 +669,7 @@ body{
 
           <div class="chat-profile">
 
-            <img src="https://randomuser.me/api/portraits/women/44.jpg">
+            <img src="./ava1.webp">
 
             <div>
 
@@ -778,7 +776,7 @@ body{
 
             <input type="text" placeholder="Type your message...">
 
-            <button class="send-btn">
+            <button class="send-btn" type="submit">
               <i class="fa-solid fa-paper-plane"></i>
             </button>
 
@@ -796,12 +794,33 @@ body{
 
 <script>
 
+/* =========================
+   SIDEBAR TOGGLE
+========================= */
+
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
 menuBtn.addEventListener("click", () => {
   sidebar.classList.toggle("active");
 });
+
+/* =========================
+   LOCAL STORAGE EMAIL
+========================= */
+
+/*
+SAVE EMAIL EXAMPLE:
+
+localStorage.setItem("userEmail", "abinaya@gmail.com");
+
+*/
+
+const storedEmail = localStorage.getItem("userEmail");
+
+if(storedEmail){
+  document.getElementById("userEmail").textContent = storedEmail;
+}
 
 </script>
 

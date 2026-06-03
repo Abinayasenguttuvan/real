@@ -61,23 +61,11 @@ body{
   z-index:1000;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:26px;
-  font-weight:700;
-  margin-bottom:45px;
-}
-
-.logo i{
-  color:#60a5fa;
-}
-
 .sidebar-menu{
   display:flex;
   flex-direction:column;
   gap:12px;
+  margin-top:40px;
 }
 
 .sidebar-menu a{
@@ -145,6 +133,16 @@ body{
   display:flex;
   align-items:center;
   gap:15px;
+}
+
+.user-details h4{
+  font-size:15px;
+  margin-bottom:5px;
+}
+
+.user-details p{
+  font-size:13px;
+  opacity:0.8;
 }
 
 .user-avatar{
@@ -442,8 +440,8 @@ body{
   <aside class="sidebar" id="sidebar">
 
     <a href="index.html">   
-        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
-      </a> 
+      <img src="./white.webp" alt="Stackly Logo" style="height:60px;">
+    </a> 
 
     <div class="sidebar-menu">
 
@@ -452,19 +450,15 @@ body{
         Dashboard
       </a>
 
-      
       <a href="./bookings.html" class="active">
         <i class="fa-solid fa-calendar-check"></i>
         Bookings
       </a>
 
-      
       <a href="./messages.html">
         <i class="fa-solid fa-envelope"></i>
         Messages
       </a>
-
-      
 
       <a href="./index.html">
         <i class="fa-solid fa-right-from-bracket"></i>
@@ -495,10 +489,12 @@ body{
 
       </div>
 
+      <!-- USER BOX -->
+
       <div class="user-box">
 
-        <div>
-          <h4>agent@stackly.com</h4>
+        <div class="user-details">
+          <h4 id="userEmail">guest@stackly.com</h4>
           <p>Role : Agent</p>
         </div>
 
@@ -515,51 +511,31 @@ body{
     <div class="stats-grid">
 
       <div class="stat-card">
-
         <i class="fa-solid fa-calendar-check"></i>
-
         <h4>Total Bookings</h4>
-
         <h1>860</h1>
-
         <p>Bookings this month</p>
-
       </div>
 
       <div class="stat-card">
-
         <i class="fa-solid fa-house"></i>
-
         <h4>Property Visits</h4>
-
         <h1>1,240</h1>
-
         <p>Scheduled site visits</p>
-
       </div>
 
       <div class="stat-card">
-
         <i class="fa-solid fa-indian-rupee-sign"></i>
-
         <h4>Total Revenue</h4>
-
         <h1>₹12.8L</h1>
-
         <p>Booking revenue generated</p>
-
       </div>
 
       <div class="stat-card">
-
         <i class="fa-solid fa-user-check"></i>
-
         <h4>Confirmed Deals</h4>
-
         <h1>540</h1>
-
         <p>Successfully completed</p>
-
       </div>
 
     </div>
@@ -567,8 +543,6 @@ body{
     <!-- CHARTS -->
 
     <div class="chart-grid">
-
-      <!-- BAR CHART -->
 
       <div class="chart-box">
 
@@ -606,8 +580,6 @@ body{
 
       </div>
 
-      <!-- PIE CHART -->
-
       <div class="chart-box">
 
         <h3 class="chart-title">
@@ -633,14 +605,12 @@ body{
         <thead>
 
           <tr>
-
             <th>Customer</th>
             <th>Property</th>
             <th>Location</th>
             <th>Booking Date</th>
             <th>Status</th>
             <th>Actions</th>
-
           </tr>
 
         </thead>
@@ -650,24 +620,17 @@ body{
           <tr>
 
             <td>
-
               <div class="customer">
-
                 <img src="https://randomuser.me/api/portraits/women/45.jpg">
-
                 <div>
                   <h4>Emily Johnson</h4>
                   <p>Premium Customer</p>
                 </div>
-
               </div>
-
             </td>
 
             <td>Luxury Villa</td>
-
             <td>Chennai</td>
-
             <td>02 Jun 2026</td>
 
             <td>
@@ -677,9 +640,7 @@ body{
             </td>
 
             <td>
-
               <div class="action-btns">
-
                 <button>
                   <i class="fa-solid fa-eye"></i>
                 </button>
@@ -687,9 +648,7 @@ body{
                 <button>
                   <i class="fa-solid fa-phone"></i>
                 </button>
-
               </div>
-
             </td>
 
           </tr>
@@ -697,24 +656,17 @@ body{
           <tr>
 
             <td>
-
               <div class="customer">
-
                 <img src="https://randomuser.me/api/portraits/men/38.jpg">
-
                 <div>
                   <h4>David Miller</h4>
                   <p>Verified Customer</p>
                 </div>
-
               </div>
-
             </td>
 
             <td>Modern Apartment</td>
-
             <td>Bangalore</td>
-
             <td>01 Jun 2026</td>
 
             <td>
@@ -724,9 +676,7 @@ body{
             </td>
 
             <td>
-
               <div class="action-btns">
-
                 <button>
                   <i class="fa-solid fa-eye"></i>
                 </button>
@@ -734,9 +684,7 @@ body{
                 <button>
                   <i class="fa-solid fa-phone"></i>
                 </button>
-
               </div>
-
             </td>
 
           </tr>
@@ -744,24 +692,17 @@ body{
           <tr>
 
             <td>
-
               <div class="customer">
-
                 <img src="https://randomuser.me/api/portraits/women/65.jpg">
-
                 <div>
                   <h4>Sophia Williams</h4>
                   <p>New Customer</p>
                 </div>
-
               </div>
-
             </td>
 
             <td>Premium Duplex</td>
-
             <td>Hyderabad</td>
-
             <td>28 May 2026</td>
 
             <td>
@@ -771,9 +712,7 @@ body{
             </td>
 
             <td>
-
               <div class="action-btns">
-
                 <button>
                   <i class="fa-solid fa-eye"></i>
                 </button>
@@ -781,9 +720,7 @@ body{
                 <button>
                   <i class="fa-solid fa-phone"></i>
                 </button>
-
               </div>
-
             </td>
 
           </tr>
@@ -800,12 +737,26 @@ body{
 
 <script>
 
+/* =========================
+   SIDEBAR TOGGLE
+========================= */
+
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
 menuBtn.addEventListener("click", () => {
   sidebar.classList.toggle("active");
 });
+
+/* =========================
+   SHOW EMAIL FROM LOCAL STORAGE
+========================= */
+
+const storedEmail = localStorage.getItem("userEmail");
+
+if(storedEmail){
+  document.getElementById("userEmail").innerText = storedEmail;
+}
 
 </script>
 

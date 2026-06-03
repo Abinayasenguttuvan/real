@@ -63,17 +63,12 @@ body{
   transition:0.4s;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:26px;
-  font-weight:700;
-  margin-bottom:45px;
+.sidebar-logo{
+  margin-bottom:40px;
 }
 
-.logo i{
-  color:#60a5fa;
+.sidebar-logo img{
+  height:60px;
 }
 
 .sidebar-menu{
@@ -95,7 +90,8 @@ body{
   background:rgba(255,255,255,0.04);
 }
 
-.sidebar-menu a:hover{
+.sidebar-menu a:hover,
+.sidebar-menu .active{
   background:rgba(255,255,255,0.15);
   transform:translateX(5px);
 }
@@ -159,6 +155,7 @@ body{
 
 .user-details h4{
   font-size:15px;
+  word-break:break-word;
 }
 
 .user-details p{
@@ -239,7 +236,7 @@ body{
 }
 
 /* =========================
-   CHARTS SECTION
+   CHARTS
 ========================= */
 
 .chart-grid{
@@ -276,6 +273,7 @@ body{
   background:linear-gradient(to top,#2563eb,#60a5fa);
   border-radius:12px 12px 0 0;
   position:relative;
+  min-width:40px;
 }
 
 .bar span{
@@ -357,7 +355,7 @@ table td{
 }
 
 /* =========================
-   404 BUTTON
+   BUTTON
 ========================= */
 
 .error-btn{
@@ -377,7 +375,7 @@ table td{
 }
 
 /* =========================
-   MOBILE
+   RESPONSIVE
 ========================= */
 
 @media(max-width:1200px){
@@ -434,10 +432,22 @@ table td{
     font-size:20px;
   }
 
+  .chart-box,
+  .table-box,
+  .card{
+    padding:18px;
+  }
+
+  .pie-chart{
+    width:180px;
+    height:180px;
+  }
+
 }
 
 </style>
 </head>
+
 <body>
 
 <div class="dashboard">
@@ -446,24 +456,33 @@ table td{
 
   <aside class="sidebar" id="sidebar">
 
-    <!-- <div class="logo">
-      <i class="fa-solid fa-building"></i>
-      StacklyEstate
-    </div> -->
-    <a href="index.html">   
-        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
-      </a> 
+    <div class="sidebar-logo">
+      <a href="index.html">
+        <img src="./white.webp" alt="Stackly Logo">
+      </a>
+    </div>
 
     <div class="sidebar-menu">
 
-      <a href="./dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+      <a href="./dashboard.html" class="active">
+        <i class="fa-solid fa-chart-line"></i>
+        Dashboard
+      </a>
 
-      <a href="./properties.html"><i class="fa-solid fa-house"></i> Properties</a>
+      <a href="./properties.html">
+        <i class="fa-solid fa-house"></i>
+        Properties
+      </a>
 
-      <a href="./agents.html"><i class="fa-solid fa-users"></i> Agents</a>
+      <a href="./agents.html">
+        <i class="fa-solid fa-users"></i>
+        Agents
+      </a>
 
-      
-      <a href="./login.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      <a href="./login.html" id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </a>
 
     </div>
 
@@ -483,15 +502,25 @@ table td{
           <i class="fa-solid fa-bars"></i>
         </div>
 
-        <h2 class="page-title">Real Estate Dashboard</h2>
+        <h2 class="page-title">
+          Real Estate Dashboard
+        </h2>
 
       </div>
 
       <div class="user-box">
 
         <div class="user-details">
-          <h4>agent@stackly.com</h4>
-          <p>Role : Agent</p>
+
+          <!-- LOCAL STORAGE EMAIL -->
+          <h4 id="userEmail">agent@stackly.com</h4>
+
+          <!-- LOCAL STORAGE ROLE -->
+          <p>
+            Role :
+            <span id="userRole">Agent</span>
+          </p>
+
         </div>
 
         <div class="user-avatar">
@@ -544,7 +573,9 @@ table td{
 
       <div class="chart-box">
 
-        <h3 class="chart-title">Monthly Sales</h3>
+        <h3 class="chart-title">
+          Monthly Sales
+        </h3>
 
         <div class="bar-chart">
 
@@ -580,7 +611,9 @@ table td{
 
       <div class="chart-box">
 
-        <h3 class="chart-title">Property Types</h3>
+        <h3 class="chart-title">
+          Property Types
+        </h3>
 
         <div class="pie-chart"></div>
 
@@ -592,7 +625,9 @@ table td{
 
     <div class="table-box">
 
-      <h3 class="chart-title">Recent Property Listings</h3>
+      <h3 class="chart-title">
+        Recent Property Listings
+      </h3>
 
       <table>
 
@@ -613,28 +648,44 @@ table td{
             <td>Luxury Villa</td>
             <td>Chennai</td>
             <td>₹1.2Cr</td>
-            <td><span class="status available">Available</span></td>
+            <td>
+              <span class="status available">
+                Available
+              </span>
+            </td>
           </tr>
 
           <tr>
             <td>Modern Apartment</td>
             <td>Bangalore</td>
             <td>₹75L</td>
-            <td><span class="status sold">Sold</span></td>
+            <td>
+              <span class="status sold">
+                Sold
+              </span>
+            </td>
           </tr>
 
           <tr>
             <td>Office Space</td>
             <td>Hyderabad</td>
             <td>₹2Cr</td>
-            <td><span class="status pending">Pending</span></td>
+            <td>
+              <span class="status pending">
+                Pending
+              </span>
+            </td>
           </tr>
 
           <tr>
             <td>Farm Land</td>
             <td>Coimbatore</td>
             <td>₹58L</td>
-            <td><span class="status available">Available</span></td>
+            <td>
+              <span class="status available">
+                Available
+              </span>
+            </td>
           </tr>
 
         </tbody>
@@ -653,13 +704,45 @@ table td{
 
 <script>
 
-/* MOBILE SIDEBAR */
+/* =========================
+   MOBILE SIDEBAR
+========================= */
 
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
 menuBtn.addEventListener("click", () => {
   sidebar.classList.toggle("active");
+});
+
+/* =========================
+   GET LOCAL STORAGE DATA
+========================= */
+
+const storedEmail = localStorage.getItem("userEmail");
+const storedRole = localStorage.getItem("userRole");
+
+/* =========================
+   SHOW EMAIL & ROLE
+========================= */
+
+if(storedEmail){
+  document.getElementById("userEmail").innerText = storedEmail;
+}
+
+if(storedRole){
+  document.getElementById("userRole").innerText = storedRole;
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+
+  localStorage.removeItem("userEmail");
+  localStorage.removeItem("userRole");
+
 });
 
 </script>

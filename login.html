@@ -4,32 +4,50 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Stackly Login</title>
+<title>Stackly Real Estate Login</title>
 
 <!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- FONT AWESOME -->
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
+/* =========================
+   ROOT
+========================= */
+
+:root{
+
+--re-primary:#2563eb;
+--re-secondary:#60a5fa;
+
+--re-dark:#0f172a;
+
+--re-card:rgba(255,255,255,0.08);
+
+--re-border:rgba(255,255,255,0.15);
+
+--re-text:#cbd5e1;
+
+}
 
 /* =========================
    RESET
 ========================= */
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 html,body{
-  width:100%;
-  min-height:100%;
-  overflow-x:hidden;
+width:100%;
+overflow-x:hidden;
 }
 
 /* =========================
@@ -37,360 +55,574 @@ html,body{
 ========================= */
 
 body{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:20px;
-  position:relative;
-  background:url('./archi6.webp') no-repeat center center/cover;
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:20px;
+
+background:
+linear-gradient(rgba(15,23,42,0.75),
+rgba(15,23,42,0.75)),
+url('./archi.webp')
+no-repeat center center/cover;
+
+position:relative;
+
+overflow:hidden;
+
 }
 
-/* OVERLAY */
+/* =========================
+   GLOW EFFECTS
+========================= */
+
+body::before,
+body::after{
+
+content:"";
+
+position:absolute;
+
+width:350px;
+height:350px;
+
+border-radius:50%;
+
+filter:blur(90px);
+
+z-index:0;
+
+}
 
 body::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.6);
-  z-index:0;
+
+background:rgba(37,99,235,0.35);
+
+top:-120px;
+left:-100px;
+
+animation:float1 7s infinite alternate;
+
+}
+
+body::after{
+
+background:rgba(96,165,250,0.25);
+
+bottom:-120px;
+right:-100px;
+
+animation:float2 9s infinite alternate;
+
+}
+
+@keyframes float1{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(50px);
+}
+
+}
+
+@keyframes float2{
+
+0%{
+transform:translateY(0);
+}
+
+100%{
+transform:translateY(-40px);
+}
+
 }
 
 /* =========================
-   LOGIN CONTAINER
+   BACK BUTTON
 ========================= */
 
-.login-container{
-  position:relative;
-  z-index:1;
-  width:100%;
-  max-width:1100px;
-  display:flex;
-  overflow:hidden;
-  border-radius:28px;
-  background:rgba(255,255,255,0.08);
-  backdrop-filter:blur(20px);
-  -webkit-backdrop-filter:blur(20px);
-  border:1px solid rgba(255,255,255,0.1);
-  box-shadow:0 8px 40px rgba(0,0,0,0.4);
+.re-back-home{
+
+position:fixed;
+
+top:20px;
+left:20px;
+
+display:flex;
+align-items:center;
+gap:8px;
+
+padding:10px 18px;
+
+border-radius:50px;
+
+text-decoration:none;
+
+color:#fff;
+
+background:rgba(255,255,255,0.08);
+
+border:1px solid rgba(255,255,255,0.1);
+
+backdrop-filter:blur(10px);
+
+z-index:100;
+
+transition:0.3s;
+
+}
+
+.re-back-home:hover{
+
+background:var(--re-primary);
+
+transform:translateX(-4px);
+
 }
 
 /* =========================
-   LEFT SIDE
+   WRAPPER
 ========================= */
 
-.login-left{
-  flex:1;
-  padding:50px 45px;
-  background:rgba(255,255,255,0.05);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
+.re-auth-wrapper{
 
-/* LOGO */
+width:100%;
+max-width:450px;
 
-.logo-box{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:30px;
-}
+position:relative;
 
-.logo-box img{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  object-fit:cover;
-}
+z-index:2;
 
-.logo-box h2{
-  color:#fff;
-  font-size:28px;
-  font-weight:700;
-}
-
-/* BACK BUTTON */
-
-.back-btn{
-  width:fit-content;
-  display:flex;
-  align-items:center;
-  gap:10px;
-  text-decoration:none;
-  color:#fff;
-  background:rgba(255,255,255,0.08);
-  padding:12px 20px;
-  border-radius:50px;
-  margin-bottom:25px;
-  border:1px solid rgba(255,255,255,0.1);
-  transition:0.3s;
-}
-
-.back-btn:hover{
-  background:#2563eb;
-  transform:translateX(-4px);
-}
-
-/* HEADING */
-
-.login-left h1{
-  color:#fff;
-  font-size:36px;
-  margin-bottom:12px;
-}
-
-.login-left p{
-  color:#d1d5db;
-  margin-bottom:30px;
-  line-height:1.6;
-}
-
-/* FORM */
-
-.form-group{
-  margin-bottom:22px;
-}
-
-.form-group label{
-  display:block;
-  margin-bottom:8px;
-  color:#fff;
-  font-size:14px;
-}
-
-.form-group input,
-.form-group select{
-  width:100%;
-  padding:15px 18px;
-  border:none;
-  outline:none;
-  border-radius:14px;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.08);
-  color:#fff;
-  font-size:15px;
-  transition:0.3s;
-}
-
-.form-group input:focus,
-.form-group select:focus{
-  border:1px solid #60a5fa;
-  background:rgba(255,255,255,0.12);
-}
-
-.form-group input::placeholder{
-  color:#cbd5e1;
-}
-
-/* SELECT OPTION */
-
-select{
-  appearance:none;
-}
-
-select option{
-  background:#111827;
-  color:#fff;
-}
-
-/* REMEMBER */
-
-.remember-box{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:25px;
-  gap:15px;
-  flex-wrap:wrap;
-}
-
-.remember-box label{
-  color:#fff;
-  font-size:14px;
-}
-
-.remember-box a{
-  text-decoration:none;
-  color:#60a5fa;
-  font-size:14px;
-}
-
-.remember-box a:hover{
-  text-decoration:underline;
-}
-
-/* BUTTON */
-
-.login-btn{
-  width:100%;
-  padding:16px;
-  border:none;
-  border-radius:14px;
-  background:linear-gradient(135deg,#2563eb,#60a5fa);
-  color:#fff;
-  font-size:16px;
-  font-weight:600;
-  cursor:pointer;
-  transition:0.4s;
-  box-shadow:0 0 20px rgba(37,99,235,0.4);
-}
-
-.login-btn:hover{
-  transform:translateY(-3px);
-  box-shadow:0 0 35px rgba(37,99,235,0.8);
-}
-
-/* SIGNUP */
-
-.signup-text{
-  margin-top:25px;
-  text-align:center;
-  color:#fff;
-  font-size:14px;
-}
-
-.signup-text a{
-  color:#60a5fa;
-  text-decoration:none;
-  font-weight:600;
-}
-
-.signup-text a:hover{
-  text-decoration:underline;
-}
-
-/* ERROR */
-
-.error-message{
-  color:#f87171;
-  margin-top:15px;
-  font-size:14px;
-  display:none;
 }
 
 /* =========================
-   RIGHT SIDE
+   CARD
 ========================= */
 
-.login-right{
-  flex:1;
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:40px;
-  overflow:hidden;
-}
+.re-auth-card{
 
-.right-overlay{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,0.25);
-}
+background:var(--re-card);
 
-.right-content{
-  position:relative;
-  z-index:1;
-  text-align:center;
-}
+border:1px solid var(--re-border);
 
-.right-content img{
-  width:170px;
-  margin-bottom:30px;
-  animation:float 3s ease-in-out infinite;
-}
+backdrop-filter:blur(18px);
 
-.right-content h2{
-  font-size:34px;
-  margin-bottom:15px;
-  color:#fff;
-}
+-webkit-backdrop-filter:blur(18px);
 
-.right-content p{
-  color:#d1d5db;
-  line-height:1.8;
-  max-width:400px;
-  margin:auto;
-}
+border-radius:26px;
 
-/* FLOAT */
+padding:40px 32px;
 
-@keyframes float{
-  0%,100%{
-    transform:translateY(0);
-  }
-  50%{
-    transform:translateY(-12px);
-  }
+color:#fff;
+
+box-shadow:0 20px 60px rgba(0,0,0,0.45);
+
 }
 
 /* =========================
-   RESPONSIVE
+   LOGO
 ========================= */
 
-@media(max-width:992px){
+.re-logo{
 
-  .login-container{
-    flex-direction:column;
-  }
+text-align:center;
 
-  .login-right{
-    min-height:350px;
-  }
+margin-bottom:18px;
 
 }
+
+.re-logo img{
+
+height:65px;
+
+object-fit:contain;
+
+}
+
+/* =========================
+   ICON
+========================= */
+
+.re-icon{
+
+width:85px;
+height:85px;
+
+margin:0 auto 18px;
+
+border-radius:50%;
+
+background:
+linear-gradient(135deg,
+var(--re-primary),
+var(--re-secondary));
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:32px;
+
+box-shadow:0 0 35px rgba(37,99,235,0.45);
+
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.re-title{
+
+text-align:center;
+
+font-size:30px;
+
+font-weight:700;
+
+margin-bottom:6px;
+
+}
+
+.re-sub{
+
+text-align:center;
+
+font-size:14px;
+
+color:var(--re-text);
+
+margin-bottom:30px;
+
+line-height:1.7;
+
+}
+
+/* =========================
+   INPUTS
+========================= */
+
+.re-input{
+
+margin-bottom:20px;
+
+}
+
+.re-input label{
+
+display:block;
+
+margin-bottom:8px;
+
+font-size:14px;
+
+font-weight:500;
+
+}
+
+.re-input input,
+.re-input select{
+
+width:100%;
+
+height:52px;
+
+padding:0 16px;
+
+border-radius:14px;
+
+border:1px solid rgba(255,255,255,0.1);
+
+background:rgba(255,255,255,0.05);
+
+color:#fff;
+
+outline:none;
+
+transition:0.3s;
+
+font-size:14px;
+
+}
+
+.re-input input:focus,
+.re-input select:focus{
+
+border-color:var(--re-secondary);
+
+box-shadow:0 0 18px rgba(96,165,250,0.25);
+
+}
+
+/* OPTION */
+
+.re-input select option{
+
+background:#0f172a;
+color:#fff;
+
+}
+
+/* PLACEHOLDER */
+
+.re-input input::placeholder{
+
+color:#cbd5e1;
+
+}
+
+/* =========================
+   PASSWORD
+========================= */
+
+.re-pass-wrap{
+
+position:relative;
+
+}
+
+.re-pass-wrap span{
+
+position:absolute;
+
+right:16px;
+
+top:50%;
+
+transform:translateY(-50%);
+
+cursor:pointer;
+
+color:#cbd5e1;
+
+}
+
+/* =========================
+   ERROR
+========================= */
+
+.re-error{
+
+display:none;
+
+margin-top:6px;
+
+font-size:12px;
+
+color:#ff6b6b;
+
+}
+
+/* =========================
+   ROW
+========================= */
+
+.re-row{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+gap:10px;
+
+font-size:13px;
+
+margin-bottom:20px;
+
+color:#cbd5e1;
+
+flex-wrap:wrap;
+
+}
+
+.re-row a{
+
+color:#cbd5e1;
+
+text-decoration:none;
+
+transition:0.3s;
+
+}
+
+.re-row a:hover{
+
+color:var(--re-secondary);
+
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.re-btn{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:14px;
+
+background:
+linear-gradient(90deg,
+var(--re-primary),
+var(--re-secondary));
+
+color:#fff;
+
+font-size:15px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+.re-btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 0 25px rgba(37,99,235,0.45);
+
+}
+
+/* =========================
+   LOGIN LINK
+========================= */
+
+.re-link{
+
+text-align:center;
+
+margin-top:18px;
+
+font-size:14px;
+
+}
+
+.re-link a{
+
+color:var(--re-secondary);
+
+text-decoration:none;
+
+font-weight:600;
+
+}
+
+/* =========================
+   DEMO BOX
+========================= */
+
+.re-demo-box{
+
+margin-top:24px;
+
+padding:18px;
+
+border-radius:16px;
+
+background:rgba(255,255,255,0.05);
+
+border:1px solid rgba(255,255,255,0.1);
+
+font-size:13px;
+
+color:#dbeafe;
+
+}
+
+.re-demo-box h4{
+
+margin-bottom:10px;
+
+font-size:14px;
+
+color:var(--re-secondary);
+
+}
+
+.re-demo-box ul{
+
+padding-left:18px;
+
+line-height:1.8;
+
+}
+
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:768px){
 
-  .login-left{
-    padding:35px 25px;
-  }
+.re-auth-card{
 
-  .login-left h1{
-    font-size:28px;
-  }
-
-  .logo-box h2{
-    font-size:24px;
-  }
-
-  .right-content h2{
-    font-size:28px;
-  }
-
-  .right-content img{
-    width:130px;
-  }
+padding:32px 24px;
 
 }
 
-@media(max-width:500px){
+}
 
-  body{
-    padding:15px;
-  }
+/* =========================
+   MOBILE
+========================= */
 
-  .login-container{
-    border-radius:20px;
-  }
+@media(max-width:480px){
 
-  .login-left{
-    padding:28px 20px;
-  }
+body{
+padding:15px;
+}
 
-  .remember-box{
-    flex-direction:column;
-    align-items:flex-start;
-  }
+.re-title{
+font-size:24px;
+}
 
-  .login-left h1{
-    font-size:24px;
-  }
+.re-sub{
+font-size:13px;
+}
 
-  .right-content h2{
-    font-size:22px;
-  }
+.re-auth-card{
+padding:26px 20px;
+border-radius:22px;
+}
+
+.re-logo img{
+height:55px;
+}
+
+.re-icon{
+width:75px;
+height:75px;
+font-size:28px;
+}
+
+.re-back-home{
+
+top:12px;
+left:12px;
+
+font-size:12px;
+
+padding:8px 12px;
+
+}
+
+.re-row{
+
+font-size:12px;
+
+}
 
 }
 
@@ -399,166 +631,209 @@ select option{
 
 <body>
 
-<div class="login-container">
+<!-- BACK BUTTON -->
 
-  <!-- LEFT SIDE -->
+<a href="index.html" class="re-back-home">
 
-  <div class="login-left">
+<i class="fa fa-arrow-left"></i>
 
-    <!-- LOGO -->
+Back to Home
 
-    <div class="logo-box">
+</a>
 
-      <!-- <img src="./logo.webp" alt="Stackly Logo"> -->
+<!-- WRAPPER -->
 
-      <!-- <h2>Stackly</h2> -->
+<div class="re-auth-wrapper">
 
-    </div>
+<!-- CARD -->
 
-    <!-- BACK BUTTON -->
+<div class="re-auth-card">
 
-    <a href="index.html" class="back-btn">
+<!-- LOGO -->
 
-      <i class="fa-solid fa-arrow-left"></i>
+<div class="re-logo">
 
-      Back to Home
+<img src="./white.webp" alt="Stackly Logo">
 
-    </a>
+</div>
 
-    <!-- HEADING -->
+<!-- ICON -->
 
-    <h1>Welcome Back</h1>
+<div class="re-icon">
 
-    <p>
-      Login to access your Stackly dashboard securely.
-      Choose your role and continue your journey.
-    </p>
+<i class="fa-solid fa-building"></i>
 
-    <!-- ROLE -->
+</div>
 
-    <div class="form-group">
+<!-- TITLE -->
 
-      <label>
-        Role
-      </label>
+<h2 class="re-title">
 
-      <select id="role">
+Stackly Real Estate Login
 
-        <option value="">
-          Select Role
-        </option>
+</h2>
 
-        <option value="customer">
-          Customer
-        </option>
+<p class="re-sub">
 
-        <option value="agent">
-          Agent
-        </option>
+Login as Agent or Customer
+to manage properties,
+bookings and premium real estate services.
 
-      </select>
+</p>
 
-    </div>
+<!-- FORM -->
 
-    <!-- EMAIL -->
+<form id="reLoginForm">
 
-    <div class="form-group">
+<!-- ROLE -->
 
-      <label>
-        Email ID
-      </label>
+<div class="re-input">
 
-      <input
-      type="email"
-      id="email"
-      placeholder="Enter your email">
+<label>
+Role
+</label>
 
-    </div>
+<select id="reRole">
 
-    <!-- PASSWORD -->
+<option value="">
+Select Role
+</option>
 
-    <div class="form-group">
+<option>
+Agent
+</option>
 
-      <label>
-        Password
-      </label>
+<option>
+Customer
+</option>
 
-      <input
-      type="password"
-      id="password"
-      placeholder="Enter your password">
+</select>
 
-    </div>
+</div>
 
-    <!-- REMEMBER -->
+<!-- EMAIL -->
 
-    <div class="remember-box">
+<div class="re-input">
 
-      <label>
+<label>
+Email Address
+</label>
 
-        <input type="checkbox" id="remember">
+<input
+type="email"
+id="reEmail"
+placeholder="Enter your email">
 
-        Remember me
+<p id="emailError" class="re-error">
 
-      </label>
+Enter valid email address
 
-      <a href="404.html">
-        Forgot Password?
-      </a>
+</p>
 
-    </div>
+</div>
 
-    <!-- BUTTON -->
+<!-- PASSWORD -->
 
-    <button class="login-btn" onclick="loginUser()">
+<div class="re-input">
 
-      Login
+<label>
+Password
+</label>
 
-    </button>
+<div class="re-pass-wrap">
 
-    <!-- ERROR -->
+<input
+type="password"
+id="rePassword"
+placeholder="Enter password">
 
-    <div class="error-message" id="errorMessage">
+<span id="togglePass">
 
-      Fill details correctly
+<i class="fa fa-eye"></i>
 
-    </div>
+</span>
 
-    <!-- SIGNUP -->
+</div>
 
-    <div class="signup-text">
+<p id="passError" class="re-error">
 
-      Don’t have an account?
+Password must contain minimum 6 characters
 
-      <a href="register.html">
-        Register Me
-      </a>
+</p>
 
-    </div>
+</div>
 
-  </div>
+<!-- ROW -->
 
-  <!-- RIGHT SIDE -->
+<div class="re-row">
 
-  <div class="login-right">
+<label>
 
-    <div class="right-overlay"></div>
+<input type="checkbox">
 
-    <div class="right-content">
+Remember Me
 
-      <img src="./white.webp" alt="Stackly Logo">
+</label>
 
-      <h2>Secure Real Estate Platform</h2>
+<a href="404.html">
 
-      <p>
-        Manage properties, bookings, customers,
-        and agents with advanced dashboard access
-        and modern security features.
-      </p>
+Forgot Password?
 
-    </div>
+</a>
 
-  </div>
+</div>
+
+<!-- BUTTON -->
+
+<button class="re-btn" type="submit">
+
+Login Account
+
+</button>
+
+<!-- REGISTER -->
+
+<div class="re-link">
+
+Don't have an account?
+
+<a href="register.html">
+
+Register Now
+
+</a>
+
+</div>
+
+<!-- DEMO -->
+
+<div class="re-demo-box">
+
+<h4>
+Demo Roles
+</h4>
+
+<ul>
+
+<li>
+Agent → dashboard.html
+</li>
+
+<li>
+Customer → dashboard1.html
+</li>
+
+<li>
+Password → Minimum 6 characters
+</li>
+
+</ul>
+
+</div>
+
+</form>
+
+</div>
 
 </div>
 
@@ -567,118 +842,124 @@ select option{
 <script>
 
 /* =========================
-   AUTO LOGIN CHECK
+   PASSWORD TOGGLE
 ========================= */
 
-window.onload = () => {
+const pass =
+document.getElementById("rePassword");
 
-  const savedUser =
-  localStorage.getItem('stacklyUser') ||
-  sessionStorage.getItem('stacklyUser');
+document.getElementById("togglePass")
+.onclick = ()=>{
 
-  if(savedUser){
-
-    const user = JSON.parse(savedUser);
-
-    if(user.role === 'agent'){
-
-      window.location.href = 'dashboard.html';
-
-    }else{
-
-      window.location.href = 'dashboard1.html';
-
-    }
-
-  }
+pass.type =
+pass.type === "password"
+? "text"
+: "password";
 
 };
 
 /* =========================
-   LOGIN FUNCTION
+   VALIDATION
 ========================= */
 
-function loginUser(){
+const form =
+document.getElementById("reLoginForm");
 
-  const role =
-  document.getElementById('role').value;
+const emailPattern =
+/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  const email =
-  document.getElementById('email').value.trim();
+form.addEventListener("submit",(e)=>{
 
-  const password =
-  document.getElementById('password').value.trim();
+e.preventDefault();
 
-  const remember =
-  document.getElementById('remember').checked;
+/* INPUTS */
 
-  const errorMessage =
-  document.getElementById('errorMessage');
+const role =
+document.getElementById("reRole").value;
 
-  /* EMAIL VALIDATION */
+const email =
+document.getElementById("reEmail").value.trim();
 
-  const emailPattern =
-  /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+const password =
+document.getElementById("rePassword").value.trim();
 
-  /* CHECK INPUT */
+/* ERRORS */
 
-  if(
-    role === '' ||
-    email === '' ||
-    password === '' ||
-    !email.match(emailPattern)
-  ){
+const emailError =
+document.getElementById("emailError");
 
-    errorMessage.style.display = 'block';
+const passError =
+document.getElementById("passError");
 
-    return;
+/* RESET */
 
-  }
+emailError.style.display = "none";
 
-  /* HIDE ERROR */
+passError.style.display = "none";
 
-  errorMessage.style.display = 'none';
+let valid = true;
 
-  /* USER DATA */
+/* ROLE */
 
-  const user = {
+if(role === ""){
 
-    role:role,
-    email:email
+valid = false;
 
-  };
-
-  /* STORAGE */
-
-  if(remember){
-
-    localStorage.setItem(
-      'stacklyUser',
-      JSON.stringify(user)
-    );
-
-  }else{
-
-    sessionStorage.setItem(
-      'stacklyUser',
-      JSON.stringify(user)
-    );
-
-  }
-
-  /* REDIRECT */
-
-  if(role === 'agent'){
-
-    window.location.href = 'dashboard.html';
-
-  }else{
-
-    window.location.href = 'dashboard1.html';
-
-  }
+alert("Please select role");
 
 }
+
+/* EMAIL */
+
+if(!emailPattern.test(email)){
+
+emailError.style.display = "block";
+
+valid = false;
+
+}
+
+/* PASSWORD */
+
+if(password.length < 6){
+
+passError.style.display = "block";
+
+valid = false;
+
+}
+
+/* STOP */
+
+if(!valid){
+
+return;
+
+}
+
+/* =========================
+   STORE IN LOCAL STORAGE
+========================= */
+
+localStorage.setItem("userRole", role);
+
+localStorage.setItem("userEmail", email);
+
+/* =========================
+   REDIRECT
+========================= */
+
+if(role === "Agent"){
+
+window.location.href = "dashboard.html";
+
+}else{
+
+window.location.href = "dashboard1.html";
+
+}
+
+});
 
 </script>
 

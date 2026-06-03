@@ -62,23 +62,11 @@ body{
   z-index:1000;
 }
 
-.logo{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  font-size:26px;
-  font-weight:700;
-  margin-bottom:45px;
-}
-
-.logo i{
-  color:#60a5fa;
-}
-
 .sidebar-menu{
   display:flex;
   flex-direction:column;
   gap:12px;
+  margin-top:35px;
 }
 
 .sidebar-menu a{
@@ -155,6 +143,7 @@ body{
 .user-info h4{
   font-size:15px;
   margin-bottom:4px;
+  word-break:break-word;
 }
 
 .user-info p{
@@ -440,8 +429,8 @@ body{
   <aside class="sidebar" id="sidebar">
 
     <a href="index.html">   
-        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
-      </a> 
+      <img src="./white.webp" alt="Stackly Logo" style="height: 60px;">
+    </a> 
 
     <div class="sidebar-menu">
 
@@ -450,19 +439,17 @@ body{
         Dashboard
       </a>
 
-
       <a href="./bookings.html">
         <i class="fa-solid fa-calendar-check"></i>
         Bookings
       </a>
 
-      
       <a href="./messages.html">
         <i class="fa-solid fa-envelope"></i>
         Messages
       </a>
 
-      <a href="./index.html">
+      <a href="./index.html" id="logoutBtn">
         <i class="fa-solid fa-right-from-bracket"></i>
         Logout
       </a>
@@ -494,7 +481,7 @@ body{
       <div class="user-box">
 
         <div class="user-info">
-          <h4>customer@stackly.com</h4>
+          <h4 id="userEmail">customer@stackly.com</h4>
           <p>Role : Customer</p>
         </div>
 
@@ -593,7 +580,7 @@ body{
 
               <div class="customer-profile">
 
-                <img src="https://randomuser.me/api/portraits/women/32.jpg">
+                <img src="./ava3.webp">
 
                 <div>
                   <h4>Emily Johnson</h4>
@@ -638,7 +625,7 @@ body{
 
               <div class="customer-profile">
 
-                <img src="https://randomuser.me/api/portraits/men/41.jpg">
+                <img src="./ava2.webp">
 
                 <div>
                   <h4>Michael Brown</h4>
@@ -683,7 +670,7 @@ body{
 
               <div class="customer-profile">
 
-                <img src="https://randomuser.me/api/portraits/women/65.jpg">
+                <img src="./ava1.webp">
 
                 <div>
                   <h4>Sophia Miller</h4>
@@ -836,11 +823,40 @@ body{
 
 <script>
 
+/* =========================
+   MOBILE SIDEBAR
+========================= */
+
 const menuBtn = document.getElementById("menuBtn");
 const sidebar = document.getElementById("sidebar");
 
 menuBtn.addEventListener("click", () => {
   sidebar.classList.toggle("active");
+});
+
+/* =========================
+   SHOW LOGIN EMAIL
+========================= */
+
+const storedEmail =
+  localStorage.getItem("userEmail") ||
+  localStorage.getItem("email") ||
+  localStorage.getItem("loginEmail");
+
+if(storedEmail){
+  document.getElementById("userEmail").textContent = storedEmail;
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+document.getElementById("logoutBtn").addEventListener("click", () => {
+
+  localStorage.removeItem("userEmail");
+  localStorage.removeItem("email");
+  localStorage.removeItem("loginEmail");
+
 });
 
 </script>

@@ -123,6 +123,7 @@ body{
   justify-content:space-between;
   align-items:center;
   margin-bottom:30px;
+  gap:20px;
 }
 
 .left-top{
@@ -146,6 +147,17 @@ body{
   display:flex;
   align-items:center;
   gap:15px;
+  flex-wrap:wrap;
+}
+
+.user-box h4{
+  font-size:15px;
+  word-break:break-word;
+}
+
+.user-box p{
+  font-size:13px;
+  color:#cbd5e1;
 }
 
 .user-avatar{
@@ -393,7 +405,6 @@ body{
 
   .topbar{
     flex-direction:column;
-    gap:20px;
     align-items:flex-start;
   }
 
@@ -409,6 +420,14 @@ body{
     flex-direction:column;
   }
 
+  .page-title{
+    font-size:20px;
+  }
+
+  .main{
+    padding:15px;
+  }
+
 }
 
 </style>
@@ -421,10 +440,12 @@ body{
 
   <aside class="sidebar" id="sidebar">
 
-    <a href="index.html">   
-        <img src="./white.webp" alt="Stackly Logo" style="height: 60px; ">
-      </a> 
-      
+    <a href="index.html">
+      <img src="./white.webp"
+      alt="Stackly Logo"
+      style="height:60px;">
+    </a>
+
     <div class="sidebar-menu">
 
       <a href="./dashboard.html">
@@ -442,13 +463,10 @@ body{
         Agents
       </a>
 
-      <a href="./index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-      
-
-      
-      
-
-      
+      <a href="./index.html" id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        Logout
+      </a>
 
     </div>
 
@@ -474,11 +492,23 @@ body{
 
       </div>
 
+      <!-- USER INFO -->
+
       <div class="user-box">
 
         <div>
-          <h4>agent@stackly.com</h4>
-          <p>Role : Agent</p>
+
+          <h4 id="userEmail">
+            loading...
+          </h4>
+
+          <p>
+            Role :
+            <span id="userRole">
+              Agent
+            </span>
+          </p>
+
         </div>
 
         <div class="user-avatar">
@@ -543,7 +573,7 @@ body{
 
     </div>
 
-    <!-- AGENT LIST -->
+    <!-- AGENTS -->
 
     <h2 class="section-title">
       Top Real Estate Agents
@@ -551,14 +581,14 @@ body{
 
     <div class="agent-grid">
 
-      <!-- AGENT -->
+      <!-- AGENT 1 -->
 
       <div class="agent-card">
 
         <div class="agent-cover">
 
           <div class="agent-image">
-            <img src="./nithiya.webp">
+            <img src="./nithiya.webp" alt="">
           </div>
 
         </div>
@@ -614,14 +644,14 @@ body{
 
       </div>
 
-      <!-- AGENT -->
+      <!-- AGENT 2 -->
 
       <div class="agent-card">
 
         <div class="agent-cover">
 
           <div class="agent-image">
-            <img src="./arjun.webp">
+            <img src="./arjun.webp" alt="">
           </div>
 
         </div>
@@ -677,14 +707,14 @@ body{
 
       </div>
 
-      <!-- AGENT -->
+      <!-- AGENT 3 -->
 
       <div class="agent-card">
 
         <div class="agent-cover">
 
           <div class="agent-image">
-            <img src="./joe.webp">
+            <img src="./joe.webp" alt="">
           </div>
 
         </div>
@@ -748,11 +778,74 @@ body{
 
 <script>
 
-const menuBtn = document.getElementById("menuBtn");
-const sidebar = document.getElementById("sidebar");
+/* =========================
+   MOBILE MENU
+========================= */
 
-menuBtn.addEventListener("click", () => {
+const menuBtn =
+document.getElementById("menuBtn");
+
+const sidebar =
+document.getElementById("sidebar");
+
+menuBtn.addEventListener("click",()=>{
+
   sidebar.classList.toggle("active");
+
+});
+
+/* =========================
+   GET LOGIN DATA
+========================= */
+
+const storedEmail =
+localStorage.getItem("userEmail");
+
+const storedRole =
+localStorage.getItem("userRole");
+
+/* =========================
+   UPDATE USER INFO
+========================= */
+
+const userEmail =
+document.getElementById("userEmail");
+
+const userRole =
+document.getElementById("userRole");
+
+if(storedEmail){
+
+  userEmail.innerText = storedEmail;
+
+}else{
+
+  userEmail.innerText =
+  "guest@stackly.com";
+
+}
+
+if(storedRole){
+
+  userRole.innerText = storedRole;
+
+}else{
+
+  userRole.innerText = "Guest";
+
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+document.getElementById("logoutBtn")
+.addEventListener("click",()=>{
+
+  localStorage.removeItem("userEmail");
+
+  localStorage.removeItem("userRole");
+
 });
 
 </script>
