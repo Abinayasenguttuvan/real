@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>404 - StacklyEstate</title>
 
@@ -34,6 +34,7 @@ body{
   justify-content:center;
   position:relative;
   background:#0f172a;
+  padding:20px;
 }
 
 /* =========================
@@ -46,8 +47,8 @@ body::before{
   inset:0;
 
   background:
-  linear-gradient(rgba(15,23,42,0.78),
-  rgba(15,23,42,0.85)),
+  linear-gradient(rgba(15,23,42,0.82),
+  rgba(15,23,42,0.88)),
   url('./archi2.webp');
 
   background-size:cover;
@@ -58,10 +59,10 @@ body::before{
 body::after{
   content:"";
   position:absolute;
-  width:700px;
-  height:700px;
+  width:500px;
+  height:500px;
   background:radial-gradient(circle,
-  rgba(37,99,235,0.25),
+  rgba(37,99,235,0.22),
   transparent 70%);
   z-index:-1;
   animation:floatGlow 6s ease-in-out infinite;
@@ -70,15 +71,15 @@ body::after{
 @keyframes floatGlow{
 
   0%{
-    transform:translateY(-20px);
+    transform:translateY(-15px);
   }
 
   50%{
-    transform:translateY(20px);
+    transform:translateY(15px);
   }
 
   100%{
-    transform:translateY(-20px);
+    transform:translateY(-15px);
   }
 
 }
@@ -88,23 +89,25 @@ body::after{
 ========================= */
 
 .error-container{
-  width:92%;
-  max-width:700px;
-  padding:55px 45px;
-  border-radius:35px;
+  width:100%;
+  max-width:520px;
+
+  padding:35px 28px;
+
+  border-radius:28px;
 
   background:rgba(255,255,255,0.08);
 
-  border:1px solid rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.10);
 
-  backdrop-filter:blur(18px);
-  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
 
   text-align:center;
   color:#fff;
 
   box-shadow:
-  0 20px 50px rgba(0,0,0,0.45);
+  0 15px 40px rgba(0,0,0,0.4);
 
   position:relative;
   overflow:hidden;
@@ -117,23 +120,23 @@ body::after{
 .error-container::before{
   content:"";
   position:absolute;
-  width:220px;
-  height:220px;
-  background:rgba(96,165,250,0.12);
+  width:160px;
+  height:160px;
+  background:rgba(96,165,250,0.10);
   border-radius:50%;
-  top:-90px;
-  right:-90px;
+  top:-70px;
+  right:-70px;
 }
 
 .error-container::after{
   content:"";
   position:absolute;
-  width:180px;
-  height:180px;
-  background:rgba(37,99,235,0.15);
+  width:140px;
+  height:140px;
+  background:rgba(37,99,235,0.12);
   border-radius:50%;
-  bottom:-70px;
-  left:-70px;
+  bottom:-60px;
+  left:-60px;
 }
 
 /* =========================
@@ -141,11 +144,11 @@ body::after{
 ========================= */
 
 .logo{
-  margin-bottom:30px;
+  margin-bottom:18px;
 }
 
 .logo img{
-  height:65px;
+  height:52px;
 }
 
 /* =========================
@@ -153,10 +156,10 @@ body::after{
 ========================= */
 
 .error-code{
-  font-size:150px;
+  font-size:100px;
   font-weight:800;
   line-height:1;
-  margin-bottom:10px;
+  margin-bottom:8px;
 
   background:linear-gradient(135deg,#60a5fa,#2563eb,#93c5fd);
 
@@ -164,7 +167,7 @@ body::after{
   -webkit-text-fill-color:transparent;
 
   text-shadow:
-  0 0 25px rgba(96,165,250,0.35);
+  0 0 20px rgba(96,165,250,0.25);
 }
 
 /* =========================
@@ -172,17 +175,17 @@ body::after{
 ========================= */
 
 .error-title{
-  font-size:42px;
+  font-size:28px;
   font-weight:700;
-  margin-bottom:18px;
+  margin-bottom:14px;
 }
 
 .error-desc{
-  font-size:16px;
-  line-height:1.9;
-  color:rgba(255,255,255,0.82);
-  max-width:520px;
-  margin:auto auto 35px;
+  font-size:14px;
+  line-height:1.8;
+  color:rgba(255,255,255,0.78);
+  max-width:420px;
+  margin:auto auto 24px;
 }
 
 /* =========================
@@ -192,19 +195,19 @@ body::after{
 .info-badge{
   display:inline-flex;
   align-items:center;
-  gap:10px;
+  gap:8px;
 
-  padding:12px 22px;
+  padding:10px 18px;
   border-radius:50px;
 
-  background:rgba(37,99,235,0.18);
+  background:rgba(37,99,235,0.15);
 
-  border:1px solid rgba(96,165,250,0.25);
+  border:1px solid rgba(96,165,250,0.20);
 
   color:#bfdbfe;
 
-  font-size:14px;
-  margin-bottom:30px;
+  font-size:13px;
+  margin-bottom:22px;
 }
 
 /* =========================
@@ -214,34 +217,34 @@ body::after{
 .button-group{
   display:flex;
   justify-content:center;
-  margin-top:10px;
 }
 
 .home-btn{
   text-decoration:none;
-  padding:16px 38px;
-  border-radius:60px;
+  padding:14px 28px;
+  border-radius:50px;
 
   background:linear-gradient(135deg,#2563eb,#60a5fa);
 
   color:#fff;
   font-weight:600;
-  font-size:16px;
+  font-size:15px;
 
   display:inline-flex;
   align-items:center;
-  gap:12px;
+  gap:10px;
 
   transition:0.35s;
+
   box-shadow:
-  0 10px 25px rgba(37,99,235,0.35);
+  0 10px 22px rgba(37,99,235,0.30);
 }
 
 .home-btn:hover{
-  transform:translateY(-4px) scale(1.03);
+  transform:translateY(-3px);
 
   box-shadow:
-  0 18px 35px rgba(37,99,235,0.45);
+  0 15px 30px rgba(37,99,235,0.40);
 }
 
 /* =========================
@@ -251,53 +254,71 @@ body::after{
 @media(max-width:768px){
 
   .error-container{
-    padding:45px 25px;
-    border-radius:28px;
+    max-width:440px;
+    padding:30px 22px;
   }
 
   .error-code{
-    font-size:110px;
+    font-size:80px;
   }
 
   .error-title{
-    font-size:32px;
+    font-size:24px;
   }
 
   .error-desc{
-    font-size:15px;
-    line-height:1.8;
-  }
-
-  .home-btn{
-    width:100%;
-    justify-content:center;
+    font-size:13px;
   }
 
 }
 
 @media(max-width:500px){
 
+  body{
+    padding:15px;
+  }
+
+  .error-container{
+    padding:26px 18px;
+    border-radius:24px;
+  }
+
+  .logo img{
+    height:45px;
+  }
+
   .error-code{
-    font-size:85px;
+    font-size:65px;
   }
 
   .error-title{
-    font-size:25px;
+    font-size:20px;
   }
 
   .error-desc{
-    font-size:14px;
+    font-size:12px;
+    line-height:1.7;
   }
 
   .info-badge{
-    font-size:13px;
-    padding:10px 18px;
+    width:100%;
+    justify-content:center;
+    font-size:12px;
+    padding:10px 14px;
+  }
+
+  .home-btn{
+    width:100%;
+    justify-content:center;
+    font-size:14px;
+    padding:13px 20px;
   }
 
 }
 
 </style>
 </head>
+
 <body>
 
 <!-- =========================
@@ -310,7 +331,6 @@ body::after{
 
   <div class="logo">
 
-    <!-- CHANGE YOUR LOGO -->
     <img src="./white.webp" alt="StacklyEstate Logo">
 
   </div>
@@ -322,7 +342,7 @@ body::after{
   </h1>
 
   <h2 class="error-title">
-    Oops! Property Not Found
+    Property Not Found
   </h2>
 
   <!-- BADGE -->
@@ -331,7 +351,7 @@ body::after{
 
     <i class="fa-solid fa-house-circle-exclamation"></i>
 
-    The property page you are looking for does not exist
+    Requested property page unavailable
 
   </div>
 
@@ -339,11 +359,9 @@ body::after{
 
   <p class="error-desc">
 
-    The listing may have been removed, sold out,
-    or the page link may be incorrect.
-    Explore premium real estate properties,
-    apartments, villas, and commercial spaces
-    from the StacklyEstate dashboard.
+    The page you are trying to access may have been removed,
+    sold out, or the URL might be incorrect.
+    Return to the StacklyEstate homepage to continue exploring properties.
 
   </p>
 
